@@ -9,8 +9,7 @@ class FrontController extends Controller
     //
     public function index()
     {
-        return view('front.front_home');
-
+        return view('front.index.front_index');
     }
 
 

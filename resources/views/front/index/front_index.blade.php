@@ -1,4 +1,4 @@
-@extends('layouts.front')
+@extends('layouts.front_template')
 @section('title')
 首頁
 @endsection
@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
 @endsection
 
-@section('content')
+@section('main')
 
 <main>
         <!-- slider -->
@@ -491,17 +493,21 @@
                 </div>
             </div>
         </section>
-
     </main>
-
 @endsection
+
+
 @section('js')
+        <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
         <script src="{{ asset('js/moment.js')}}"></script>{{-- 只是拿來做行事曆 --}}
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>{{-- 只是拿來做滑頁動畫 --}}
+        <script src="{{ asset('https://unpkg.com/swiper/swiper-bundle.min.js')}}"></script>{{-- 只是拿來做滑頁動畫 --}}
         <script src="{{ asset('js/aos.js')}}"></script> {{-- 只是拿來做出移動動畫 --}}
         <script src="{{ asset('js/main.min.js')}}"></script>{{-- 只是拿來做行事曆 --}}
         <script src="{{ asset('js/pet-vogue-swiper.js')}}"></script>{{-- 只是拿來做滑頁動畫 --}}
         <script src="{{ asset('js/pet-vogue-calendar.js')}}"></script>{{-- 只是拿來做行事曆 --}}
-        @yield('js')
+        <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
+        <script src="{{ asset('js/all.js')}}"></script>
+        <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js')}}" crossorigin="anonymous"></script>
 @endsection
+
 
