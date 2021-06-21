@@ -617,22 +617,17 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
     content: '';
     position: absolute;
     width: 0;
-    height: 1.5px;
-    /* 2px */
+    height: 2px;
     background-color: #fa0;
     transition: .5s;
   }
-  /* LIMO修正動畫 */
   .header-content .main-nav-pc > li h3 a:before {
-    /* visibility:hidden; */
-    right: 0;
-    /* left: 0; */
-    top: 9px;
+    top: 6px;
+    left: 0;
   }
   .header-content .main-nav-pc > li h3 a::after {
-    /* right: 0; */
-    left: 0;
-    bottom: 9px;
+    right: 0;
+    bottom: 6px;
   }
   .header-content .main-nav-pc > li:hover h3 a:before,
   .header-content .main-nav-pc > li:hover h3 a:after {
@@ -4377,3 +4372,5 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   .recent-activity .recent-list li .recent-txt p:last-of-type {
     font-size: 1.7rem;
   }
+}
+
