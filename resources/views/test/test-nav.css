@@ -1,0 +1,44 @@
+
+@media screen and (min-width: 500px){
+  .header-content h1{
+    width: 150px;
+  }
+  .logo{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 900px){
+  .header-content h1{
+    width: 160px;
+  }
+  
+  .logo{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px){
+  .header-content h1{
+    width: 160px;
+  }
+  
+  .logo{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1100px){
+  .header-content h1{
+    width: 260px;
+  }
+  .logo{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .header-content h1{
+    width: auto;
+  }
+  .logo{
+    width: 70%;
+  }
+}

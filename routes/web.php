@@ -18,11 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
-
-
+Route::get('/donate', function () {
+    return view('front.donate.donate_index');
+});
 
 
 Route::prefix('cart_ecpay')->group(function(){
