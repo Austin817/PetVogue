@@ -10,6 +10,7 @@
 @endsection
 
 @section('content')
+
 <main>
         <!-- slider -->
         <section class="index-banner-slider">
@@ -492,6 +493,8 @@
         </section>
     </main>
 @endsection
+
+
 @section('js')
         <script src="{{ asset('js/moment.js')}}"></script>{{-- 只是拿來做行事曆 --}}
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>{{-- 只是拿來做滑頁動畫 --}}
@@ -501,3 +504,5 @@
         <script src="{{ asset('js/pet-vogue-calendar.js')}}"></script>{{-- 只是拿來做行事曆 --}}
         @yield('js')
 @endsection
+
+
