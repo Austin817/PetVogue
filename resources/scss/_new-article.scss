@@ -1,0 +1,228 @@
+main{
+    .section{
+        .container{
+            h1{
+                @include font(34px,1.8,500);
+                text-align: center;
+                margin: 0;
+            }
+            .new-article-content{
+                @include flex;
+                padding: 20px;
+                .article-type{
+                    width: 20%;
+                    ul{
+                        @include font(20px,1.6,500);
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                        li{
+                            padding: 10px;
+                            border-radius: 15px;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: $bgccof;
+                                color: white;
+                                transition: .6s;
+                            }
+                        }
+                    }
+                }
+                .new-article{
+                    width: 60%;
+                    ul{
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        li{
+                            @include flex;
+                            border-bottom:3px solid $bgcorg;
+                            .pic{
+                                width: 45%;
+                                padding: 10px;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                            .article-text{
+                                @include flex;
+                                flex-direction: column;
+                                width: 55%;
+                                padding: 10px;
+                                .all-label{
+                                    @include flex;
+                                    .date{
+                                        @include font(18px,1.2,500);
+                                        padding: 8px 0;
+                                    }
+                                    .label{
+                                        @include font(18px,1.2,500);
+                                        width: 100px;
+                                        padding: 8px;
+                                        border-radius: 10px;
+                                        text-align: center;
+                                    }
+                                    .label:nth-child(2){
+                                        background-color: $bgccof;
+                                    }
+                                    .label:nth-child(3){
+                                        background-color: $bgcyel;
+                                    }
+                                }
+                                h2{
+                                    @include font(24px,1.6,500);
+                                }
+                                .article-btn{
+                                    margin: auto 0 0 auto;
+                                }
+                            }
+                        }
+                    }
+                }
+                .article-advertising{
+                    width: 20%;
+                    ul{
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                        li{
+                            height: 120px;
+                            margin: 10px 0;
+                            border: 1px solid $bgcorg;
+                            border-radius: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:992px){
+    main{
+        .section{
+            .container{
+                h1{
+                    font-size: 30px;
+                }
+                .new-article-content{
+                    .article-type{
+                        width: 25%;
+                        ul{
+                            font-size: 18px;
+                        }
+                    }
+                    .new-article{
+                        width: 75%;
+                        ul{
+                            li{
+                                .pic{
+                                    width: 40%;
+                                    margin: auto;
+                                }
+                                .article-text{
+                                    width: 60%;
+                                    .all-label{
+                                        flex-wrap: wrap;
+                                        .date{
+                                            font-size: 14px;
+                                        }
+                                        .label{
+                                            width: 80px;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                    h2{
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .article-advertising{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:768px){
+    main{
+        .section{
+            .container{
+                .new-article-content{
+                    .new-article{
+                        ul{
+                            li{
+                                .pic{
+                                    img{
+                                        height: 20vw;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:576px){
+    main{
+        .section{
+            .container{
+                h1{
+                    font-size: 26px;
+                }
+                .new-article-content{
+                    display: block;
+                    .article-type{
+                        width: 100%;
+                        ul{
+                            @include flex;
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                            font-size: 16px;
+                            li{
+                                width: 33%;
+                                padding: 5px;
+                            }
+                        }
+                    }
+                    .new-article{
+                        width: 100%;
+                        ul{
+                            li{
+                                margin: auto;
+                                .pic{
+                                    width: 50%;
+                                    img{
+                                        height: 35vw;
+                                    }
+                                }
+                                .article-text{
+                                    width: 50%;
+                                    .all-label{
+                                        .date{
+                                            padding: 5px 0;
+                                            font-size: 14px;
+                                        }
+                                        .label{
+                                            padding: 5px;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                    h2{
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

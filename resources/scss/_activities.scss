@@ -1,0 +1,241 @@
+main{
+    .section{
+        .container{
+            .activities-content{
+                ul{
+                    @include flex(space-around,0,0);
+                    flex-wrap: wrap;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        width: 33%;
+                        border: 1px solid rgb(224, 217, 217);
+                        border-radius: 5px;
+                        &:hover{
+                            border: 3px solid $bgcorg;
+                            .pic{
+                                opacity: 1;
+                            }
+                        }
+                        .pic{
+                            width: 100%;
+                            padding: 10px;
+                            opacity: .6;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .text{
+                            @include flex;
+                            flex-direction: column;
+                            width: 100%;
+                            padding: 10px;
+                            h2{
+                                @include font(24px,1.6,500);
+                            }
+                            p{
+                                @include font(20px,1.6,400);
+                                overflow:hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                            }
+                            .activities-btn{
+                                margin-top: auto;
+                                margin-left: auto;    
+                            }
+                        }
+                    }
+                }
+            }
+            .fedding-and-method-content{
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li{
+                        @include flex;
+                        .pic{
+                            width: 50%;
+                            padding: 20px 15px;
+                            margin: auto;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .text{
+                            @include flex;
+                            flex-direction: column;
+                            padding: 20px 15px;
+                            width: 50%;
+                            h2{
+                                @include font(28px,1.6,500);
+                            }
+                            p{
+                                @include font(20px,1.6,400);
+                            }
+                            .fedding-btns{
+                                margin-top: auto;
+                                margin-left: auto;
+                                .fedding-btn:nth-child(1){
+                                    margin-right: 5px;
+                                }
+                                .fedding-btn:nth-child(2){
+                                    margin-left: 5px;
+                                }
+                            }
+                            .method-btn{
+                                margin-top: auto;
+                                margin-left: auto;
+                            }
+                        }
+                        .method-text{
+                            p:nth-child(6){
+                                @include font(22px,1.6,600);
+                                color: rgb(233, 50, 50);
+                            }
+                        }
+                    }
+                    li:nth-child(1){
+                        background-color: $bgccof;
+                    }
+                    li:nth-child(2){
+                        background-color: $bgcyel;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:992px){
+    main{
+        .section{
+            .container{
+                .activities-content{
+                    ul{
+                        li{
+                            .text{
+                                h2{
+                                    font-size: 20px;
+                                }
+                                p{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .fedding-and-method-content{
+                    ul{
+                        li{
+                            .pic{
+                                img{
+                                    height: 45vw;
+                                }
+                            }
+                            .text{
+                                h2{
+                                    font-size: 24px;
+                                }
+                                p{
+                                    font-size: 16px;
+                                }
+                                .fedding-btns{
+                                    .fedding-btn:nth-child(1){
+                                        margin-right: 0;
+                                    }
+                                    .fedding-btn:nth-child(2){
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                            .method-text{
+                                p:nth-child(6){
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:652px){
+    main{
+        .section{
+            .container{
+                .fedding-and-method-content{
+                    ul{
+                        li{
+                            .pic{
+                                img{
+                                    height: 60vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:576px){
+    main{
+        .section{
+            .container{
+                .activities-content{
+                    ul{
+                        li{
+                            width: 95%;
+                            margin: 5px 0;
+                            .text{
+                                h2{
+                                    font-size: 16px;
+                                }
+                                p{
+                                    font-style: 14px;
+                                }
+                                .activities-btn{
+                                    margin: auto auto 0 auto;  
+                                }
+                            }
+                        }
+                    }
+                }
+                .fedding-and-method-content{
+                    ul{
+                        li{
+                            display: block;
+                            .pic{
+                                width: 90%;
+                            }
+                            .text{
+                                width: 90%;
+                                margin: auto;
+                                h2{
+                                    font-style: 20px;
+                                    text-align: center;
+                                }
+                                p{
+                                    font-style: 14px;
+                                }
+                                .fedding-btns{
+                                    margin: auto;
+                                }
+                                .method-btn{
+                                    margin: auto;
+                                }
+                            }
+                            .method-text{
+                                p:nth-child(6){
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
