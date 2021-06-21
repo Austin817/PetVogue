@@ -40,6 +40,8 @@ Route::prefix('/donate')->group(function (){
 
     // 顯示首頁
     Route::get('/','DonateFrontController@index');
+    // 顯示捐款頁
+    Route::get('/cash','DonateFrontController@cash');
     
 });
 
