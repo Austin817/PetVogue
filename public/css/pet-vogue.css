@@ -617,22 +617,17 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
     content: '';
     position: absolute;
     width: 0;
-    height: 1.5px;
-    /* 2px */
+    height: 2px;
     background-color: #fa0;
     transition: .5s;
   }
-  /* LIMO修正動畫 */
   .header-content .main-nav-pc > li h3 a:before {
-    /* visibility:hidden; */
-    right: 0;
-    /* left: 0; */
-    top: 9px;
+    top: 6px;
+    left: 0;
   }
   .header-content .main-nav-pc > li h3 a::after {
-    /* right: 0; */
-    left: 0;
-    bottom: 9px;
+    right: 0;
+    bottom: 6px;
   }
   .header-content .main-nav-pc > li:hover h3 a:before,
   .header-content .main-nav-pc > li:hover h3 a:after {
@@ -4209,76 +4204,4 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   .recent-activity .recent-list li .recent-txt p:last-of-type {
     font-size: 1.7rem;
   }
-}
-
-/* LIMO更動區域 */
-
-/* 手機NAV分隔線去除 */
-.header{
-  border-bottom: 0;
-}
-
-/* 修改NAV字重*/
-@media screen and (min-width: 992px){
-.header-content .main-nav-pc>li h3 a{
-    font-weight: 540;
-}
-}
-
-
-/* 手機下拉選單增加上方分隔線 */
-.header-content .main-nav-mobile{
-    top: 50px;
-}
-.header-content .main-nav-mobile li:first-of-type .list-title{
-  border-top: 1px solid #fa0;
-}
-
-
-/* 更改字體 */
-body {
-  font-family: '微軟正黑體', 'Roboto', sans-serif;
-}
-
-/* 去除底下LOGO白色外框 */
-.footer-content .footer-title{
-  border:0;
-}
-
-.donate-us a{
-  border-radius:5px 0 0 5px;
-}
-
-.donate-us.show-donate{
-  right:0;
-}
-
-/* 調整PC下拉NAV */
-@media screen and (min-width: 992px){
-.header-content .main-nav-pc > li:hover .sub-nav-pc {
-
-    box-shadow: 0px 3px 8px #5552;
-}
-
-}
-.header{
-  box-shadow: 0px 3px 8px #5552;
-}
-
-@media screen and (min-width: 992px){
-.header {
-    border-bottom: none;
-    padding: 2px;
-}
-
-.index-banner-slider .swiper-container{
-  padding-top:10px;
-}
-
-/* 微調NAV間距 */
-@media screen and (min-width: 992px){
-.header-content .main-nav-pc li:nth-of-type(7) .fas{
-  padding-left:30px;
-}
-
 }
