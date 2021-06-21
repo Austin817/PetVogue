@@ -46,7 +46,7 @@
             <div class="header-content">
                 <h1>
                     <a href="index.html">PET Vogue 毛孩日記
-                        <img src="{{ asset('/img/logo.svg') }}" alt="PET Vogue Logo" title="PET Vogue Logo">
+                        <img src="{{ asset('/img/logo-08.svg') }}" alt="PET Vogue Logo" title="PET Vogue Logo">
                     </a>
                 </h1>
                 <div class="user-icon-m">
@@ -760,7 +760,7 @@
             <div class="footer-content">
                 <h3 class="footer-title">
                     <a href="###">PET Vogue 毛孩日記
-                        <img src="{{ asset('/img/logo.svg') }}" alt="Footer Logo" title="PET Vogue Logo">
+                        <img src="{{ asset('/img/logo-08.svg') }}" alt="Footer Logo" title="PET Vogue Logo">
 
                     </a>
                 </h3>
