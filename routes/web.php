@@ -30,8 +30,8 @@ Route::prefix('cart_ecpay')->group(function(){
 
 //文章頁前端
 Route::prefix('articles')->group(function (){
-    Route::get('/', 'FrontController@articlesIndex');
-    Route::get('/content/{id}', 'FrontController@articlesContent');
+    Route::get('/', 'ArtileFrontController@articlesIndex');
+    Route::get('/content/{id}', 'ArtileFrontController@articlesContent');
 });
 
 //文章頁後端

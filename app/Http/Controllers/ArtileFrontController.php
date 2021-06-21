@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Ad;
 use App\Article;
-use App\ArticleLabel;
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+class ArtileFrontController extends Controller
 {
     //文章首頁
     public function articlesIndex(Request $request)
