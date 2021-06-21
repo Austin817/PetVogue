@@ -5,7 +5,6 @@ body {
   font-family: 'Noto Sans TC', 'Roboto', sans-serif;
 }
 
-
 body.body-fix {
   height: 100vh;
   overflow: hidden;
@@ -160,7 +159,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
 /* 共用的區塊內連結按鈕 */
 .pet-btn {
   display: block;
-  padding: 10px;
+  padding: 10px 15px;
   background-color: #ffe562;
   border-radius: 5px;
   transition: .3s;
@@ -451,7 +450,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   position: absolute;
   width: 100%;
   z-index: 888;
-  top: 50px;
+  top: 64px;
   left: 0;
   transform: translateX(-100%);
 }
@@ -529,7 +528,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
     justify-content: space-between;
   }
   .header-content h1 {
-    width: auto;
+    width: 150px;
   }
   .header-content .user-icon-m {
     display: none;
@@ -618,17 +617,22 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
     content: '';
     position: absolute;
     width: 0;
-    height: 2px;
+    height: 1.5px;
+    /* 2px */
     background-color: #fa0;
     transition: .5s;
   }
+  /* LIMO修正動畫 */
   .header-content .main-nav-pc > li h3 a:before {
-    top: 6px;
-    left: 0;
+    /* visibility:hidden; */
+    right: 0;
+    /* left: 0; */
+    top: 9px;
   }
   .header-content .main-nav-pc > li h3 a::after {
-    right: 0;
-    bottom: 6px;
+    /* right: 0; */
+    left: 0;
+    bottom: 9px;
   }
   .header-content .main-nav-pc > li:hover h3 a:before,
   .header-content .main-nav-pc > li:hover h3 a:after {
@@ -1876,6 +1880,153 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   .donate-support .donate-support-content .text ul,
   .donate-support .donate-support-content .text p {
     font-size: 18px;
+  }
+}
+
+.donate-detail .container .donate-detail-content {
+  max-width: 576px;
+  margin: auto;
+  background-color: #ffe562;
+  padding: 30px 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #00000060;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-area {
+  margin-bottom: 25px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-area h2 {
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-area p {
+  margin-bottom: 10px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-area p span {
+  display: block;
+  padding: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input {
+  background-color: white;
+  padding: 15px;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input input:focus::placeholder {
+  color: transparent;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .input-top span {
+  display: block;
+  font-weight: 700;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .input-top h2 {
+  font-size: 20px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .input-price {
+  padding: 15px 0;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .input-price .donate-money {
+  margin-bottom: 15px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .input-price h3,
+.donate-detail .container .donate-detail-content .donate-detail-input .input-price label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .input-price select,
+.donate-detail .container .donate-detail-content .donate-detail-input .input-price input {
+  width: 100%;
+  padding: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set h3 span {
+  display: block;
+  font-size: 12px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .allselect {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .allselect .sel-county {
+  width: 55%;
+  margin-right: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .allselect .sel-county select {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .allselect .sel-district {
+  width: 45%;
+  margin-left: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .allselect .sel-district select {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .zipcode {
+  display: none;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .addres {
+  margin-bottom: 50px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .addres label {
+  padding: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .city-selector-set .addres input {
+  width: 100%;
+  padding: 5px;
+}
+
+.donate-detail .container .donate-detail-content .donate-detail-input .pet-btn {
+  margin: auto auto 0 auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .donate-detail .container .donate-detail-content {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+  }
+  .donate-detail .container .donate-detail-content .donate-detail-area {
+    width: 54%;
+    padding: 20px 25px 20px 0;
+  }
+  .donate-detail .container .donate-detail-content .donate-detail-input {
+    width: 44%;
+    padding: 20px 25px 20px 25px;
   }
 }
 
@@ -4058,88 +4209,76 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   .recent-activity .recent-list li .recent-txt p:last-of-type {
     font-size: 1.7rem;
   }
-
 }
 
+/* LIMO更動區域 */
 
-@media screen and (min-width: 500px){
-  .header-content h1{
-    width: 150px;
-  }
-  .logo{
-    width: 100%;
-  }
+/* 手機NAV分隔線去除 */
+.header{
+  border-bottom: 0;
 }
-@media screen and (min-width: 900px){
-  .header-content h1{
-    width: 160px;
-  }
-  
-  .logo{
-    width: 100%;
-  }
-}
+
+/* 修改NAV字重*/
 @media screen and (min-width: 992px){
-  .header-content h1{
-    width: 160px;
-  }
-  
-  .logo{
-    width: 100%;
-  }
+.header-content .main-nav-pc>li h3 a{
+    font-weight: 540;
 }
-@media screen and (min-width: 1100px){
-  .header-content h1{
-    width: 260px;
-  }
-  .logo{
-    width: 70%;
-  }
 }
 
-@media screen and (min-width: 1200px){
-  .header-content h1{
-    width: auto;
-  }
-  .logo{
-    width: 70%;
-  }
-  .main-nav-pc{
-    font-weight: 350;
-  }
-}
 
-.header-content .main-nav-mobile li >a{
-  padding-left:40px;
-  background-color: #FFFAE8;
-  color: black;
-  font-weight: 300;
-  border:1px solid rgb(255, 228, 175);
-}
-.list-title>span,.header-content .main-nav-mobile li a{
-  font-weight: 300;
-}
-
-.header-content .close-nav-m.close-active{
-  background-color: rgba(0, 0, 0, 0.5);
+/* 手機下拉選單增加上方分隔線 */
+.header-content .main-nav-mobile{
+    top: 50px;
 }
 .header-content .main-nav-mobile li:first-of-type .list-title{
   border-top: 1px solid #fa0;
 }
 
 
-.header-content .main-nav-mobile li .list-title{
+/* 更改字體 */
+body {
+  font-family: '微軟正黑體', 'Roboto', sans-serif;
+}
+
+/* 去除底下LOGO白色外框 */
+.footer-content .footer-title{
   border:0;
 }
 
-.header{
-  border-bottom: 0;
+.donate-us a{
+  border-radius:5px 0 0 5px;
 }
 
-/* @media screen and (min-width: 992px){
-  .header-content .main-nav-pc .sub-nav-pc li:last-of-type a{
-    border:0;
-  }
+.donate-us.show-donate{
+  right:0;
+}
 
+/* 調整PC下拉NAV */
+@media screen and (min-width: 992px){
+.header-content .main-nav-pc > li:hover .sub-nav-pc {
 
-} */
+    box-shadow: 0px 3px 8px #5552;
+}
+
+}
+.header{
+  box-shadow: 0px 3px 8px #5552;
+}
+
+@media screen and (min-width: 992px){
+.header {
+    border-bottom: none;
+    padding: 2px;
+}
+
+.index-banner-slider .swiper-container{
+  padding-top:10px;
+}
+
+/* 微調NAV間距 */
+@media screen and (min-width: 992px){
+.header-content .main-nav-pc li:nth-of-type(7) .fas{
+  padding-left:30px;
+}
+
+}
