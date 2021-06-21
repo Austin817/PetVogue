@@ -1,0 +1,219 @@
+main{
+    .donate-detail{
+        background-color: #ffe562;
+        .container{
+            .donate-detail-content{
+                padding: 20px 0;
+                .donate-detail-area{
+                    h2{
+                        padding: 5px;
+                        text-align: center;
+                    }
+                    p{
+                        span{
+                            display: block;
+                            padding: 5px;
+                        }
+                    }
+                    .donate-area-pic{
+                        padding: 10px;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .donate-detail-input{
+                    width: 95%;
+                    background-color: white;
+                    padding: 5px;
+                    margin: auto;
+                    border-radius: 5px;
+                    box-shadow: 3px 3px 7px #000;
+                    display: flex;
+                    flex-direction: column;
+                    .input-top{
+                        span{
+                            padding: 5px;
+                        }
+                        h2{
+                            padding: 5px;
+                        }
+                    }
+                    .input-price{
+                        p{
+                            padding: 5px;
+                        }
+                        select{
+                            width: 100%;
+                            padding: 5px;
+                        }
+                        input{
+                            width: 100%;
+                            padding: 5px;
+                        }
+                    }
+                    .city-selector-set{
+                        width: 100%;
+                        .allselect{
+                            width: 100%;
+                            display: flex;
+                            .sel-county{
+                                width: 60%;
+                                margin: 5px 0;
+                            }
+                            .sel-district{
+                                width: 40%;
+                                margin: 5px 0;
+                            }
+                        }
+                        .addres{
+                            padding: 5px 0;
+                            p{
+                                padding: 5px;
+                            }
+                            input{
+                                width: 100%;
+                                padding: 5px;
+                            }
+                        }
+                    }
+                    .pet-btn{
+                        margin: auto auto 0 auto;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:576px) {
+    main{
+        .donate-detail{
+            .container{
+                .donate-detail-content{
+                    display: flex;
+                    justify-content: space-around;
+                    .donate-detail-area{
+                        width: 48%;
+                        h2{
+                            font-size: 22px;
+                        }
+                        p{
+                            span{
+                                margin: 10px 0;
+                            }
+                        }
+                    }
+                    .donate-detail-input{
+                        width: 48%;
+                        margin: 0;
+                        .input-top{
+                            width: 80%;
+                            margin: 10px auto;
+                            span{
+                                font-size: 20px;
+                            }
+                            h2{
+                                font-size: 22px;
+                            }
+                        }
+                        .input-price{
+                            width: 80%;
+                            margin: 10px auto;
+                            p{
+                                font-size: 16px;
+                            }
+                        }
+                        .city-selector-set{
+                            width: 80%;
+                            margin: 10px auto;
+                            .addres{
+                                p{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                        .pet-btn{
+                            width: 30%;
+                            margin: auto auto 15px auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:992px) {
+    main{
+        .donate-detail{
+            .container{
+                .donate-detail-content{
+                    .donate-detail-area{
+                        h2{
+                            font-size: 24px;
+                        }
+                        p{
+                            span{
+                                font-size: 18px;
+                                margin: 15px 0;
+                            }
+                        }
+                    }
+                    .donate-detail-input{
+                        .input-top{
+                            margin: 30px auto 10px auto;
+                            span{
+                                font-size: 20px;
+                            }
+                            h2{
+                                font-size: 24px;
+                            }
+                        }
+                        .input-price{
+                            margin: 15px auto;
+                            p{
+                                font-size: 18px;
+                            }
+                            select{
+                                height: 45px;
+                            }
+                            input{
+                                height: 45px;
+                            }
+                        }
+                        .city-selector-set{
+                            width: 80%;
+                            margin: 30px auto;
+                            p{
+                                font-size: 18px;
+                            }                             
+                            .allselect{
+                                select{
+                                    height: 45px;
+                                }
+                                input{
+                                    height: 45px;
+                                }
+                            }
+                            .zipcode{
+                                height: 45px;
+                            }
+                            .addres{
+                                p{
+                                    font-size: 18px;
+                                }
+                                input{
+                                    height: 45px;
+                                }
+                            }
+                        }
+                        .pet-btn{
+                            width: 35%;
+                            margin: 60px auto 28px auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

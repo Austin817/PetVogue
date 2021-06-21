@@ -1,0 +1,213 @@
+main{
+    .section{
+        .container{
+            .pet-house-foster-content{
+                ul{
+                    padding-left: 0;
+                    margin: 0;
+                    list-style: none;
+                    li{
+                        @include flex;
+                        flex-wrap: wrap;
+                        padding: 25px 5px;
+                        .pic{
+                            width: 50%;
+                            padding: 10px;
+                            margin: auto;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .text{
+                            @include flex;
+                            flex-direction: column;
+                            width: 50%;
+                            padding: 10px;
+                            h2{
+                                @include font(24px, 1.2, 600);
+                            }
+                            p{
+                                @include font(18px, 1.5, 500);
+                            }
+                            >.pet-house-btn{
+                                margin: auto 0 0 auto;
+                            }
+                            >.foster-btns{
+                                @include flex;
+                                margin: auto 0 0 auto;
+                                .foster-btn:nth-child(1){
+                                    margin-right: 10px;
+                                }
+                                .foster-btn:nth-child(2){
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                        >.foster-text{
+                            p:nth-child(4){
+                                font-size: 20px;
+                                color: rgb(231, 39, 39);
+                            }
+                        }
+                        >.pet-house-btn{
+                            margin: auto;
+                            display: none;
+                        }
+                        >.foster-btns{
+                            margin: auto;
+                            display: none;
+                            .foster-btn:nth-child(1){
+                                margin-right: 10px;
+                            }
+                            .foster-btn:nth-child(2){
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                    li:nth-child(1){
+                        background-color: $bgcorg;
+                    }
+                    li:nth-child(2){
+                        background-color: $bgcyel;
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:992px){
+    main{
+        .section{
+            .container{
+                .pet-house-foster-content{
+                    ul{
+                        li{
+                            .pic{
+                                width: 50%;
+                            }
+                            .text{
+                                width: 50%;
+                                h2{
+                                    font-size: 20px;
+                                }
+                                p{
+                                    font-size: 16px;
+                                }
+                                >.pet-house-btn{
+                                    display: none;
+                                }
+                                >.foster-btns{
+                                    display: none;
+                                }
+                            }
+                            >.foster-text{
+                                p:nth-child(4){
+                                    font-size: 18px;
+                                }
+                            }
+                            >.pet-house-btn{
+                                display: block;
+                                margin-bottom: 10px;
+                            }
+                            >.foster-btns{
+                                display: block;
+                                @include flex;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:768px){
+    main{
+        .section{
+            .container{
+                .pet-house-foster-content{
+                    ul{
+                        li{
+                            .pic{
+                                img{
+                                    height: 50vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:682px){
+    main{
+        .section{
+            .container{
+                .pet-house-foster-content{
+                    ul{
+                        li{
+                            .pic{
+                                img{
+                                    height: 60vw;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:576px){
+    main{
+        .section{
+            .container{
+                .pet-house-foster-content{
+                    ul{
+                        li{
+                            display: block;
+                            .pic{
+                                width: 80%;
+                                img{
+                                    height: auto;
+                                }
+                            }
+                            .text{
+                                width: 80%;
+                                margin: auto;
+                                h2{
+                                    text-align: center;
+                                    font-size: 18px;
+                                }
+                                p{
+                                    font-size: 14px;
+                                }
+                            }
+                            >.foster-text{
+                                p:nth-child(4){
+                                    font-size: 16px;
+                                }
+                            }
+                            >.pet-house-btn{
+                                margin-bottom: 0;
+                            }
+                            >.foster-btns{
+                                margin-bottom: 0;
+                                padding: 10px;
+                                .foster-btn:nth-child(1){
+                                    margin-right: 10px;
+                                    margin-left: auto;
+                                }
+                                .foster-btn:nth-child(2){
+                                    margin-left: 10px;
+                                    margin-right: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

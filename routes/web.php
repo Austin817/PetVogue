@@ -112,11 +112,6 @@ Route::prefix('/shopping_cart')->group(function (){
 });
 
 
-
-
-
-
-
 Route::prefix('cart_ecpay')->group(function(){
     //當消費者付款完成後，綠界會將付款結果參數以幕後(Server POST)回傳到該網址。
     Route::post('notify', 'ShoppingCartFrontController@notifyUrl')->name('notify');
@@ -125,6 +120,47 @@ Route::prefix('cart_ecpay')->group(function(){
     Route::post('return', 'ShoppingCartFrontController@returnUrl')->name('return');
 });
 
+//文章頁前端
+Route::prefix('articles')->group(function (){
+    Route::get('/', 'ArtileFrontController@articlesIndex');
+    Route::get('/content/{id}', 'ArtileFrontController@articlesContent');
+});
+
+//文章頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('article', 'ArticleController');
+    Route::resource('article_label', 'ArticleLabelController'); 
+});
+
+//廣告後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('ad', 'AdController');
+});
+
+//活動頁前端
+Route::prefix('activities')->group(function (){
+    Route::get('/', 'ActivityFrontController@activitiesIndex');
+    Route::get('/content/{id}', 'ActivityFrontController@activitiesContent');
+});
+
+//活動頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('activity', 'ActivityController');
+});
+
+//救援頁前端
+Route::prefix('rescues')->group(function (){
+    Route::get('/', 'RescueFrontController@rescuesIndex');
+});
+
+//救援頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('rescue', 'RescueController');
+});
 
 Auth::routes();
 
