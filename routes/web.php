@@ -97,12 +97,14 @@ Route::prefix('/shop')->group(function (){
 Route::prefix('/shopping_cart')->group(function (){
     Route::post('/add', 'ShoppingCartFrontController@add');
 
+    Route::get('/list_1', 'ShoppingCartFrontController@list');
+
     // 登入需求
     Route::middleware('auth','cartCheck')->group(function(){
         Route::post('/update', 'ShoppingCartFrontController@update');
         Route::post('/delete', 'ShoppingCartFrontController@delete');
         Route::get('/content', 'ShoppingCartFrontController@content');
-        Route::get('/list_1', 'ShoppingCartFrontController@list');
+        // Route::get('/list_1', 'ShoppingCartFrontController@list');
         Route::get('/information_2', 'ShoppingCartFrontController@information');
         Route::get('/checkout_3', 'ShoppingCartFrontController@checkout');
     });
@@ -117,10 +119,10 @@ Route::prefix('/shopping_cart')->group(function (){
 
 Route::prefix('cart_ecpay')->group(function(){
     //當消費者付款完成後，綠界會將付款結果參數以幕後(Server POST)回傳到該網址。
-    Route::post('notify', 'ShoppingCartController@notifyUrl')->name('notify');
+    Route::post('notify', 'ShoppingCartFrontController@notifyUrl')->name('notify');
 
     //付款完成後，綠界會將付款結果參數以幕前(Client POST)回傳到該網址
-    Route::post('return', 'ShoppingCartController@returnUrl')->name('return');
+    Route::post('return', 'ShoppingCartFrontController@returnUrl')->name('return');
 });
 
 
