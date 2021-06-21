@@ -22,7 +22,7 @@ Route::prefix('/')->group(function (){
 
     // 顯示首頁
     Route::get('/','FrontController@index');
-    
+
 });
 
 

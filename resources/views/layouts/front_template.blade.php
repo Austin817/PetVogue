@@ -1,26 +1,17 @@
-{{-- 這裡是LIMO的template --}}
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-
-
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
-
     <title>
         @yield('title')
-        {{ config('app.name', 'Laravel') }}
+        {{ config('app.name', ' - Pet Vogue') }}
     </title>
-
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('css')
-
 </head>
 
 <body>
@@ -268,11 +259,9 @@
     </header>
     <!-- 全頁面共用 -->
 
-    <main>
-       @yield('content')
-    </main>
-
+    
     @yield('main')
+    
 
     <!-- footer -->
     <footer class="footer">
@@ -305,8 +294,6 @@
         </div>
     </footer>
     
-
-
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
@@ -315,19 +302,14 @@
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
     <!-- 全頁面共用 -->
-    {{-- 改動 --}}
-        <!-- Scripts -->
-        {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
-        <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
-        <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-        <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
-        <script src="{{ asset('js/all.js')}}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
-        crossorigin="anonymous"></script>
-        @yield('js')
 
+
+
+
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('js')
+    
 </body>
 </html>
 
