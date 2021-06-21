@@ -137,6 +137,28 @@ Route::prefix('admin')->middleware('auth')->group(function ()
     Route::resource('ad', 'AdController');
 });
 
+//活動頁前端
+Route::prefix('activities')->group(function (){
+    Route::get('/', 'ActivityFrontController@activitiesIndex');
+    Route::get('/content/{id}', 'ActivityFrontController@activitiesContent');
+});
+
+//活動頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('activity', 'ActivityController');
+});
+
+//救援頁前端
+Route::prefix('rescues')->group(function (){
+    Route::get('/', 'RescueFrontController@rescuesIndex');
+});
+
+//救援頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('rescue', 'RescueController');
+});
 
 Auth::routes();
 

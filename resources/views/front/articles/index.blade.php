@@ -2,7 +2,7 @@
 
 @section('css')
 <style>
-    .adc {
+    .recent-p {
         width: 100%;
         overflow: hidden;
         display: -webkit-box;
@@ -102,9 +102,11 @@
                                         <span>{{$article->articleLabel->name}}</span>
                                     </div>
                                     <h3>{{$article->title}}</h3>
-                                    <div class="adc">
-                                        {{$article->text}}
-                                    </div>
+                                    <p>
+                                        <div class="recent-p">
+                                            {{$article->text}}
+                                        </div>
+                                    </p>
                                 </div>
                             </a>
                         </li>

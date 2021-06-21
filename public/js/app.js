@@ -40551,8 +40551,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\coding\PetVogue\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\coding\PetVogue\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\均\OneDrive\桌面\PetVogue\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\均\OneDrive\桌面\PetVogue\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

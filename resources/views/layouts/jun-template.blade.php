@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
     <title>全部文章 - PET Vogue 毛孩日誌</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
     <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/aos.css')}}">
@@ -298,12 +299,13 @@
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
     <!-- 全頁面共用 -->
-    <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+    {{-- <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script> --}}
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{{asset('js/aos.js')}}"></script>
     <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
     <script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
     <script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
     <script src="{{asset('/js/all.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('js')
 </body>

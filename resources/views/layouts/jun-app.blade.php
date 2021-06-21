@@ -47,8 +47,10 @@
                             <a class="nav-link" href="/admin/article">文章(後端)</a>
                             <a class="nav-link" href="/admin/article_label">文章標籤(後端)</a>
                             <a class="nav-link" href="/admin/ad">廣告(後端)</a>
-                            <a class="nav-link" href="/activitys">活動(前端)</a>
+                            <a class="nav-link" href="/activities">活動(前端)</a>
                             <a class="nav-link" href="/admin/activity">活動(後端)</a>
+                            <a class="nav-link" href="/rescues">救援(前端)</a>
+                            <a class="nav-link" href="/admin/rescue">救援(後端)</a>
                         </li>
                     </ul>
 
