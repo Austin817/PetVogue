@@ -33,7 +33,7 @@
             <div class="header-content">
                 <h1>
                     <a href="index.html">PET Vogue 毛孩日記
-                        <img src="/img/logo-3.svg" alt="PET Vogue Logo" title="PET Vogue Logo" class="logo">
+                        <img src="/img/logo.svg" alt="PET Vogue Logo" title="PET Vogue Logo" class="logo">
                     </a>
                 </h1>
                 <div class="user-icon-m">
