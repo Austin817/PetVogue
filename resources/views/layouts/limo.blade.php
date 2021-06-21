@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     
     <title>
         @yield('title')
@@ -49,10 +51,10 @@
                 </h1>
                 <div class="user-icon-m">
                     <a href="###">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="far fa-shopping-cart"></i>
                     </a>
                     <a href="###">
-                        <i class="fas fa-user"></i>
+                        <i class="far fa-user"></i>
                     </a>
                 </div>
                 <label class="menu-ham" for="menu-ctrl">mobile menu</label>
@@ -147,12 +149,12 @@
                         </li>
                         <li>
                             <a href="###">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="far fa-shopping-cart"></i>
                             </a>
                         </li>
                         <!-- 登入前 -->
                         <li>
-                            <a href="###"><i class="fas fa-user"></i></a>
+                            <a href="###"><i class="far fa-user"></i></a>
                         </li>
                         <!-- 登入後 -->
                         <!-- <li>
@@ -777,6 +779,7 @@
                 </ul>
                 <div class="coptright">
                     &copy;數位消波塊團體專題，非營利用途
+
                 </div>
             </div>
         </div>
@@ -800,7 +803,7 @@
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script src="{{ asset('js/aos.js')}}"></script>
         <script src="{{ asset('js/main.min.js')}}"></script>
-        <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+        {{-- <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script> --}}
         <script src="{{ asset('js/pet-vogue-swiper.js')}}"></script>
         <script src="{{ asset('js/pet-vogue-calendar.js')}}"></script>
         <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
