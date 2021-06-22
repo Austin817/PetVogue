@@ -44,6 +44,7 @@ Route::prefix('/donate')->group(function (){
     Route::get('/cash','DonateFrontController@cash');
     // 傳送捐款資料   
     Route::post('/cash_save', 'DonateFrontController@cashSave');
+     
     
 });
 
@@ -91,7 +92,7 @@ Route::prefix('/shop')->group(function (){
     Route::get('/','ShopFrontController@index');
 
     // 顯示內頁
-    Route::get('/detail/{id}','ShopFrontController@detail');
+    Route::get('/detail','ShopFrontController@detail');
     
 });
 
@@ -101,24 +102,19 @@ Route::prefix('/shop')->group(function (){
 Route::prefix('/shopping_cart')->group(function (){
     Route::post('/add', 'ShoppingCartFrontController@add');
 
-    Route::get('/list_1', 'ShoppingCartFrontController@list');
+    // Route::get('/list_1', 'ShoppingCartFrontController@list');
 
     // 登入需求
     Route::middleware('auth','cartCheck')->group(function(){
         Route::post('/update', 'ShoppingCartFrontController@update');
         Route::post('/delete', 'ShoppingCartFrontController@delete');
         Route::get('/content', 'ShoppingCartFrontController@content');
-        // Route::get('/list_1', 'ShoppingCartFrontController@list');
+        Route::get('/list_1', 'ShoppingCartFrontController@list');
         Route::get('/information_2', 'ShoppingCartFrontController@information');
         Route::get('/checkout_3', 'ShoppingCartFrontController@checkout');
     });
     
 });
-
-
-
-
-
 
 
 Route::prefix('cart_ecpay')->group(function(){
@@ -129,6 +125,47 @@ Route::prefix('cart_ecpay')->group(function(){
     Route::post('return', 'ShoppingCartFrontController@returnUrl')->name('return');
 });
 
+//文章頁前端
+Route::prefix('articles')->group(function (){
+    Route::get('/', 'ArtileFrontController@articlesIndex');
+    Route::get('/content/{id}', 'ArtileFrontController@articlesContent');
+});
+
+//文章頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('article', 'ArticleController');
+    Route::resource('article_label', 'ArticleLabelController'); 
+});
+
+//廣告後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('ad', 'AdController');
+});
+
+//活動頁前端
+Route::prefix('activities')->group(function (){
+    Route::get('/', 'ActivityFrontController@activitiesIndex');
+    Route::get('/content/{id}', 'ActivityFrontController@activitiesContent');
+});
+
+//活動頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('activity', 'ActivityController');
+});
+
+//救援頁前端
+Route::prefix('rescues')->group(function (){
+    Route::get('/', 'RescueFrontController@rescuesIndex');
+});
+
+//救援頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('rescue', 'RescueController');
+});
 
 Auth::routes();
 

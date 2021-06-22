@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}"> --}}
     <title>
         @yield('title')
         {{ config('app.name', ' - Pet Vogue') }}
@@ -94,7 +92,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="pet-house.html">送領養相關</a>
+                                <a href="/owner">送領養相關</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -107,11 +105,11 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="about_us.html">關於我</a>
+                                <a href="/about">關於我</a>
                             </h3>
                         <li>
                             <h3>
-                                <a href="all-products.html">寵物商城</a>
+                                <a href="/shop">寵物商城</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -160,7 +158,7 @@
                     <ul class="main-nav-mobile">
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="index.html">首頁</a>
+                                <a href="/">首頁</a>
                             </h3>
                         </li>
                         <li>
@@ -212,7 +210,7 @@
                             <h3 class="list-title"><span>送領養相關</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="pet-house.html">領養與送養</a>
+                                    <a href="/owner">領養與送養</a>
                                 </li>
                                 <li>
                                     <a href="#index-half-way">中途之家</a>
@@ -223,7 +221,7 @@
                             <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="all-products.html">全部商品</a>
+                                    <a href="/detail">全部商品</a>
                                 </li>
                                 <li>
                                     <a href="###">貓皇飼料</a>
@@ -244,12 +242,12 @@
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="donate-support.html">愛心捐款</a>
+                                <a href="/donate">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="about_us.html">關於我</a>
+                                <a href="/about">關於我</a>
                             </h3>
                         </li>
                     </ul>

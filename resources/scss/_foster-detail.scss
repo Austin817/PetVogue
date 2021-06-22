@@ -1,0 +1,157 @@
+main{
+    .foster-detail{
+        .container{
+            .foster-detail-content{
+                .foster-description{
+                    padding: 5px;
+                    .color-title{
+                        h2{
+                            padding: 15px 25px;
+                            background-color: #ffe562;
+                        }
+                    }
+                    .foster-text{
+                        .pic{
+                            width: 80%;
+                            margin: auto;
+                            padding: 5px;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .text{
+                            width: 90%;
+                            margin: auto;
+                            p{
+                                span{
+                                    display: block;
+                                    padding: 5px;
+                                }
+                                span:nth-child(4){
+                                    color: rgb(231, 42, 42);
+                                }
+                            }
+                        }
+                    }
+                }
+                .foster-area{
+                    padding: 5px;
+                    h2{
+                        padding: 15px 35px;
+                        position: relative;
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            transform: translate(-50% , -50%);
+                            top: 50%;
+                            left: 25px;
+                            width: 10px;
+                            height: 8px;
+                            background-color: #ffe562;
+                        }
+                    }
+                    ul{
+                        li{
+                            padding: 10px;
+                            margin: 5px 0;
+                            background-color: rgb(236, 229, 221);
+                            border-radius: 5px;
+                            border: 1px solid #c0c0c0;
+                            .pic{
+                                padding: 5px;
+                                img{
+                                    width: 100%;
+                                }
+                                .pic-lg{
+                                    display: none;
+                                }
+                            }
+                            .text{
+                                h3{
+                                    padding: 5px;
+                                }
+                                p{
+                                    padding: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:576px) {
+    main{
+        .foster-detail{
+            .container{
+                .foster-detail-content{
+                    .foster-area{
+                        h2{
+                            &::before{
+                                width: 15px;
+                                height: 12px;
+                            }
+                        }
+                        ul{
+                            display: flex;
+                            flex-wrap: wrap;
+                            li{
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:992px) {
+    main{
+        .foster-detail{
+            .container{
+                .foster-detail-content{
+                    .foster-description{
+                        .color-title{
+                            h2{
+                                padding: 25px 40px;
+                            }
+                        }
+                        .foster-text{
+                            display: flex;
+                            .pic{
+                                width: 45%;
+                                padding: 20px 40px;
+                            }
+                            .text{
+                                width: 55%;
+                                padding: 20px 10px;
+                            }
+                        }
+                    }
+                    .foster-area{
+                        h2{
+                            padding: 15px 50px;
+                            &::before{
+                                left: 40px;
+                            }
+                        }
+                        ul{
+                            li{
+                                width: 25%;
+                                .pic{
+                                    .pic-lg{
+                                        display: block;
+                                    }
+                                    .pic-sm{
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
