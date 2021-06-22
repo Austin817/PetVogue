@@ -1,7 +1,4 @@
-@extends('layouts.front_template')
-@section('title')
-重設密碼
-@endsection
+@extends('layouts.app')
 @section('css')
 <style>
     .login {
@@ -9,7 +6,7 @@
     }
 
     .bg-image {
-        background-image: url('https://images.pexels.com/photos/5047566/pexels-photo-5047566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+        background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
         background-size: cover;
         background-position: center;
     }
@@ -94,7 +91,7 @@
     }
 </style>
 @endsection
-@section('main')
+@section('content')
 <div class="container-fluid">
     <div class="row no-gutter">
         <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
@@ -136,8 +133,6 @@
                                                 {{ __('發送密碼到電子信箱') }}
                                             </button>
                                         </div>
-                                        <a class="" href="{{ route('login') }}">{{ __('我要登入') }}</a></div>
-
                                     </div>
                                 </form>
                             </div>

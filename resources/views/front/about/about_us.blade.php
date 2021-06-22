@@ -19,7 +19,9 @@
                 <div class="about-banner-content">
                     <h2 class="block-title">關於我宣言</h2>
                     <div class="about-banner-pic">
-                        <img class="about-banner-pic-pc" src="https://picsum.photos/1440/450/?random=93">
+                        {{-- <img class="about-banner-pic-pc" src="https://picsum.photos/1440/450/?random=93"> --}}
+                        <img class="about-banner-pic-pc" style="object-fit: cover;" width="1440" height="500"  src="https://www-ws.gov.taipei/001/Upload/411/relpic/10162/8267424/53ec27d0-7a60-43a6-a1af-2612b73f2f8b.jpg">
+
                         <img class="about-banner-pic-m" src="https://picsum.photos/1440/800/?random=123">
                     </div>
                     <p class="about-banner-txt">

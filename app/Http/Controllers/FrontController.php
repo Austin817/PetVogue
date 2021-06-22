@@ -12,9 +12,4 @@ class FrontController extends Controller
         return view('front.index.front_index');
     }
 
-    public function login()
-    {
-        return view('auth.login_pv');
-    }
-
 }

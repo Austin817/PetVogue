@@ -11,7 +11,7 @@
   }
 
   .bg-image {
-    background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
+    background-image: url('https://images.pexels.com/photos/5472520/pexels-photo-5472520.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-size: cover;
     background-position: center;
   }

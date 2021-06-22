@@ -1,6 +1,6 @@
-
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +13,12 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
     @yield('css')
+    <style>
+        .product-list-group .product-list li .product-item .product-txt .pdt-hashtag span:nth-of-type(1) {
+            background-color: #ffe562;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -145,24 +151,24 @@
 
                         <ul class="navbar-nav ml-auto">
                             @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-user"></i></a></a>
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-user"></i></a></a>
+                                </li>
                             @else
                                 <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
-    
+
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" 
-                                        href="{{ route('logout') }}" 
-                                           onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
+                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
                                             登出
                                         </a>
-    
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
                                             @csrf
                                         </form>
                                     </div>
@@ -179,7 +185,7 @@
                             </ul>
                         </li> -->
                     </ul>
- 
+
                     <!-- pc menu -->
 
                     <!-- mobile menu -->
@@ -287,9 +293,9 @@
     </header>
     <!-- 全頁面共用 -->
 
-    
+
     @yield('main')
-    
+
 
     <!-- footer -->
     <footer class="footer">
@@ -321,7 +327,7 @@
             </div>
         </div>
     </footer>
-    
+
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
@@ -336,11 +342,11 @@
 
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js')}}" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
-    <script src="{{ asset('js/all.js')}}"></script>
+    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>
+    <script src="{{ asset('js/all.js') }}"></script>
     @yield('js')
-    
-</body>
-</html>
 
+</body>
+
+</html>

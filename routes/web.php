@@ -21,10 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->group(function (){
 
     // 顯示首頁
-    Route::get('/','FrontController@index');
-    // 顯示新登入首頁
-    Route::get('/login_pv','FrontController@login');
-
+    Route::get('/','FrontController@index')->name('index');
 });
 
 
