@@ -1,20 +1,18 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>
-        @yield('title')
-        {{ config('app.name', ' - Pet Vogue') }}
-    </title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
-    @yield('css')
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+    <title>3/3 購物車 - PET Vogue 毛孩日誌</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/pet-vogue.min.css">
 </head>
 
-<body>
+<body class="body">
+
+    <!-- 全頁面共用 -->
     <div class="loading" id="loading">
         <div class="paw-ani">
             <span><i class="fas fa-paw"></i></span>
@@ -32,8 +30,8 @@
         <div class="container">
             <div class="header-content">
                 <h1>
-                    <a href="/">PET Vogue 毛孩日記
-                        <img src="{{ asset('/img/logo-08.svg') }}" alt="PET Vogue Logo" title="PET Vogue Logo">
+                    <a href="index.html">PET Vogue 毛孩日記
+                        <img src="./pic/logo.svg" alt="PET Vogue Logo" title="PET Vogue Logo">
                     </a>
                 </h1>
                 <div class="user-icon-m">
@@ -92,7 +90,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="/owner">送領養相關</a>
+                                <a href="pet-house.html">送領養相關</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -105,11 +103,11 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="/about">關於我</a>
+                                <a href="about_us.html">關於我</a>
                             </h3>
                         <li>
                             <h3>
-                                <a href="/shop">寵物商城</a>
+                                <a href="all-products.html">寵物商城</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -131,7 +129,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="/donate">愛心捐款</a>
+                                <a href="donate-support.html">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
@@ -158,7 +156,7 @@
                     <ul class="main-nav-mobile">
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="/">首頁</a>
+                                <a href="index.html">首頁</a>
                             </h3>
                         </li>
                         <li>
@@ -210,7 +208,7 @@
                             <h3 class="list-title"><span>送領養相關</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="/owner">領養與送養</a>
+                                    <a href="pet-house.html">領養與送養</a>
                                 </li>
                                 <li>
                                     <a href="#index-half-way">中途之家</a>
@@ -221,7 +219,7 @@
                             <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="/detail">全部商品</a>
+                                    <a href="all-products.html">全部商品</a>
                                 </li>
                                 <li>
                                     <a href="###">貓皇飼料</a>
@@ -242,12 +240,12 @@
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="/donate">愛心捐款</a>
+                                <a href="donate-support.html">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="/about">關於我</a>
+                                <a href="about_us.html">關於我</a>
                             </h3>
                         </li>
                     </ul>
@@ -259,18 +257,140 @@
     </header>
     <!-- 全頁面共用 -->
 
-    
-    @yield('main')
-    
+    <main>
+        <section class="section-sm section-lg final-check">
+            <div class="container">
+                <div class="final-check-content">
+                    <h2>3/3 購物車</h2>
+                    <h3>確認購物詳細資料</h3>
+                    <div class="all-info">
+                        <div class="check-cargo">
+                            <h2 class="section-title">購物清單</h2>
+                            <ul class="cargo-list">
+                                <!-- 塞資料這邊塞 li做foreach -->
+                                <li class="cargo-item">
+                                    <div class="cargo-pics">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/82/82/?random=1" alt="商品圖片" title="商品圖片">
+                                        </div>
+                                        <div class="pic-txt-pc">
+                                            <h3 class="cargo-name">商品名稱</h3>
+                                        </div>
+                                    </div>
+                                    <div class="cargo-txt">
+                                        <div class="cargo-quantity-group">
+                                            <span>X</span>
+                                            <span class="cargo-quantity">1</span>
+                                        </div>
+                                        <div class="cargo-price-group">
+                                            <span>$</span>
+                                            <span class="cargo-price">1200</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="cargo-item">
+                                    <div class="cargo-pics">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/82/82/?random=1" alt="商品圖片" title="商品圖片">
+                                        </div>
+                                        <div class="pic-txt-pc">
+                                            <h3 class="cargo-name">商品名稱</h3>
+                                        </div>
+                                    </div>
+                                    <div class="cargo-txt">
+                                        <div class="cargo-quantity-group">
+                                            <span>X</span>
+                                            <span class="cargo-quantity">1</span>
+                                        </div>
+                                        <div class="cargo-price-group">
+                                            <span>$</span>
+                                            <span class="cargo-price">1200</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="cargo-item">
+                                    <div class="cargo-pics">
+                                        <div class="pic">
+                                            <img src="https://picsum.photos/82/82/?random=1" alt="商品圖片" title="商品圖片">
+                                        </div>
+                                        <div class="pic-txt-pc">
+                                            <h3 class="cargo-name">商品名稱</h3>
+                                        </div>
+                                    </div>
+                                    <div class="cargo-txt">
+                                        <div class="cargo-quantity-group">
+                                            <span>X</span>
+                                            <span class="cargo-quantity">1</span>
+                                        </div>
+                                        <div class="cargo-price-group">
+                                            <span>$</span>
+                                            <span class="cargo-price">1200</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="check-shipping-info">
+                            <h2 class="section-title">運送資訊</h2>
+                            <ul>
+                                <!-- 帶資料這邊帶 -->
+                                <li>
+                                    <span>收件人</span>
+                                    <span class="receiver-name">王小明</span>
+                                </li>
+                                <li>
+                                    <span>聯絡信箱</span>
+                                    <span class="receiver-mail">888@petVogue.com</span>
+                                </li>
+                                <li>
+                                    <span>聯絡手機</span>
+                                    <span class="receiver-phone">0988-888888</span>
+                                </li>
+                                <li>
+                                    <span>收件地址</span>
+                                    <span>888</span>
+                                    <span>台中市八八里88鄰八八街88號88樓</span>
+                                </li>
+                                <!--  -->
+                            </ul>
+                        </div>
+                        <ul class="cargo-amount">
+                            <!-- 帶資料這邊帶 -->
+                            <li>
+                                <span>數量</span>
+                                <span class="quan-total">3</span>
+                            </li>
+                            <li>
+                                <span>小計</span>
+                                <span class="subtotal">8,888</span>
+                            </li>
+                            <li>
+                                <span>運費</span>
+                                <span class="shipping">60</span>
+                            </li>
+                            <li>
+                                <span>總計</span>
+                                <span class="calc-total">8,948</span>
+                            </li>
+                            <!--  -->
+                        </ul>
+                        <div class="move-btns">
+                            <a class="pet-btn" href="shopping-cart-step-2.html">上一步</a>
+                            <a class="pet-btn" href="###">下一步</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <h3 class="footer-title">
-                    <a href="###">PET Vogue 毛孩日記
-                        <img src="{{ asset('/img/logo-08.svg') }}" alt="Footer Logo" title="PET Vogue Logo">
-
+                    <a href="index.html">PET Vogue 毛孩日記
+                        <img src="./pic/logo.svg" alt="Footer Logo">
                     </a>
                 </h3>
                 <ul class="footer-pet-info">
@@ -288,28 +408,26 @@
                 </ul>
                 <div class="coptright">
                     &copy;數位消波塊團體專題，非營利用途
-
                 </div>
             </div>
         </div>
     </footer>
-    
+
+
+
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
-        <a href="donate-support.html"><i class="far fa-heart"></i> 愛心捐款</a>
+        <a href="donate-support.html">愛心捐款</a>
     </div>
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
     <!-- 全頁面共用 -->
 
-
-
-
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('js')
-    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+    <script src="./js/pet-vogue-jquery.js"></script>
+    <script src="./js/all.js"></script>
 </body>
-</html>
 
+</html>

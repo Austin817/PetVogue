@@ -1,20 +1,20 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>
-        @yield('title')
-        {{ config('app.name', ' - Pet Vogue') }}
-    </title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
-    @yield('css')
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+    <title>領養 & 送養 - PET Vogue 毛孩日誌</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/pet-vogue.min.css">
 </head>
 
 <body>
+
+    <!-- 全頁面共用 -->
     <div class="loading" id="loading">
         <div class="paw-ani">
             <span><i class="fas fa-paw"></i></span>
@@ -26,18 +26,18 @@
         </div>
         <div class="progress" id="progress">0%</div>
     </div>
-
+    
     <input type="checkbox" name="mobile-menu" id="menu-ctrl">
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <h1>
-                    <a href="/">PET Vogue 毛孩日記
-                        <img src="{{ asset('/img/logo-08.svg') }}" alt="PET Vogue Logo" title="PET Vogue Logo">
+                    <a href="index.html">PET Vogue 毛孩日記
+                        <img src="./pic/logo.svg" alt="PET Vogue Logo" title="PET Vogue Logo">
                     </a>
                 </h1>
                 <div class="user-icon-m">
-                    <a href="###">
+                    <a href="shopping-cart-step-1.html">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                     <a href="###">
@@ -92,7 +92,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="/owner">送領養相關</a>
+                                <a href="pet-house.html">送領養相關</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -105,11 +105,11 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="/about">關於我</a>
+                                <a href="about_us.html">關於我</a>
                             </h3>
                         <li>
                             <h3>
-                                <a href="/shop">寵物商城</a>
+                                <a href="all-products.html">寵物商城</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -131,11 +131,11 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="/donate">愛心捐款</a>
+                                <a href="donate-support.html">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
-                            <a href="###">
+                            <a href="shopping-cart-step-1.html">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>
@@ -145,20 +145,20 @@
                         </li>
                         <!-- 登入後 -->
                         <!-- <li>
-                            <h3 class="user-name"></h2>
-                            <ul class="sub-nav">
-                                <li>回饋</li>
-                                <li>登出</li>
-                            </ul>
-                        </li> -->
+                                <h3 class="user-name"></h2>
+                                <ul class="sub-nav">
+                                    <li>回饋</li>
+                                    <li>登出</li>
+                                </ul>
+                            </li> -->
                     </ul>
                     <!-- pc menu -->
-
+    
                     <!-- mobile menu -->
                     <ul class="main-nav-mobile">
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="/">首頁</a>
+                                <a href="index.html">首頁</a>
                             </h3>
                         </li>
                         <li>
@@ -210,7 +210,7 @@
                             <h3 class="list-title"><span>送領養相關</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="/owner">領養與送養</a>
+                                    <a href="pet-house.html">領養與送養</a>
                                 </li>
                                 <li>
                                     <a href="#index-half-way">中途之家</a>
@@ -221,7 +221,7 @@
                             <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="/detail">全部商品</a>
+                                    <a href="all-products.html">全部商品</a>
                                 </li>
                                 <li>
                                     <a href="###">貓皇飼料</a>
@@ -242,12 +242,12 @@
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="/donate">愛心捐款</a>
+                                <a href="donate-support.html">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="/about">關於我</a>
+                                <a href="about_us.html">關於我</a>
                             </h3>
                         </li>
                     </ul>
@@ -259,18 +259,78 @@
     </header>
     <!-- 全頁面共用 -->
 
-    
-    @yield('main')
-    
+    <main>
+
+        <!-- 共用 page title -->
+        <section class="page-title">
+            <div class="container">
+                <div class="page-title-content">
+                    <h2 class="section-title">把我帶回家</h2>
+                </div>
+            </div>
+        </section>
+        <!-- 共用 page title -->
+
+        <section class="section-sm section-lg pet-house">
+            <div class="container">
+                <div class="pet-house-content">
+                    <div class="house-pic">
+                        <img class="house-pic-pc" src="https://picsum.photos/550/350/?random=432">
+                        <img class="house-pic-m" src="https://picsum.photos/550/300/?random=432">
+                    </div>
+                    <div class="pet-house-text text">
+                        <h2 class="section-title">收容所</h2>
+                        <p>
+                            <span>收容所的動物們都在等待一份愛，等待你給牠溫暖的家。</span>
+                            <span>
+                                我們提供平台讓你在此找尋你命定的萌寵，帶收容所可愛的動物們回家。只要你年滿年滿20歲，就有機會讓牠們陪伴你的人生，一起寫下難忘的回憶。
+                            </span>
+                            <span>※免費領養，犬貓皆實施植入晶片寵物登記及注射狂犬病疫苗。</span>
+                        </p>
+                        <a class="pet-btn pet-btn-pc" href="###">收容所領養</a>
+                    </div>
+                    <a class="pet-btn pet-btn-m" href="###">收容所領養</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-sm section-lg pet-house">
+            <div class="container">
+                <div class="pet-house-content">
+                    <div class="house-pic">
+                        <img class="house-pic-pc" src="https://picsum.photos/550/350/?random=432">
+                        <img class="house-pic-m" src="https://picsum.photos/550/300/?random=432">
+                    </div>
+                    <div class="pet-house-text text">
+                        <h2 class="section-title">飼主送領養</h2>
+                        <p>
+                            <span>你家有貓咪、狗狗或其它的寵物要送人嗎?</span>
+                            <span>這裡提供送領養寵物的管道!你可以在刊載送養訊息。</span>
+                            <span>本送養/領養資料,僅公告3個月,若動物資料須刪修下架,請與我們聯繫。</span>
+                            <span>※免費領養，禁止與送養人有金錢往來，任何商業及買賣之行為恐違反動物保護法，切勿以身試法，以免受罰。</span>
+                        </p>
+                        <div class="btn-group">
+                            <a class="pet-btn pet-btn-pc" href="###">我要送養</a>
+                            <a class="pet-btn pet-btn-pc" href="###">我要領養</a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <a class="pet-btn pet-btn-m" href="###">我要送養</a>
+                        <a class="pet-btn pet-btn-m" href="###">我要領養</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <h3 class="footer-title">
-                    <a href="###">PET Vogue 毛孩日記
-                        <img src="{{ asset('/img/logo-08.svg') }}" alt="Footer Logo" title="PET Vogue Logo">
-
+                    <a href="index.html">PET Vogue 毛孩日記
+                        <img src="./pic/logo.svg" alt="Footer Logo">
                     </a>
                 </h3>
                 <ul class="footer-pet-info">
@@ -288,16 +348,17 @@
                 </ul>
                 <div class="coptright">
                     &copy;數位消波塊團體專題，非營利用途
-
                 </div>
             </div>
         </div>
     </footer>
-    
+
+
+
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
-        <a href="donate-support.html"><i class="far fa-heart"></i> 愛心捐款</a>
+        <a href="donate-support.html">愛心捐款</a>
     </div>
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
@@ -305,11 +366,18 @@
 
 
 
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/sweetalert2.js"></script>
+    <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+    <script src="./js/pet-vogue-jquery.js"></script>
+    <script src="./js/all.js"></script>
 
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('js')
-    
 </body>
-</html>
 
+</html>
