@@ -34,15 +34,15 @@
         <div class="container">
             <div class="donate-support-content">
                 <div class="donate-support-pic">
-                    <img src="https://picsum.photos/700/500/?random=1">
-                    <img src="https://picsum.photos/700/400/?random=1">
+                    <img src="https://images.pexels.com/photos/1904105/pexels-photo-1904105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                    <img src="https://images.pexels.com/photos/1904105/pexels-photo-1904105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                 </div>
                 <div class="donnate-text text">
                     <h2 class="section-title">您的捐款，有無窮的希望!</h2>
                     <p>
                         「毛孩日記」負責把關，確保您的每一份愛心都不會浪費，我們會盡力用最合理的價格，使浪浪獲得最好的醫療服務、飼料。有您的捐款，才可以讓流浪動物無後顧之憂，即時幫助到無法為自己權益發聲的浪浪！
                     </p>
-                    <a class="pet-btn" href="{{ asset('donate/cas') }}">我要捐款</a>
+                    <a class="pet-btn" href="{{ asset('donate/cash') }}">我要捐款</a>
                 </div>
             </div>
         </div>
@@ -52,8 +52,8 @@
         <div class="container">
             <div class="donate-support-content">
                 <div class="donate-support-pic">
-                    <img src="https://picsum.photos/700/500/?random=1">
-                    <img src="https://picsum.photos/700/400/?random=1">
+                    <img src="https://img.wreadit.com/member/150/blogId/balimantw/147445/article_cover/147445-ef276b5b971ed3c8103d0e3efdd1028a.jpg">
+                    <img src="https://img.wreadit.com/member/150/blogId/balimantw/147445/article_cover/147445-ef276b5b971ed3c8103d0e3efdd1028a.jpg">
                 </div>
                 <div class="supplies-text text">
                     <h2 class="section-title">幫助浪浪物資</h2>
@@ -76,8 +76,8 @@
         <div class="container">
             <div class="donate-support-content">
                 <div class="donate-support-pic">
-                    <img src="https://picsum.photos/700/500/?random=1">
-                    <img src="https://picsum.photos/700/400/?random=1">
+                    <img src="https://images.pexels.com/photos/1904103/pexels-photo-1904103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                    <img src="https://images.pexels.com/photos/1904103/pexels-photo-1904103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                 </div>
                 <div class="donate-list-text text">
                     <h2 class="section-title">捐贈查詢</h2>
@@ -150,4 +150,3 @@
     <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
     <script src="{{ asset('js/all.js')}}"></script>
 @endsection
-

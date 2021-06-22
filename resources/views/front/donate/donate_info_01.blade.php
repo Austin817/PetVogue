@@ -28,7 +28,7 @@
                         </span>
                     </p>
                     <div class="donate-area-pic">
-                        <img src="https://picsum.photos/630/300/?random=1" alt="捐款示意圖" title="捐款示意圖">
+                        <img src="https://images.pexels.com/photos/3908804/pexels-photo-3908804.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="捐款示意圖" title="捐款示意圖">
                     </div>
                 </div>
                 <div class="donate-detail-input">
@@ -41,6 +41,7 @@
                             </h2>
                         </div>
                         <div class="input-price">
+
                             <div class="donate-money">
                                 <h3>捐款金額</h3>
                                 <select name="" id="price">
@@ -50,33 +51,42 @@
                                     <option value="80000">$80000 - 感激涕零，恩重如山</option>
                                 </select>
                             </div>
+
                             <div class="donor-name">
                                 <label for="donor">捐贈者姓名</label>
                                 <input type="text" id="donor" name="name" placeholder="王小明">
                             </div>
                         </div>
+
                         <!-- 後端帶入前端 -->
                         <div class="city-selector-set">
+
                             <h3>縣市<span>(收據以紙本收據寄送，請務必填寫完整地址)</span></h3>
                             <div class="allselect">
+
                                 <div class="sel-county">
                                     <!-- 縣市選單 -->
                                     <select class="county" name="county"></select>
                                 </div>
+
                                 <div class="sel-district">
                                     <!-- 區域選單 -->
                                     <select class="district" name="district"></select>
                                 </div>
+
                             </div>
-                            <div class="zipcode">
+
+                            
+                             <div>
                                 <!-- 郵遞區號欄位 (建議加入 readonly 屬性，防止修改) -->
-                                <input class="zipcode" name="zipcode" type="text" size="3" readonly
-                                    placeholder="郵遞區號">
-                            </div>
+                                <input class="zipcode" name="zipcode" type="text" size="3" readonly placeholder="郵遞區號">
+                              </div>
+
                             <div class="addres">
                                 <label for="ads">街道地址</label>
                                 <input type="text" name="address" id="ads" placeholder="例:興大路426號3樓">
                             </div>
+
                         </div>
                         <button class="pet-btn" type="submit">下一步</button>
                     </form>
