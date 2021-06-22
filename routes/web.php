@@ -42,9 +42,8 @@ Route::prefix('/donate')->group(function (){
     Route::get('/','DonateFrontController@index');
     // 顯示捐款頁
     Route::get('/cash','DonateFrontController@cash');
-
+    // 傳送捐款資料   
     Route::post('/cash_save', 'DonateFrontController@cashSave');
-
     
 });
 
