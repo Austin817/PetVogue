@@ -5,16 +5,12 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-    <title>全部文章 - PET Vogue 毛孩日誌</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('css/reset.css')}}">
-    <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('css/pet-vogue.min.css')}}">
-    @yield('css')
+    <title>2/3 購物車 - PET Vogue 毛孩日誌</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/pet-vogue.min.css">
 </head>
 
-<body>
+<body class="body">
 
     <!-- 全頁面共用 -->
     <div class="loading" id="loading">
@@ -28,7 +24,7 @@
         </div>
         <div class="progress" id="progress">0%</div>
     </div>
-    
+
     <input type="checkbox" name="mobile-menu" id="menu-ctrl">
     <header class="header">
         <div class="container">
@@ -147,19 +143,19 @@
                         </li>
                         <!-- 登入後 -->
                         <!-- <li>
-                                <h3 class="user-name"></h2>
-                                <ul class="sub-nav">
-                                    <li>回饋</li>
-                                    <li>登出</li>
-                                </ul>
-                            </li> -->
+                            <h3 class="user-name"></h2>
+                            <ul class="sub-nav">
+                                <li>回饋</li>
+                                <li>登出</li>
+                            </ul>
+                        </li> -->
                     </ul>
                     <!-- pc menu -->
-    
+
                     <!-- mobile menu -->
                     <ul class="main-nav-mobile">
                         <li>
-                            <h3 class="list-title">
+                            <h3 class="list-title only-title">
                                 <a href="index.html">首頁</a>
                             </h3>
                         </li>
@@ -243,12 +239,12 @@
                             </ul>
                         </li>
                         <li>
-                            <h3 class="list-title">
+                            <h3 class="list-title only-title">
                                 <a href="donate-support.html">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
-                            <h3 class="list-title">
+                            <h3 class="list-title only-title">
                                 <a href="about_us.html">關於我</a>
                             </h3>
                         </li>
@@ -260,15 +256,66 @@
         </div>
     </header>
     <!-- 全頁面共用 -->
+
     <main>
-        @yield('main')
+        <section class="section-sm section-lg user-info">
+            <div class="container">
+                <div class="user-info-content">
+                    <h2>2/3 購物車</h2>
+                    <h3>填選運送詳細資料</h3>
+                    <form action="" class="user-form-list">
+                        <!-- 帶資料這邊帶 -->
+                        <div class="info-group">
+                            <label for="receiver">收件人</label>
+                            <input class="receiver-name" type="text" name="" id="receiver" placeholder="輸入姓名">
+                        </div>
+                        <div class="info-group">
+                            <label for="phone">聯絡電話</label>
+                            <input class="receiver-phone" type="tel" name="" id="phone" placeholder="0988-888-888">
+                        </div>
+                        <div class="info-group">
+                            <label for="mail">聯絡信箱</label>
+                            <input class="receiver-mail" type="email" name="" id="mail" placeholder="888@petVogue.com">
+                        </div>
+                        <!-- 後端帶入前端 -->
+                        <div class="city-selector-set">
+                            <label for="">收件地址</label>
+                            <div class="allselect">
+                                <div class="sel-county">
+                                    <!-- 縣市選單 -->
+                                    <select class="county">
+                                        <option value="八八市">八八市</option>
+                                        <!-- 測試用記得刪掉 -->
+                                    </select>
+                                </div>
+                                <div class="sel-district">
+                                    <!-- 區域選單 -->
+                                    <select class="district">
+                                        <option value="八八區">八八區</option>
+                                        <!-- 測試用記得刪掉 -->
+                                    </select>
+                                </div>
+                                <input type="text" name="" id="" placeholder="輸入街道地址">
+                            </div>
+                        </div>
+                    </form>
+                    <h3>目前僅提供線上刷卡支付及宅配服務</h3>
+                    <div class="move-btns">
+                        <a class="pet-btn" href="shopping-cart-step-1.html">上一步</a>
+                        <a class="pet-btn" href="shopping-cart-step-3.html">下一步</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <h3 class="footer-title">
-                    <a href="###">PET Vogue 毛孩日記
-                        <img src="https://picsum.photos/100/50/?random=541" alt="Footer Logo">
+                    <a href="index.html">PET Vogue 毛孩日記
+                        <img src="./pic/logo.svg" alt="Footer Logo">
                     </a>
                 </h3>
                 <ul class="footer-pet-info">
@@ -291,6 +338,8 @@
         </div>
     </footer>
 
+
+
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
@@ -299,13 +348,11 @@
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
     <!-- 全頁面共用 -->
-    {{-- <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script> --}}
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="{{asset('js/aos.js')}}"></script>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
-    <script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
-    <script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
-    <script src="{{asset('/js/all.js')}}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('js')
+    <script src="./js/pet-vogue-jquery.js"></script>
+    <script src="./js/all.js"></script>
 </body>
+
+</html>

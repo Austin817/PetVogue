@@ -40,6 +40,11 @@ Route::prefix('/donate')->group(function (){
 
     // 顯示首頁
     Route::get('/','DonateFrontController@index');
+    // 顯示捐款頁
+    Route::get('/cash','DonateFrontController@cash');
+    // 傳送捐款資料   
+    Route::post('/cash_save', 'DonateFrontController@cashSave');
+     
     
 });
 
@@ -87,7 +92,7 @@ Route::prefix('/shop')->group(function (){
     Route::get('/','ShopFrontController@index');
 
     // 顯示內頁
-    Route::get('/detail/{id}','ShopFrontController@detail');
+    Route::get('/detail','ShopFrontController@detail');
     
 });
 
