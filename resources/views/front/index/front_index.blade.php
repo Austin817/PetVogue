@@ -23,7 +23,7 @@
                     <div class="swiper-container mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img class="slider-pc-pic" src="https://picsum.photos/1440/450/?random=122" alt="Banner 圖片">
+                                <img class="slider-pc-pic" src="img/homepage_dog.png" alt="Banner 圖片">
                                 <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=92" alt="Banner 圖片">
                             </div>
                             <div class="swiper-slide">

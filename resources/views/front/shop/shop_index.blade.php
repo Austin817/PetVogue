@@ -80,7 +80,8 @@
         <div class="container-full">
             <h2 class="block-title">特價商品圖</h2>
             <div class="all-product-content">
-                <img src="./pic/all-product-banner.jpg" alt="特價商品圖" title="特價商品圖">
+                <img src="https://i.shgcdn.com/48313f74-248e-4af3-a792-377353206ce6/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="特價商品圖" title="特價商品圖">
+                {{-- <img src="./pic/all-product-banner.jpg" alt="特價商品圖" title="特價商品圖"> --}}
             </div>
         </div>
     </section>

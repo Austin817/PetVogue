@@ -19,7 +19,7 @@
                 <div class="about-banner-content">
                     <h2 class="block-title">關於我宣言</h2>
                     <div class="about-banner-pic">
-                        <img class="about-banner-pic-pc" src="https://picsum.photos/1440/500/?random=93">
+                        <img class="about-banner-pic-pc" src="https://picsum.photos/1440/450/?random=93">
                         <img class="about-banner-pic-m" src="https://picsum.photos/1440/800/?random=123">
                     </div>
                     <p class="about-banner-txt">
@@ -115,7 +115,7 @@
             <div class="container-full">
                 <div class="about-donate-banner-content">
                     <div class="donate-banner-pic-pc">
-                        <img src="https://picsum.photos/1440/500/?random=923">
+                        <img src="https://picsum.photos/1440/300/?random=923">
                     </div>
                     <div class="donate-banner-pic-m">
                         <img src="https://picsum.photos/1440/800/?random=923">

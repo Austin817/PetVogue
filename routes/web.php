@@ -38,13 +38,15 @@ Route::prefix('/about')->group(function (){
 // Donate Front Controller
 Route::prefix('/donate')->group(function (){
 
-    // 顯示首頁
+    // 顯示 捐款的首頁
     Route::get('/','DonateFrontController@index');
-    // 顯示捐款頁
+    // 顯示 輸入捐款資料頁
     Route::get('/cash','DonateFrontController@cash');
-    // 傳送捐款資料   
+    // 傳送 捐款資料   
     Route::post('/cash_save', 'DonateFrontController@cashSave');
-     
+    // 顯示 確認捐款資料頁   
+    // 進入 信用卡頁面   
+    Route::post('/cash_pay', 'DonateFrontController@cashPay');
     
 });
 

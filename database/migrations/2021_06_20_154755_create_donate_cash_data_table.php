@@ -15,7 +15,7 @@ class CreateDonateCashDataTable extends Migration
     {
         Schema::create('donate_cash_data', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->string('order_no');
             $table->string('name');
             $table->string('county');

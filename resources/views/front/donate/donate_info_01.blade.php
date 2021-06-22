@@ -44,7 +44,7 @@
 
                             <div class="donate-money">
                                 <h3>捐款金額</h3>
-                                <select name="" id="price">
+                                <select name="price" id="price" required>
                                     <option value="100">$100 - 小小支持，大大改變</option>
                                     <option value="500">$500 - 動保路上，有您真好</option>
                                     <option value="1000">$1000 - 因為有您，浪愛不斷</option>
@@ -54,7 +54,7 @@
 
                             <div class="donor-name">
                                 <label for="donor">捐贈者姓名</label>
-                                <input type="text" id="donor" name="name" placeholder="王小明">
+                                <input type="text" id="donor" name="name" placeholder="王小明" required>
                             </div>
                         </div>
 
@@ -66,12 +66,12 @@
 
                                 <div class="sel-county">
                                     <!-- 縣市選單 -->
-                                    <select class="county" name="county"></select>
+                                    <select class="county" name="county" required></select>
                                 </div>
 
                                 <div class="sel-district">
                                     <!-- 區域選單 -->
-                                    <select class="district" name="district"></select>
+                                    <select class="district" name="district" required></select>
                                 </div>
 
                             </div>
@@ -84,7 +84,7 @@
 
                             <div class="addres">
                                 <label for="ads">街道地址</label>
-                                <input type="text" name="address" id="ads" placeholder="例:興大路426號3樓">
+                                <input type="text" name="address" id="ads" placeholder="例:興大路426號3樓" required>
                             </div>
 
                         </div>
