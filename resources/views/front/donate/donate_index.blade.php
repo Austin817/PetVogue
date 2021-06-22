@@ -107,25 +107,25 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">聯絡人</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="name" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">電話</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="phone" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">物資種類</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="type" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">數量/單位</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="number" required>
                         </div>
                     </div>
                 </div>

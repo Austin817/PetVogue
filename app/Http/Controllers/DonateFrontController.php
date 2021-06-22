@@ -13,20 +13,46 @@ use TsaiYiHua\ECPay\Collections\CheckoutResponseCollection;
 
 class DonateFrontController extends Controller
 {
-    //
     public function __construct(Checkout $checkout,CheckoutResponseCollection $checkoutResponse)
     {
         $this->checkout = $checkout;
         $this->checkoutResponse = $checkoutResponse;
     }
     
+// 捐款首頁👇
     public function index()
     {
 
         return view('front.donate.donate_index');
 
     }
-    
+
+// 捐贈表單👇
+public function goods(Request $request)
+{
+
+    if ($request) {
+
+        Session::put('name', $request->name);
+        Session::put('price', $request->price);
+        Session::put('county', $request->county);
+        Session::put('district', $request->district);
+        Session::put('zipcode', $request->zipcode);
+        Session::put('address', $request->address);
+
+        $donateCollection = Session::all();
+        $donatename = $donateCollection['name'];
+        
+        // dd($donateCollection,$donateCollection['price'],$donatename);
+        return view('front.donate.donate_check_02', compact('donateCollection'));
+
+    };
+    return 'fail';
+
+}
+
+
+// 捐款金流👇
     public function cash()
     {
 
@@ -45,17 +71,7 @@ class DonateFrontController extends Controller
             Session::put('district', $request->district);
             Session::put('zipcode', $request->zipcode);
             Session::put('address', $request->address);
-            // dd($order_no,$request->all());
-            // \Cart::add(array(  //記得Cart前方加/
-            //     'id' => 1, //商品id必須唯一
-            //     'name' => $request->name, //商品名稱
-            //     'price' => $request->price, //商品價格
-            //     'quantity' => 1, //商品數量
-            //     'attributes' => array(
-            //         'county' => $request->county, 'district' => $request->district, 'zipcode' => $request->zipcode, 'address' => $request->address, 'order_no' => $order_no
-            //     ), //自定義參數
-            // ));
-            // return 'success';
+
             $donateCollection = Session::all();
             $donatename = $donateCollection['name'];
             
@@ -76,18 +92,6 @@ class DonateFrontController extends Controller
             $userId = Auth::user()->id;
         };
         $userId = null;
-
-        // \Cart::add(array(  //記得Cart前方加/
-        //     'id' => 0, //商品id必須唯一
-        //     'name' => 'PETVOGUE捐款', //商品名稱
-        //     'price' => $donate['price'], //商品價格
-        //     'quantity' => 1, //商品數量
-        //     'attributes' => array(
-        //         '' => , 'type' => 
-        //     ), //自定義參數
-        //     // 'associatedModel' => $Product 
-        // ));
-
 
         $order = DonateCashData::create([
             'user_id' => 0,
@@ -123,17 +127,6 @@ class DonateFrontController extends Controller
             'PaymentMethod' => 'Credit', // ALL, Credit, ATM, WebATM
         ];
 
-        // //清空購物車
-        // Session::forget('name');
-        // Session::forget('price');
-        // Session::forget('county');
-        // Session::forget('district');
-        // Session::forget('zipcode');
-        // Session::forget('address');
-
-        // \Cart::clear();
-
-
         
         return $this->checkout->setNotifyUrl(route('notify'))->setReturnUrl(route('return'))->setPostData($formData)->send();
     }
@@ -168,5 +161,8 @@ class DonateFrontController extends Controller
             }
         }
     }
+
+
+
 
 }

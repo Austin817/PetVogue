@@ -22,6 +22,8 @@ Route::prefix('/')->group(function (){
 
     // 顯示首頁
     Route::get('/','FrontController@index');
+    // 顯示新登入首頁
+    Route::get('/login_pv','FrontController@login');
 
 });
 
@@ -31,7 +33,6 @@ Route::prefix('/about')->group(function (){
 
     // 顯示首頁
     Route::get('/','AboutFrontController@index');
-    
 });
 
 
@@ -40,11 +41,14 @@ Route::prefix('/donate')->group(function (){
 
     // 顯示 捐款的首頁
     Route::get('/','DonateFrontController@index');
+
+    // 傳送 捐贈物資資料
+    Route::post('/goods', 'DonateFrontController@goods');
+
     // 顯示 輸入捐款資料頁
     Route::get('/cash','DonateFrontController@cash');
-    // 傳送 捐款資料   
+    // 傳送 捐款資料  + 顯示 確認捐款資料頁  
     Route::post('/cash_save', 'DonateFrontController@cashSave');
-    // 顯示 確認捐款資料頁   
     // 進入 信用卡頁面   
     Route::post('/cash_pay', 'DonateFrontController@cashPay');
     
