@@ -7,7 +7,78 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/aos.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
-    s
+    <style>
+        main {
+            background-color: white;
+        }
+
+        .about-info .about-info-content .about-info-list li {
+            border: 0.5px solid rgb(219, 219, 219);
+            box-shadow: unset;
+        }
+
+        .about-info .about-info-content .about-info-list li .info-list-icon:before {
+            border-top: 0.5px solid rgb(219, 219, 219);
+            border-right: 0.5px solid rgb(219, 219, 219);
+            border-left: 0.5px solid transparent;
+            border-bottom: 0.5px solid transparent;
+            left: -2px;
+        }
+
+        .about-info .about-info-content .about-info-list li:nth-of-type(1) .info-list-txt h3 {
+            color: #fa0;
+        }
+
+        .about-info .about-info-content .about-info-list li:nth-of-type(2) .info-list-txt h3 {
+            color: #F7555F;
+
+        }
+
+        .about-info .about-info-content .about-info-list li:nth-of-type(3) .info-list-txt h3 {
+            color: #18A0FB;
+        }
+
+        .info-list-icon .fa-map-marked-alt:before {
+            color: #fa0;
+        }
+
+        .info-list-icon .fa-paw:before {
+            color: #F7555F;
+        }
+
+        .info-list-icon .fa-book-reader:before {
+            color: #18A0FB;
+        }
+
+        .pet-btn {
+            padding: 5px 10px;
+            border: 0;
+            color: white;
+            background-color: #fa0;
+        }
+
+        .pet-btn-b {
+            background-color: #18A0FB;
+        }
+
+        .pet-btn-r {
+            background-color: #F7555F;
+        }
+
+        @media screen and (min-width: 992px) {
+            .section-lg {
+                padding: 50px 100px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .about-donate-banner .about-donate-banner-content::before {
+                background: linear-gradient(-280deg, rgba(255, 255, 255, 0.8) 50%, transparent 50%);
+            }
+        }
+        }
+
+    </style>
 @endsection
 
 
@@ -21,7 +92,7 @@
                 <div class="about-banner-content">
                     <h2 class="block-title">關於我宣言</h2>
                     <div class="about-banner-pic">
-                        <img class="about-banner-pic-pc" src="https://picsum.photos/1440/500/?random=93">
+                        <img class="about-banner-pic-pc" src="{{ asset('img/petdog.png') }}">
                         <img class="about-banner-pic-m" src="https://picsum.photos/1440/800/?random=123">
                     </div>
                     <p class="about-banner-txt">
@@ -41,18 +112,9 @@
                     <h2 class="section-title">成立宗旨</h2>
                     <p>
                         「毛孩日記」（PetVogue）成立於2020年，是一非營利、非政府的民間組織。我們每年訂定明確、務實的階段任務，堅定原則，朝著最終目標前進。我們關心台灣流浪犬貓的困境，並且希望從問題的根源解決人與犬貓的衝突，透過溫柔、堅定的力量「為牠們發聲」。我們最終的目標是：「有一天，街頭不再有受苦受難的生命。」
+
                     </p>
-                    <p>「
-                        毛孩日記」兩年來持續關懷全台灣超過120個私人弱勢貓狗收容園區，仿效人類食物銀行的概念，以每月定期捐助飼料的模式，舒緩各弱勢貓狗園區的困境。
-                    </p>
-                    <p>
-                        除了定期捐助飼料滿足貓狗每日的基本需求之外，「毛孩日記」也發現許多私人的弱勢貓狗園區，收容環境不佳，有的甚至連遮風避雨的基本建設都難達成，所以我們也陸續挑選部分園區，進行軟硬體設施的修繕與優化工作。同時也提供平台鼓勵民眾領養犬貓，「毛孩日記」去年（2020年）開始和各界攜手合作，讓無數毛小孩回歸人類家庭：
-                        <span>1. 與中途動物醫院合作，共送養36隻。</span>
-                        <span>2. 「一起認養吧」與民間企業合作，送養37隻。</span>
-                        <span>
-                            3.如果民眾交通不便或居住地點偏遠，還貼心地提供「送愛到家」服務，以專車將領養犬貓送到民眾家裡，共送養46隻。
-                        </span>
-                    </p>
+
                 </div>
             </div>
         </section>
@@ -72,11 +134,12 @@
                             <div class="info-list-txt">
                                 <h3>參加活動</h3>
                                 <p>
-                                    <span>我們會去尋找各地浪浪</span>
-                                    <span>協助TNR、餵食、送養</span>
-                                    <span>並宣導友善動物的觀念</span>
+
+
+                                    <span>我們尋找各地浪浪協助TNR、餵食、</span>
+                                    <span>送養並宣導友善動物的觀念</span>
                                 </p>
-                                <a href="###">按我參加</a>
+                                <button class="pet-btn" href="###">按我參加</button>
                             </div>
                         </li>
                         <li data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
@@ -86,11 +149,10 @@
                             <div class="info-list-txt">
                                 <h3>認養寵物</h3>
                                 <p>
-                                    <span>在街頭流浪的浪浪們</span>
-                                    <span>需要各位的友愛關懷</span>
-                                    <span>給他們一個溫暖的家</span>
+                                    <span>在街頭流浪的浪浪們需要</span>
+                                    <span>各位的友愛，給他們一個溫暖的家</span>
                                 </p>
-                                <a href="###">按我認養</a>
+                                <button class="pet-btn pet-btn-r" href="###">按我認養</button>
                             </div>
                         </li>
                         <li data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
@@ -101,13 +163,30 @@
                                 <h3>認養須知</h3>
                                 <p>
                                     <span>盡我們所能的善待毛孩</span>
-                                    <span>我們整理一些飼養資訊</span>
-                                    <span>提供給需要的毛孩家長</span>
+                                    <span>飼養資訊提供給您</span>
                                 </p>
-                                <a href="###">查看須知</a>
+                                <button class="pet-btn pet-btn-b" href="###">查看須知</button>
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </section>
+        <section class="section-sm section-lg about-tenet">
+            <div class="container">
+                <div class="about-tenet-content">
+                    <h2 class="section-title">送領養、救助、教育</h2>
+                    <p>「
+                        毛孩日記」兩年來持續關懷全台灣超過120個私人弱勢貓狗收容園區，仿效人類食物銀行的概念，以每月定期捐助飼料的模式，舒緩各弱勢貓狗園區的困境。
+                    </p>
+                    <p>
+                        除了定期捐助飼料滿足貓狗每日的基本需求之外，「毛孩日記」也發現許多私人的弱勢貓狗園區，收容環境不佳，有的甚至連遮風避雨的基本建設都難達成，所以我們也陸續挑選部分園區，進行軟硬體設施的修繕與優化工作。同時也提供平台鼓勵民眾領養犬貓，「毛孩日記」去年（2020年）開始和各界攜手合作，讓無數毛小孩回歸人類家庭：
+                        <span>1. 與中途動物醫院合作，共送養36隻。</span>
+                        <span>2. 「一起認養吧」與民間企業合作，送養37隻。</span>
+                        <span>
+                            3.如果民眾交通不便或居住地點偏遠，還貼心地提供「送愛到家」服務，以專車將領養犬貓送到民眾家裡，共送養46隻。
+                        </span>
+                    </p>
                 </div>
             </div>
         </section>
@@ -117,7 +196,7 @@
             <div class="container-full">
                 <div class="about-donate-banner-content">
                     <div class="donate-banner-pic-pc">
-                        <img src="https://picsum.photos/1440/500/?random=923">
+                        <img src="{{ asset('img/donate-touch.png') }}">
                     </div>
                     <div class="donate-banner-pic-m">
                         <img src="https://picsum.photos/1440/800/?random=923">

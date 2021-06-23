@@ -18,6 +18,8 @@
             background-color: #ffe562;
         }
 
+        body{font-weight:390;background-color: white;}
+
     </style>
 </head>
 
