@@ -1,17 +1,19 @@
 @extends('layouts.front_template')
 @section('title')
-關於我
+    關於我
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/aos.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/reset.css')}}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/aos.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
+    s
 @endsection
 
 
 
 @section('main')
+
     <main>
         <!-- 關於我 banner -->
         <section class="about-banner">
@@ -19,9 +21,7 @@
                 <div class="about-banner-content">
                     <h2 class="block-title">關於我宣言</h2>
                     <div class="about-banner-pic">
-                        {{-- <img class="about-banner-pic-pc" src="https://picsum.photos/1440/450/?random=93"> --}}
-                        <img class="about-banner-pic-pc" style="object-fit: cover;" width="1440" height="500"  src="https://www-ws.gov.taipei/001/Upload/411/relpic/10162/8267424/53ec27d0-7a60-43a6-a1af-2612b73f2f8b.jpg">
-
+                        <img class="about-banner-pic-pc" src="https://picsum.photos/1440/500/?random=93">
                         <img class="about-banner-pic-m" src="https://picsum.photos/1440/800/?random=123">
                     </div>
                     <p class="about-banner-txt">
@@ -117,7 +117,7 @@
             <div class="container-full">
                 <div class="about-donate-banner-content">
                     <div class="donate-banner-pic-pc">
-                        <img src="https://picsum.photos/1440/300/?random=923">
+                        <img src="https://picsum.photos/1440/500/?random=923">
                     </div>
                     <div class="donate-banner-pic-m">
                         <img src="https://picsum.photos/1440/800/?random=923">
@@ -139,10 +139,12 @@
                 <div class="about-future-plan-content">
                     <h2 class="section-title">未來展望</h2>
                     <p>
-                        近年來，台灣公立貓狗收容園區實施「零安樂死」政策，雖然看似好消息，卻也衍生許多問題；如收容所爆滿，收容品質下降等等，都令許多動保人士相當憂心。也因為公立收容所量能飽和，許多貓狗只能委由私人貓狗園區收容，無疑讓資源本已潰乏的私人貓狗園區雪上加霜。這些弱勢毛孩子的命運乖舛，更需要「PET Vogue 毛孩日誌」與社會各界伸出援手。
+                        近年來，台灣公立貓狗收容園區實施「零安樂死」政策，雖然看似好消息，卻也衍生許多問題；如收容所爆滿，收容品質下降等等，都令許多動保人士相當憂心。也因為公立收容所量能飽和，許多貓狗只能委由私人貓狗園區收容，無疑讓資源本已潰乏的私人貓狗園區雪上加霜。這些弱勢毛孩子的命運乖舛，更需要「PET
+                        Vogue 毛孩日誌」與社會各界伸出援手。
                     </p>
                     <p>
-                        為了讓極度有限的資源幫助更多的受難貓狗，「PET Vogue 毛孩日誌」團隊不但隨時評估個別受助園區的狀況，也持續不斷尋找隱藏在台灣各角落的弱勢對象，將它們加入受助者的名單中，讓更多可憐貓狗早日走出苦難陰影。
+                        為了讓極度有限的資源幫助更多的受難貓狗，「PET Vogue
+                        毛孩日誌」團隊不但隨時評估個別受助園區的狀況，也持續不斷尋找隱藏在台灣各角落的弱勢對象，將它們加入受助者的名單中，讓更多可憐貓狗早日走出苦難陰影。
                     </p>
                     <p>
                         也因為如此，資源的需求有增無減；「PET Vogue 毛孩日誌」邀請贊同此理念的社會大眾，伸出援手，共同加入幫助這群弱勢毛孩子的行列。
@@ -151,16 +153,85 @@
             </div>
         </section>
 
+        <!-- 聯絡我們 -->
+        <section class="section-sm section-lg about-contact-us">
+            <div class="container">
+                <div class="about-contact-us-content">
+                    <h2>
+                        <span>″</span>
+                        如果您有任何寶貴的意見歡迎與我們聯絡
+                        <span>″</span>
+                    </h2>
+                    <div class="contact-us-btn">
+                        <a class="pet-btn" href="###" data-toggle="modal" data-target="#contactModal">聯絡我們</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- madal -->
+            <div class="modal" tabindex="-1" id="contactModal">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable text-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title mr-auto">聯絡我們</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label">聯絡人姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="" name="" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label">聯絡人信箱</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="" name="" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-2 col-form-label">回饋毛孩日記</label>
+                                <div class="col-sm-10">
+                                    <textarea name="" class="form-control" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary sweetalert2"
+                                data-swal-toast-template='#my-template'>送出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
 @endsection
 
-   
+
 
 
 @section('js')
-    {{-- <script src="./js/jquery-3.6.0.min.js"></script> --}}
-    <script src="{{ asset('js/aos.js')}}"></script>
-    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js')}}" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
-    <script src="{{ asset('js/all.js')}}"></script>
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>
+    <script src="{{ asset('js/all.js') }}"></script>
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
+
+
+
 @endsection
