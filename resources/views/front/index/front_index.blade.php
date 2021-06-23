@@ -23,23 +23,23 @@
                     <div class="swiper-container mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img class="slider-pc-pic" src="img/homepage_dog.png" alt="Banner 圖片">
+                                <img class="slider-pc-pic" src="{{ asset('img/index-dog.png') }}" alt="Banner 圖片">
                                 <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=92" alt="Banner 圖片">
                             </div>
                             <div class="swiper-slide">
-                                <img class="slider-pc-pic" src="https://picsum.photos/1440/450/?random=133" alt="Banner 圖片">
-                                <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=666" alt="Banner 圖片">
-                            </div>
-                            <div class="swiper-slide">
-                                <img class="slider-pc-pic" src="https://picsum.photos/1440/450/?random=144" alt="Banner 圖片">
+                                <img class="slider-pc-pic" src="{{ asset('img/index-sleep.png') }}" alt="Banner 圖片">
                                 <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=777" alt="Banner 圖片">
                             </div>
                             <div class="swiper-slide">
-                                <img class="slider-pc-pic" src="https://picsum.photos/1440/450/?random=165" alt="Banner 圖片">
+                                <img class="slider-pc-pic" src="{{ asset('img/index-train.png') }}" alt="Banner 圖片">
+                                <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=666" alt="Banner 圖片">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="slider-pc-pic" src="{{ asset('img/index-stayby.png') }}" alt="Banner 圖片">
                                 <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=31" alt="Banner 圖片">
                             </div>
                             <div class="swiper-slide">
-                                <img class="slider-pc-pic" src="https://picsum.photos/1440/450/?random=186" alt="Banner 圖片">
+                                <img class="slider-pc-pic" src="{{ asset('img/index-save.png') }}" alt="Banner 圖片">
                                 <img class="slider-mobile-pic" src="https://picsum.photos/1440/800/?random=71" alt="Banner 圖片">
                             </div>
                         </div>
