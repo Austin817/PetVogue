@@ -14,7 +14,7 @@
         @csrf
         <div class="form-group">
             <label for="name">類別名稱</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         </div>
         <button type="submit">送出</button>
     </form>

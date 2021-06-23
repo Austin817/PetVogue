@@ -1,6 +1,9 @@
-@extends('layouts.jun-template')
+@extends('layouts.front_template')
 
 @section('css')
+<link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
+<link rel="stylesheet" href="{{asset('css/aos.css')}}">
+<link rel="stylesheet" href="{{asset('css/pet-vogue.min.css')}}">
 @endsection
 
 @section('main')
@@ -38,12 +41,14 @@
                         <p class="essay-txt">
                             {{$articleDetail->text}}
                         </p>
-                        文章來源：<a class="essay-origin" href="{{$articleDetail->website}}">{{$articleDetail->reference}}</a>
+                        文章來源：<a class="essay-origin"
+                            href="{{$articleDetail->website}}">{{$articleDetail->reference}}</a>
                     </div>
                     <div class="feature-eaasy">
                         <h2 class="section-title">文章推薦</h2>
                         <ul>
-                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                            <li data-aos="fade-right" data-aos-duration="1000"
+                                data-aos-anchor-placement="center-bottom">
                                 <a href="###">
                                     <div class="feature-pic">
                                         <img src="{{$articleDetail->img}}" alt="推薦文章" title="文章標題">
@@ -60,7 +65,8 @@
                                     </div>
                                 </a>
                             </li>
-                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                            <li data-aos="fade-right" data-aos-duration="1000"
+                                data-aos-anchor-placement="center-bottom">
                                 <a href="###">
                                     <div class="feature-pic">
                                         <img src="{{$articleDetail->img}}" alt="推薦文章" title="文章標題">
@@ -78,7 +84,8 @@
                                 </a>
 
                             </li>
-                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                            <li data-aos="fade-right" data-aos-duration="1000"
+                                data-aos-anchor-placement="center-bottom">
                                 <a href="###">
                                     <div class="feature-pic">
                                         <img src="{{$articleDetail->img}}" alt="推薦文章" title="文章標題">
@@ -116,4 +123,10 @@
 </main>
 @endsection
 @section('js')
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+<script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
+<script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
+<script src="{{asset('/js/all.js')}}"></script>
 @endsection

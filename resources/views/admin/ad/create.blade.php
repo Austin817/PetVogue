@@ -16,7 +16,7 @@
         <hr>
         <div class="form-group">
             <label for="name">廣告名稱</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
@@ -26,7 +26,7 @@
     
         <div class="form-group">
             <label for="text">連結網址</label>
-            <textarea name="website" id="website" rows="1"></textarea>
+            <textarea name="website" id="website" rows="1" required></textarea>
         </div>
         <button type="submit">送出</button>
     </form>

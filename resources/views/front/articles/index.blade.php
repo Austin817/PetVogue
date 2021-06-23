@@ -1,6 +1,9 @@
-@extends('layouts.jun-template')
+@extends('layouts.front_template')
 
 @section('css')
+<link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
+<link rel="stylesheet" href="{{asset('css/aos.css')}}">
+<link rel="stylesheet" href="{{asset('css/pet-vogue.min.css')}}">
 <style>
     .recent-p {
         width: 100%;
@@ -133,4 +136,10 @@
 </main>
 @endsection
 @section('js')
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+<script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
+<script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
+<script src="{{asset('/js/all.js')}}"></script>
 @endsection

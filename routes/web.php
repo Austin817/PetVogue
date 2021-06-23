@@ -130,6 +130,7 @@ Route::prefix('articles')->group(function (){
 Route::prefix('admin')->middleware('auth')->group(function ()
 {
     Route::resource('article', 'ArticleController');
+    //文章標籤後端
     Route::resource('article_label', 'ArticleLabelController'); 
 });
 
@@ -162,6 +163,21 @@ Route::prefix('admin')->middleware('auth')->group(function ()
     Route::resource('rescue', 'RescueController');
 });
 
-Auth::routes();
+//餵食頁前端
+Route::prefix('feeds')->group(function (){
+    Route::get('/', 'FeedFrontController@feedsIndex');
+    //增加浪浪地圖座標
+    Route::get('create', 'FeedFrontController@feedsCreate');
+});
 
+//餵食表單狀態後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('feed', 'FeedController');
+    //餵食表單狀態
+    Route::resource('feed_status', 'FeedStatusController');
+    Route::post('delete_img', 'feedController@delete_img');
+});
+
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

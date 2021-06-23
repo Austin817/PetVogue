@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
     <title>
         @yield('title')
         {{ config('app.name', ' - Pet Vogue') }}
     </title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
     @yield('css')
 </head>
 
@@ -51,26 +51,26 @@
                     <ul class="main-nav-pc">
                         <li>
                             <h3>
-                                <a href="all-articles.html">最新文章</a>
+                                <a href="/articles">最新文章</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
-                                    <a href="article-pet-life.html">寵物生活</a>
+                                    <a href="/articles?labelId=1">寵物生活</a>
                                 </li>
                                 <li>
-                                    <a href="article-pet-food.html">寵物飲食</a>
+                                    <a href="/articles?labelId=2">寵物飲食</a>
                                 </li>
                                 <li>
-                                    <a href="article-pet-environment.html">寵物環境</a>
+                                    <a href="/articles?labelId=3">寵物環境</a>
                                 </li>
                                 <li>
-                                    <a href="article-pet-health.html">寵物健康</a>
+                                    <a href="/articles?labelId=4">寵物健康</a>
                                 </li>
                                 <li>
-                                    <a href="atricle-pet-law.html">寵物法規</a>
+                                    <a href="/articles?labelId=5">寵物法規</a>
                                 </li>
                                 <li>
-                                    <a href="article-others.html">其他相關</a>
+                                    <a href="/articles?labelId=6">其他相關</a>
                                 </li>
                             </ul>
                         </li>
@@ -80,13 +80,13 @@
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
-                                    <a href="recent-activity.html">志工聚會活動</a>
+                                    <a href="/activities">志工聚會活動</a>
                                 </li>
                                 <li>
-                                    <a href="activity.html#feeding">餵食浪貓地圖</a>
+                                    <a href="/feeds">浪浪餵食地圖</a>
                                 </li>
                                 <li>
-                                    <a href="activity.html#report">誘捕救援說明</a>
+                                    <a href="/rescues">誘捕救援洽詢</a>
                                 </li>
                             </ul>
                         </li>
@@ -141,7 +141,7 @@
                         </li>
                         <!-- 登入前 -->
                         <li>
-                            <a href="###"><i class="fas fa-user"></i></a>
+                            <a href="/login"><i class="fas fa-user"></i></a>
                         </li>
                         <!-- 登入後 -->
                         <!-- <li>
@@ -302,11 +302,6 @@
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
     <!-- 全頁面共用 -->
-
-
-
-
-
     <script src="{{ asset('js/app.js') }}"></script>
     @yield('js')
     

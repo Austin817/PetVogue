@@ -14,7 +14,7 @@ class RescueController extends Controller
      */
     public function index()
     {
-        $rescueData = Rescue::get();
+        $rescueData = Rescue::orderBy('sort','asc')->get();
         return view('admin.rescue.index',compact('rescueData'));
     }
 

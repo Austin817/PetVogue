@@ -33,10 +33,70 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @php
+                        $role = Auth::user()->role ?? null;
+                    @endphp
+                    @if ($role == "admin")
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-link dropdown" style="color: red">後端專區</li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">文章</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                <a class="dropdown-item" href="/admin/article">文章</a>
+                                <a class="dropdown-item" href="/admin/article_label">文章標籤</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">活動</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown02">
+                                <a class="dropdown-item" href="/admin/activity">活動</a>
+                                <a class="dropdown-item" href="/admin/feed">餵食浪浪</a>
+                                <a class="dropdown-item" href="/admin/feed_status">餵食浪浪表單狀態</a>
+                                <a class="dropdown-item" href="/admin/rescue">救援</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">送領養及捐款</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown03">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">商品</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">購物車</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown05">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown06" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">廣告</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown06">
+                                <a class="dropdown-item" href="/admin/ad">廣告</a>
+                            </div>
+                        </li>
                     </ul>
-
+                    @elseif ($role == "user")
+                    建置中...
+                    @else
+                    建置中...
+                    @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
