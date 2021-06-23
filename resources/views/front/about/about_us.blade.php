@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
     <style>
-        .section-sm{
+        .section-sm {
             padding: 30px 0;
         }
+
         .about-info .about-info-content .about-info-list li {
             border: 0.5px solid rgb(219, 219, 219);
             box-shadow: unset;
@@ -74,6 +75,8 @@
                 background: linear-gradient(-280deg, rgba(255, 255, 255, 0.8) 50%, transparent 50%);
             }
         }
+        .about-donate-banner .about-donate-banner-content .donate-banner-txt{
+            background-color:rgba(255, 255, 255, 0.8);
         }
 
     </style>
@@ -91,7 +94,7 @@
                     <h2 class="block-title">關於我宣言</h2>
                     <div class="about-banner-pic">
                         <img class="about-banner-pic-pc" src="{{ asset('img/petdog.png') }}">
-                        <img class="about-banner-pic-m" src="https://picsum.photos/1440/800/?random=123">
+                        <img class="about-banner-pic-m" src="{{ asset('img/petdog-m.png') }}">
                     </div>
                     <p class="about-banner-txt">
                         <span>毛孩一生都陪伴我們</span>
@@ -102,7 +105,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- 成立宗旨 -->
         <section class="section-sm section-lg about-tenet">
             <div class="container">
@@ -196,7 +199,7 @@
                         <img src="{{ asset('img/donate-touch.png') }}">
                     </div>
                     <div class="donate-banner-pic-m">
-                        <img src="https://picsum.photos/1440/800/?random=923">
+                        <img src="{{ asset('img/donate-touch-m.png') }}">
                     </div>
                     <div class="donate-banner-txt">
                         <h2>愛心捐款</h2>
@@ -293,11 +296,15 @@
 @section('js')
 
 
-    <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js')}}" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js')}}" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
-    <script src="{{ asset('js/sweetalert2.js')}}"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js') }}"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js') }}"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11') }}"></script>
+    <script src="{{ asset('js/sweetalert2.js') }}"></script>
     <script src="{{ asset('js/aos.js') }}" crossorigin="anonymous"></script>
     <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
     <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>

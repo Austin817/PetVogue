@@ -83,20 +83,24 @@
 
         .header-content .main-nav-mobile a,
         .index-half-way .half-content .half-list a {
-            background-color: rgb(250, 250, 230);
+            background-color: #fdf1b3;
             color: #000;
         }
 
         .header-content .main-nav-mobile li>a {
             padding-left: 30px;
         }
-        .index-featured-article .article-list li{
+
+        .index-featured-article .article-list li {
             border: 0;
         }
-        @media screen and (min-width: 992px){
-.index-featured-article .article-content .article-list li:hover {
-    box-shadow: 0 1px 5px #0005;
-}
+
+        @media screen and (min-width: 992px) {
+            .index-featured-article .article-content .article-list li:hover {
+                box-shadow: 0 1px 5px #0005;
+            }
+        }
+
     </style>
 
     <link rel="shortcut icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
@@ -165,7 +169,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="activity.html">活動專區</a>
+                                <a href="/event">活動專區</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -246,7 +250,7 @@
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                                 document.getElementById('logout-form').submit();">
+                                                                                     document.getElementById('logout-form').submit();">
                                             登出
                                         </a>
 
@@ -338,7 +342,7 @@
                             <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="/detail">全部商品</a>
+                                    <a href="/shop">全部商品</a>
                                 </li>
                                 <li>
                                     <a href="###">貓皇飼料</a>
@@ -385,7 +389,7 @@
         <div class="container">
             <div class="footer-content">
                 <h3 class="footer-title">
-                    <a href="###">PET Vogue 毛孩日記
+                    <a href="{{ asset('/') }}">PET Vogue 毛孩日記
                         <img src="{{ asset('/img/logo-08.svg') }}" alt="Footer Logo" title="PET Vogue Logo">
 
                     </a>
@@ -414,7 +418,7 @@
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
-        <a href="donate-support.html"><i class="far fa-heart"></i> 愛心捐款</a>
+        <a href="{{ asset('/donate') }}"><i class="far fa-heart"></i> 愛心捐款</a>
     </div>
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
