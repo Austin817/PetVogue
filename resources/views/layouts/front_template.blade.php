@@ -18,8 +18,8 @@
             background-color: #ffe562;
         }
 
-        body{font-weight:390;background-color: white;letter-spacing: 3px;}
-        h1,h2,{font-weight:400;}
+        body{font-weight:390;background-color: white;letter-spacing: 2px;}
+        h1,h2,h3{font-weight:400;}
         .footer-content .footer-title{background-color: transparent;}
     </style>
 
