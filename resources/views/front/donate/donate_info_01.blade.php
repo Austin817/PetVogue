@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
 @endsection
 
+<style>
+    .donate-detail-area h2{
+        font-weight:400;
+    }.donate-area-pic{
+        padding-top:20px ;
+    }
+</style>
 
 
 @section('main')
@@ -18,16 +25,18 @@
         <div class="container">
             <div class="donate-detail-content">
                 <div class="donate-detail-area">
-                    <h2>愛心捐款 | 讓幫助動物成為充滿愛的日常</h2>
+                    <h2>愛心捐款 | 讓幫助動物成為日常</h2>
                     <p>
-                        <span>
-                            「毛孩日記」與全台多個動物醫療機構及各大飼料廠商都有合作關係，可以用最合理的價格，獲得最好的醫療服務，並購得最多的飼料，確保您的愛心發揮最大效益。
-                        </span>
                         <span>
                             有您的捐款，才可以讓流浪動物無後顧之憂，幫助到無法為自己權益發聲的流浪動物！
                         </span>
+                        <span>
+                            「毛孩日記」與多個動物醫療機構及飼料廠商合作，用最合理的價格，取得最好的醫療服務，購得最多的飼料，確保您的愛心發揮最大效益。
+                        </span>
                     </p>
                     <div class="donate-area-pic">
+                        {{-- <img src="https://picsum.photos/630/300/?random=1" alt="捐款示意圖" title="捐款示意圖"> --}}
+
                         <img src="https://images.pexels.com/photos/3908804/pexels-photo-3908804.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="捐款示意圖" title="捐款示意圖">
                     </div>
                 </div>
@@ -54,7 +63,7 @@
 
                             <div class="donor-name">
                                 <label for="donor">捐贈者姓名</label>
-                                <input type="text" id="donor" name="name" placeholder="王小明" required>
+                                <input type="text" id="donor" name="name" placeholder="毛小日" required>
                             </div>
                         </div>
 

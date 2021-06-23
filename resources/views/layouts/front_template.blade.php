@@ -10,17 +10,21 @@
         {{-- {{ config('app.name', ' - Pet Vogue') }} --}}
     </title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}"> --}}
     @yield('css')
     <style>
         .product-list-group .product-list li .product-item .product-txt .pdt-hashtag span:nth-of-type(1) {
             background-color: #ffe562;
         }
 
-        body{font-weight:390;background-color: white;}
-
+        body{font-weight:390;background-color: white;letter-spacing: 3px;}
+        h1,h2,{font-weight:400;}
+        .footer-content .footer-title{background-color: transparent;}
     </style>
+
+<link rel="shortcut icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
+<link rel="icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
 </head>
 
 <body>
@@ -344,9 +348,16 @@
 
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
+    
+    {{-- <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
     <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>
     <script src="{{ asset('js/all.js') }}"></script>
+    <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js')}}" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js')}}" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
+    <script src="{{ asset('js/sweetalert2.js')}}"></script> --}}
+
     @yield('js')
 
 </body>

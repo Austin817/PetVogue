@@ -1,6 +1,6 @@
 @extends('layouts.front_template')
 @section('title')
-捐款
+捐款$捐贈
 @endsection
 
 @section('css')
