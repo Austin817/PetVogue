@@ -12,19 +12,95 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}"> --}}
+
     @yield('css')
     <style>
+        /* LIMO更動區域 */
+        /* 改標籤顏色 */
         .product-list-group .product-list li .product-item .product-txt .pdt-hashtag span:nth-of-type(1) {
             background-color: #ffe562;
         }
 
-        body{font-weight:390;background-color: white;letter-spacing: 2px;}
-        h1,h2,h3{font-weight:400;}
-        .footer-content .footer-title{background-color: transparent;}
+        .index-featured-article .article-list li .article-txt .artl-date-hashtag span:nth-of-type(2) {
+            background-color: #ffe562;
+        }
+
+        /* 字體修改*/
+        body {
+            font-weight: 390;
+            background-color: white;
+            letter-spacing: 2px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 400;
+        }
+
+        .footer-content .footer-title {
+            background-color: transparent;
+        }
+
+        /* 手機NAV分隔線 */
+        .header {
+            border-bottom: silver;
+        }
+
+        /* 手機下拉選單增加上方分隔線 */
+        .header-content .main-nav-mobile {
+            top: 50px;
+        }
+
+        .header-content .main-nav-mobile li:first-of-type .list-title {
+            border-top: 1px solid #fa0;
+        }
+
+        /* 愛心捐款黏貼右側 */
+        .donate-us a {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .donate-us.show-donate {
+            right: 0;
+        }
+
+        /* SWIPER上推方空白 */
+        .index-banner-slider .swiper-container {
+            padding-top: 10px;
+        }
+
+        /* PC下拉透明背景 */
+        @media screen and (min-width: 992px) {
+            .header-content .main-nav-pc>li:hover .sub-nav-pc {
+                box-shadow: 0px 3px 8px #5552;
+            }
+        }
+
+        .header-content .close-nav-m.close-active {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .header-content .main-nav-mobile a,
+        .index-half-way .half-content .half-list a {
+            background-color: rgb(250, 250, 230);
+            color: #000;
+        }
+
+        .header-content .main-nav-mobile li>a {
+            padding-left: 30px;
+        }
+        .index-featured-article .article-list li{
+            border: 0;
+        }
+        @media screen and (min-width: 992px){
+.index-featured-article .article-content .article-list li:hover {
+    box-shadow: 0 1px 5px #0005;
+}
     </style>
 
-<link rel="shortcut icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
-<link rel="icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
+    <link rel="shortcut icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
+    <link rel="icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
 </head>
 
 <body>
@@ -168,8 +244,9 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                                                 document.getElementById('logout-form').submit();">
                                             登出
                                         </a>
 
@@ -348,15 +425,17 @@
 
 
     <script src="{{ asset('js/app.js') }}"></script>
-    
-    {{-- <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>
-    <script src="{{ asset('js/all.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js')}}" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js')}}" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
-    <script src="{{ asset('js/sweetalert2.js')}}"></script> --}}
+
+    @if (Session::get('icon'))
+        <script>
+            Swal.fire({
+                icon: '{{ Session::get('icon') }}',
+                title: '{{ Session::get('title') }}',
+                text: '{{ Session::get('text') }}',
+                timer: 3500
+            });
+        </script>
+    @endif
 
     @yield('js')
 
