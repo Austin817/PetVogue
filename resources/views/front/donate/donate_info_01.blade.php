@@ -123,9 +123,6 @@
             elZipcode: '.zipcode' // 在 el 裡查找 element
         });
     </script>
-    {{-- <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>
-    <script src="{{ asset('js/all.js') }}"></script> --}}
 
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>

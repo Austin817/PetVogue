@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
     <style>
         .pet-submit{
+            display: block;
             padding: 10px 15px;
             background-color: #ffe562;
             border-radius: 5px;
@@ -19,96 +20,68 @@
         .pet-submit:hover{
             transform: scale(1.2);
         }
-
-        .check-donor-list .d-flex{
-            justify-content: space-between;
-        }
-        .donate-detail-area h2{
-        font-weight:400;
-    }.donate-area-pic{
-        padding-top:20px ;
-    }
-    .text-r{
-        text-align: right;
-    }
-    .pet-btn{
-        background-color: transparent;
-        border: 0;
-    }
-    .input-price{
-        margin-bottom: 220px;
-    }
     </style>
 @endsection
 
 
 
 @section('main')
-
 <main>
-    <section class="section section-sm section-lg donate-detail">
-        <div class="container">
-            <div class="donate-detail-content">
-                <div class="donate-detail-area">
-                    <h2>愛心捐款 | 讓幫助動物成為日常</h2>
-                    <p>
-                        <span>
-                            毛孩日記」兩年來持續關懷全台灣超過120個私人弱勢貓狗收容園區
-                        </span>
-                        <span>
-                            您的捐款，給流浪動物有無窮的希望！且針對貓狗收容環境不佳園區，進行軟硬體設施的修繕與優化工作。
-                        </span>
-                    </p>
-                    <div class="donate-area-pic">
-                        {{-- <img src="https://picsum.photos/630/300/?random=1" alt="捐款示意圖" title="捐款示意圖"> --}}
-
-                        <img src="https://images.pexels.com/photos/3908804/pexels-photo-3908804.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="捐款示意圖" title="捐款示意圖">
+    <main>
+        <section class="section section-sm section-lg donate-check">
+            <div class="container">
+                <div class="donate-check-content">
+                    <div class="donate-txt-area">
+                        <h2>愛心捐款 | 讓幫助動物成為充滿愛的日常</h2>
+                        <p>
+                            <span>您的捐款，給流浪動物有無窮的希望！</span>
+                            <span>系統會將您的愛心善款歸入所指定關注的公益專案上,希望您能長期支持，成為毛孩日記的穩定力量，讓改變成為可能。</span>
+                            <span>「毛孩日記」兩年來持續關懷全台灣超過120個私人弱勢貓狗收容園區</span>
+                            <span>除了定期捐助飼料滿足貓狗每日的基本需求之外，「毛孩日記」也發現許多私人的弱勢貓狗園區，收容環境不佳，所以我們也陸續挑選部分園區，進行軟硬體設施的修繕與優化工作。</span>
+                        </p>
+                        <div class="donate-area-pic">
+                            <img src="https://picsum.photos/630/300/?random=1" alt="捐款示意圖" title="捐款示意圖">
+                        </div>
                     </div>
-                </div>
-                <div class="donate-detail-input">
 
-                        <div class="input-top">
-                            <h2>
-                                <span>2/2 確認捐款資訊</span>
-                                確認捐贈人資訊
-                            </h2>
+                    <div class="donate-check-txt">
+                        <div class="check-info-title">
+                            <h2>2/2 確認捐款資訊</h2>
+                            <h3>確認捐贈人資訊</h3>
                         </div>
-                        <div class="input-price">
-                            <ul class="check-donor-list">
-                                <li class="d-flex">
-                                    <h3>捐款人姓名：</h3>
-                                    <p>{{$donateCollection['name']}}</p>
-                                </li>
-                                <li class="d-flex">
-                                    <h3>捐款金額：</h3>
-                                    <p>$ <span>{{$donateCollection['price']}}</span></p>
-                                </li>
-                                <li class="d-flex">
-                                    <h3>寄送地址：</h3>
-                                    <div class="address-area">
-                                        <p class="text-r">{{ $donateCollection['zipcode']}} &nbsp; {{$donateCollection['county']}}{{$donateCollection['district']}}<br>{{$donateCollection['address']}}</p>
-                                    </div>
-                                </li>
-                            </ul>
+                        <ul class="check-donor-list">
+                            <li>
+                                <h3>捐款人姓名：</h3>
+                                <p>{{$donateCollection['name']}}</p>
+                            </li>
+                            <li>
+                                <h3>捐款金額：</h3>
+                                <p>$ <span>{{$donateCollection['price']}}</span></p>
+                            </li>
+                            <li>
+                                <h3>寄送地址：</h3>
+                                <p>{{ $donateCollection['zipcode']}} &nbsp; {{$donateCollection['county']}}{{$donateCollection['district']}}{{$donateCollection['address']}}</p>
+                            </li>
+                        </ul>
+                        
+                        <div class="move-btns">
+                            <a href="/donate/cash" class="pet-btn">上一步</a>
+                            {{-- <button class="pet-btn" type="submit">前往付款</button> --}}
+                            <form action="/donate/cash_pay" method="POST">
+                                @csrf
+                                
+                            <button class="pet-submit" type="submit">前往付款</button>
+                            </form>
+                            {{-- <a href="###" class="pet-btn">前往付款</a> --}}
                         </div>
 
-                       
-                        <form action="/donate/cash_pay" method="POST">
-                            @csrf
-                        <div class="move-btns d-flex">
-                            
-                        <button href="/donate/cash" class="pet-btn" type="button">上一步</button>
-                        <button class="pet-submit" type="submit">前往付款</button>
-
-                        </div>
-                        </form>
-                        {{-- <a href="###" class="pet-btn">前往付款</a> --}}
+                    </div>
+                    
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 </main>
-
 
 
 
