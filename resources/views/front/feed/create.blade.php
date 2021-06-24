@@ -12,18 +12,9 @@
     }
 
     .bg-image {
-        background-image: url('{{asset('upload/feed/straycat.jpg')}}');
+        background-image: url('{{asset('upload/feed/feed.jpg')}}');
         background-size: cover;
         background-position: center;
-    }
-
-    .btn-feed {
-        font-size: 18px;
-        letter-spacing: 0.05rem;
-        padding: 0.5rem 0.5rem;
-        border-radius: 0.5rem;
-        background-color: #FFE661;
-        margin-bottom: 1rem;
     }
 
     .form-label-group {
@@ -107,15 +98,15 @@
                                 </div>
 
                                 <div class="form-label-group">
-                                    <label for="imgs">浪浪照片及街景照片</label>
-                                    <h2>請提供浪浪照片及餵食地區附近街景照片供願意餵食的人參考</h2>
+                                    <label for="imgs">浪浪照片</label>
+                                    <h2>請提供一張浪浪照片供辨識</h2>
                                     <input type="file" accept="image/*" class="form-control" id="img" name="img"
                                     required>
                                 </div>
 
                                 <div class="form-label-group">
-                                    <label for="imgs">浪浪照片及街景照片</label>
-                                    <h2>請提供浪浪照片及餵食地區附近街景照片供願意餵食的人參考</h2>
+                                    <label for="imgs">其他浪浪照片及街景照片</label>
+                                    <h2>請提供其他浪浪照片及餵食地區附近街景照片讓人更容易發現浪浪</h2>
                                     <input type="file" accept="image/*" class="form-control" id="imgs" name="imgs[]"
                                         multiple required>
                                 </div>
@@ -133,8 +124,8 @@
                                     @enderror
                                 </div>
                                 <div class="feedbtn">
-                                    <button type="submit" class="btn-feed">送出</button>
-                                    <a href="/feeds"><button class="btn-feed" type="button"
+                                    <button type="submit" class="pet-btn">送出</button>
+                                    <a href="/feeds"><button class="pet-btn" type="button"
                                             required>改前往浪浪餵食地圖</button></a>
                                 </div>
                             </form>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->group(function (){
 
     // 顯示首頁
-    Route::get('/','FrontController@index');
+    Route::get('/','FrontController@index')->name('index');
 
 });
 
@@ -38,8 +39,18 @@ Route::prefix('/about')->group(function (){
 // Donate Front Controller
 Route::prefix('/donate')->group(function (){
 
-    // 顯示首頁
+    // 顯示 捐款的首頁
     Route::get('/','DonateFrontController@index');
+
+    // 傳送 捐贈物資資料
+    Route::post('/goods', 'DonateFrontController@goods');
+    
+    // 顯示 輸入捐款資料頁
+    Route::get('/cash','DonateFrontController@cash');
+    // 傳送 捐款資料  + 顯示 確認捐款資料頁
+    Route::post('/cash_save', 'DonateFrontController@cashSave');
+    // 進入 信用卡頁面
+    Route::post('/cash_pay', 'DonateFrontController@cashPay');
     
 });
 
@@ -79,12 +90,11 @@ Route::prefix('/register')->group(function (){
     
 });
 
-
 // Shop Front Controller
 Route::prefix('/shop')->group(function (){
 
     // 顯示首頁
-    Route::get('/','ShopFrontController@index');
+    Route::get('/{typeId?}','ShopFrontController@index');
 
     // 顯示內頁
     Route::get('/detail/{id}','ShopFrontController@detail');
@@ -97,16 +107,17 @@ Route::prefix('/shop')->group(function (){
 Route::prefix('/shopping_cart')->group(function (){
     Route::post('/add', 'ShoppingCartFrontController@add');
 
-    Route::get('/list_1', 'ShoppingCartFrontController@list');
+    // Route::get('/list_1', 'ShoppingCartFrontController@list');
 
     // 登入需求
     Route::middleware('auth','cartCheck')->group(function(){
         Route::post('/update', 'ShoppingCartFrontController@update');
         Route::post('/delete', 'ShoppingCartFrontController@delete');
         Route::get('/content', 'ShoppingCartFrontController@content');
-        // Route::get('/list_1', 'ShoppingCartFrontController@list');
+        Route::get('/list_1', 'ShoppingCartFrontController@list');
         Route::get('/information_2', 'ShoppingCartFrontController@information');
-        Route::get('/checkout_3', 'ShoppingCartFrontController@checkout');
+        Route::post('/checkout_3', 'ShoppingCartFrontController@checkout');
+        Route::get('/send_order', 'ShoppingCartFrontController@sendOrder');
     });
     
 });
@@ -119,6 +130,14 @@ Route::prefix('cart_ecpay')->group(function(){
     //付款完成後，綠界會將付款結果參數以幕前(Client POST)回傳到該網址
     Route::post('return', 'ShoppingCartFrontController@returnUrl')->name('return');
 });
+
+// 商品頁後端
+Route::prefix('/admin')->middleware('auth')->group(function ()
+{
+    Route::resource('/product', 'ProductResourceController');
+    Route::post('/product/deleteImg', 'ProductResourceController@deleteImg');
+});
+
 
 //文章頁前端
 Route::prefix('articles')->group(function (){
@@ -176,7 +195,30 @@ Route::prefix('admin')->middleware('auth')->group(function ()
     Route::resource('feed', 'FeedController');
     //餵食表單狀態
     Route::resource('feed_status', 'FeedStatusController');
-    Route::post('delete_img', 'feedController@delete_img');
+});
+
+//首頁swipper後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('index_swiper', 'IndexSwiperController');
+});
+
+//認養頁前端
+Route::prefix('adopts')->group(function (){
+    Route::get('/', 'AdoptFrontController@adoptIndex');
+    Route::get('/content', 'AdoptFrontController@adoptContent');
+});
+
+//認養頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('rescue', 'RescueController');
+});
+
+//首頁swipper後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('house', 'HouseController');
 });
 
 Auth::routes();

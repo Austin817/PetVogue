@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -23,14 +23,14 @@
         @endforeach
         浪浪位置:<p>{{$feed->address}}</p>
         <div class="form-group">
-            <label for="status_id">文章標籤</label>
+            <label for="status_id">張貼進度</label>
             <select name="status_id" id="status_id" required>
                 @foreach ($feedstatuses as $feedstatus)
                 <option value="{{$feedstatus->id}}"@if ($feedstatus->id == $feed->status_id) selected @endif>{{$feedstatus->name}}</option>
                 @endforeach
             </select>
         </div>
-        <button type="submit">已編輯表單狀態並送出</button>
+        <button type="submit" class="btn btn-danger btn-sm">已編輯表單進度並送出</button>
     </form>
 </div>
 @endsection

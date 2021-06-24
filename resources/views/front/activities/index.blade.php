@@ -1,8 +1,10 @@
 @extends('layouts.front_template')
 
 @section('css')
-<link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
-<link rel="stylesheet" href="{{asset('css/aos.css')}}">
+
+<link rel="stylesheet" href="{{asset('/css/reset.css')}}">
+<link rel="stylesheet" href="{{asset('/css/aos.css')}}">
+<link rel="stylesheet" href="{{asset('/css/pet-vogue.min.css')}}">
 <style>
     .recent-p {
         width: 100%;
@@ -13,10 +15,8 @@
     }
 </style>
 @endsection
-
 @section('main')
 <main>
-
     <!-- 共用 page title -->
     <section class="page-title">
         <div class="container">
@@ -67,10 +67,9 @@
 </main>
 @endsection
 @section('js')
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="{{asset('js/aos.js')}}"></script>
-    <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
-    <script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
-    <script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
-    <script src="{{asset('/js/all.js')}}"></script>
+<script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+<script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
+<script src="{{asset('/js/all.js')}}"></script>
 @endsection

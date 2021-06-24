@@ -28,7 +28,7 @@
  <section class="page-title">
     <div class="container">
         <div class="page-title-content">
-            <h2 class="section-title">各縣市動物保護單位</h2>
+            <h2 class="section-title">各縣市動物保護機關</h2>
         </div>
     </div>
 </section>

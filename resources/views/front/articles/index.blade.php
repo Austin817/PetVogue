@@ -97,8 +97,12 @@
                         <li>
                             <a href="/articles/content/{{$article->id}}">
                                 <div class="list-pic">
-                                    <img src="{{asset($article->img)}}" alt="文章圖片" title="文章圖片">
-                                </div>
+                                    <div style="width: 100%;
+                                                height: 180px;
+                                                background-image:url({{asset($article->img)}});
+                                                background-size: cover;
+                                                background-position: center;"></div>
+                                     </div>
                                 <div class="list-txt">
                                     <div class="list-date">
                                         <span>{{$article->date}}</span>

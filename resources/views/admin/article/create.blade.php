@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -19,7 +19,7 @@
             <textarea name="title" id="title" rows="1" required></textarea>
         </div>
         <div class="form-group">
-            <label for="date">文章日期</label>
+            <label for="date">張貼日期</label>
             <input type="date" id="date" name="date" required>
         </div>
 
@@ -33,17 +33,17 @@
         </div>
 
         <div class="form-group">
-            <label for="img">文章圖片</label>
+            <label for="img">內文圖片</label>
             <input type="file" accept="image/*" class="form-control" id="img" name="img" required>
         </div>
         
         <div class="form-group">
-            <label for="text">文章內文</label>
+            <label for="text">內文文字</label>
             <textarea name="text" id="text" rows="6" required></textarea>
         </div>
 
         <div class="form-group">
-            <label for="text">參考網站名稱</label>
+            <label for="text">參考網站</label>
             <input type="text" id="reference" name="reference" required>
         </div>
 
@@ -51,7 +51,7 @@
             <label for="text">參考網站網址</label>
             <textarea name="website" id="website" rows="1" required></textarea>
         </div>
-        <button type="submit">送出</button>
+        <button type="submit" class="btn btn-danger btn-sm">確認送出</button>
     </form>
 </div>
 @endsection

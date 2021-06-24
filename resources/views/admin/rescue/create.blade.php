@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -12,6 +12,7 @@
 <div class="container">
     <form action="/admin/rescue" method="POST" enctype="multipart/form-data">
         @csrf
+        新增單位
         <div class="form-group">
             <label for="name">單位名稱</label>
             <input type="text" id="name" name="name" required>
@@ -32,7 +33,7 @@
             <label for="sort">排序(1最前)</label>
             <input type="mumber" id="sort" name="sort" required>
         </div>
-        <button type="submit">送出</button>
+        <button type="submit" class="btn btn-danger btn-sm">確認新增</button>
     </form>
 </div>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -7,20 +7,20 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 10px
+        padding: 10px;
     }
 </style>
 @endsection
 
 @section('main')
 <div class="container">
-    <a href="/admin/feed_status/create " class="btn btn-primary">新增表單狀態</a>
+    <a href="/admin/feed_status/create " class="btn btn-primary">新增表單進度</a>
     <hr>
-    <table id="myTable">
+    <table id="feedstatusTable">
         <thead>
             <tr>
                 <th>id</th>
-                <th>狀態名稱</th>
+                <th>進度名稱</th>
             </tr>
         </thead>
         <tbody>
@@ -47,7 +47,7 @@
 document.querySelectorAll('.delete-btn').forEach(function (btn) {
     btn.addEventListener('click',function () {
         var id=this.getAttribute('data-id');
-        if(confirm('是否要刪除這個狀態?')){
+        if(confirm('是否要刪除這個進度?')){
             document.querySelector(id).submit();
         }
     });

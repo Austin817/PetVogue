@@ -9,13 +9,7 @@
         width: 100%;
         position: relative;
     }
-    .btn-feed {
-        font-size: 18px;
-        letter-spacing: 0.05rem;
-        padding: 0.5rem 0.5rem;
-        border-radius: 0.5rem;
-        background-color: #FFE661;
-        margin-bottom: 1rem;
+    .pet-btn {
         position: absolute;
         bottom:30%;
         right:15%;
@@ -42,7 +36,7 @@
             </div>
         </div>
     </section>
-    <a href="/feeds/create"><button class="btn-feed" type="button">建立自己的浪浪餵食座標</button></a>
+    <a href="/feeds/create"><button class="pet-btn" type="button">建立自己的浪浪餵食座標</button></a>
 </main>
 @endsection
 @section('js')

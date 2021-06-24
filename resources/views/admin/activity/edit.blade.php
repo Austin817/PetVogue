@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -54,7 +54,7 @@
         </div>
 
         <div class="form-group">
-            <label for="people">活動人數</label>
+            <label for="people">可參加人數</label>
             <input type="text" id="people" name="people" value="{{$activity->people}}">
         </div>
 
@@ -73,7 +73,7 @@
             <label for="text">活動內文</label>
             <textarea name="text" id="text" rows="6">{{$activity->text}}</textarea>
         </div>
-        <button type="submit">編輯</button>
+        <button type="submit"  class="btn btn-danger btn-sm">確認編輯</button>
     </form>
 </div>
 @endsection

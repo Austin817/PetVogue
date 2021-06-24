@@ -1,29 +1,28 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
+<link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
 <style>
-    td,
-    th {
-        max-width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        padding: 10px
-    }
+    td,th {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px;
+}
 </style>
 @endsection
 @section('main')
 <div class="container">
-    <hr>
     <table id="feedTable" class="">
         <thead>
             <tr>
                 <th>表單編號</th>
-                <th>表單狀態</th>
+                <th>表單進度</th>
                 <th>餵食日期</th>
                 <th>浪浪種類</th>
                 <th>浪浪數量</th>
-                <th>表單詳細內容與編輯</th>
+                <th>詳細內容與編輯進度</th>
                 <th>刪除</th>
             </tr>
         </thead>
@@ -51,6 +50,7 @@
 @endsection
 
 @section('js')
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script>
     var delBtns = document.querySelectorAll('.delete-btn');
     delBtns.forEach(function (btn) {
@@ -61,5 +61,16 @@
         }
     });
 })
+</script>
+<script>
+    $(function () {
+        $("#feedTable").DataTable({
+            searching: true,    //關閉filter功能
+            columnDefs: [{
+                targets: [6],
+                orderable: false,
+            }]
+        });
+    });
 </script>
 @endsection

@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -12,12 +12,13 @@
 <div class="container">
     <form action="/admin/article_label/{{$article_label->id}}" method="POST" enctype="multipart/form-data">
         @csrf
+        編輯文章標籤
         @method('PUT')
         <div class="form-group">
-            <label for="name">類別名稱</label>
+            <label for="name">標籤名稱</label>
             <input type="text" id="name" name="name" value="{{$article_label->name}}">
         </div>
-        <button type="submit">送出</button>
+        <button type="submit"  class="btn btn-danger btn-sm">確認編輯</button>
     </form>
 </div>
 @endsection
