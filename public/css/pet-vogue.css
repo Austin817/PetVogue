@@ -760,11 +760,16 @@ h1, h2, h3, h4, h5, h6, p, a, span, li {
   align-items: center;
 }
 
+.index-featured-article .article-list li .article-pic {
+  width: 40%;
+}
+
 .index-featured-article .article-list li .article-pic .atl-pic-pc {
   display: none;
 }
 
 .index-featured-article .article-list li .article-txt {
+  width: 60%;
   padding: 0 15px;
 }
 

@@ -43,6 +43,30 @@
             height: 15vw;
         }
     }
+
+
+    .article-pic>img {
+            height: 25vw ; 
+            object-fit: cover; 
+        }
+
+        @media screen and (min-width: 572px) {
+            .article-pic>img {
+                height: 20vw ;
+            }
+        }
+
+        @media screen and (min-width: 700px) {
+            .article-pic>img {
+                height: 20vw ;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .article-pic>img {
+                height: 8vw ;
+            }
+        }
 </style>
 @endsection
 
@@ -91,7 +115,7 @@
                     <li>
                         <a href="/articles/content/{{$article->id}}">
                             <div class="article-pic">
-                                <img class="atl-pic-m" src="{{asset($article->img)}}" style="height:200px;" alt="文章圖片" title="文章圖片">
+                                <img class="atl-pic-m" src="{{asset($article->img)}}" alt="文章圖片" title="文章圖片">
                                 <img class="atl-pic-pc" src="{{asset($article->img)}}" alt="文章圖片" title="文章圖片">
                             </div>
                             <div class="article-txt">
