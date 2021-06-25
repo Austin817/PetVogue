@@ -33,8 +33,9 @@ class ShoppingCartFrontController extends Controller
 
     // 購物車 增刪查改
     public function add(Request $request)
-    {
+    {    
         $product = Product::find($request->productId);
+        $qty = $request->quantity;
         // 新增一筆產品至購物車
         // array format
         if($product){
@@ -42,7 +43,7 @@ class ShoppingCartFrontController extends Controller
                 'id' => $product->id,    // 商品id必須唯一
                 'name' => $product->name,    // 商品名稱
                 'price' => $product->price,    // 商品價格
-                'quantity' => 1,    // 商品數量
+                'quantity' => $qty,    // 商品數量
                 'attributes' => array(
                     'img'=>$product->img
                 ),    // 自定義參數
@@ -105,23 +106,23 @@ class ShoppingCartFrontController extends Controller
         $cartCollection = \Cart::getContent()->sortBy('id');
         return view('front.Cart.shopping_cart_list_1',compact('cartCollection'));
     }
+
+    public function information()
+    {
+        return view('front.Cart.shopping_cart_information_2');
+    }
     
-    public function payment()
+
+    public function checkout(Request $request)
     {
-        $cartCollection = \Cart::getContent();
-        return view('ShoppingCart.shopping_payment_2_page',compact('cartCollection'));
+        Session::put('information_save',$request->all());
+        return view('front.Cart.shopping_cart_checkout_3');
     }
 
-    public function paymentCheck(Request $request)
+    public function sendOrder()
     {
-        Session::put('payment',$request->payment);
-        Session::put('shipment',$request->shipment);
-
-        return view('ShoppingCart.shopping_information_3_page');
-    }
-
-    public function informationCheck(Request $request)
-    {
+        $orderData = Session::all();
+        $informationData = $orderData['information_save']; 
 
         $user = Auth::user();
 
@@ -130,16 +131,16 @@ class ShoppingCartFrontController extends Controller
         $order = Order::create([
             'user_id'=>$user->id,
             'order_no'=>'DP'.time().rand(1,99999),
-            'name'=>$request->name,
-            'phone'=>$request->phone,
-            'email'=>$request->email,
-            'county'=>$request->county,
-            'district'=>$request->district,
-            'zipcode'=>$request->zipcode,
-            'address'=>$request->address,
+            'name'=>$informationData['name'],
+            'phone'=>$informationData['phone'],
+            'email'=>$informationData['email'],
+            'county'=>$informationData['county'],
+            'district'=>$informationData['district'],
+            'zipcode'=>$informationData['zipcode'],
+            'address'=>$informationData['address'],
             'price'=>9999999999,
-            'pay_type'=>Session::get('payment'),
-            'shipping'=>Session::get('shipment'),
+            'pay_type'=>'credit card',
+            'shipping'=>'home delivery',
             'shipping_fee'=>99999999999,
             'shipping_status_id'=>$shipping_status->id,
             'order_status_id'=>$order_status->id,
@@ -175,14 +176,11 @@ class ShoppingCartFrontController extends Controller
             
         }
         
-        $fee = $subPrice > 1000000 ? 0 : 600;
+        $fee = $subPrice > 1000 ? 0 : 60;
         $order->update([
             'price'=>$subPrice + $fee,
             'shipping_fee'=>$fee,
         ]);
-
-
-        // dd($order);
 
 
 

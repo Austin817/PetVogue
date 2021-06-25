@@ -1,6 +1,6 @@
 @extends('layouts.front_template')
 @section('title')
-捐款
+捐款$捐贈
 @endsection
 
 @section('css')
@@ -34,8 +34,8 @@
         <div class="container">
             <div class="donate-support-content">
                 <div class="donate-support-pic">
-                    <img src="https://picsum.photos/700/500/?random=1">
-                    <img src="https://picsum.photos/700/400/?random=1">
+                    <img src="https://images.pexels.com/photos/1904105/pexels-photo-1904105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                    <img src="https://images.pexels.com/photos/1904105/pexels-photo-1904105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                 </div>
                 <div class="donnate-text text">
                     <h2 class="section-title">您的捐款，有無窮的希望!</h2>
@@ -52,8 +52,8 @@
         <div class="container">
             <div class="donate-support-content">
                 <div class="donate-support-pic">
-                    <img src="https://picsum.photos/700/500/?random=1">
-                    <img src="https://picsum.photos/700/400/?random=1">
+                    <img src="https://img.wreadit.com/member/150/blogId/balimantw/147445/article_cover/147445-ef276b5b971ed3c8103d0e3efdd1028a.jpg">
+                    <img src="https://img.wreadit.com/member/150/blogId/balimantw/147445/article_cover/147445-ef276b5b971ed3c8103d0e3efdd1028a.jpg">
                 </div>
                 <div class="supplies-text text">
                     <h2 class="section-title">幫助浪浪物資</h2>
@@ -76,8 +76,8 @@
         <div class="container">
             <div class="donate-support-content">
                 <div class="donate-support-pic">
-                    <img src="https://picsum.photos/700/500/?random=1">
-                    <img src="https://picsum.photos/700/400/?random=1">
+                    <img src="https://images.pexels.com/photos/1904103/pexels-photo-1904103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                    <img src="https://images.pexels.com/photos/1904103/pexels-photo-1904103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
                 </div>
                 <div class="donate-list-text text">
                     <h2 class="section-title">捐贈查詢</h2>
@@ -107,25 +107,25 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">聯絡人</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="name" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">電話</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="phone" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">物資種類</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="type" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">數量/單位</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="" name="" required>
+                            <input type="text" class="form-control" id="" name="number" required>
                         </div>
                     </div>
                 </div>
@@ -141,11 +141,11 @@
 
 
 @section('js')
-    {{-- <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script> --}}
-    {{-- <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous')}}"></script> --}}
-    {{-- <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous')}}"></script> --}}
-    {{-- <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script> --}}
-    {{-- <script src="{{ asset('js/sweetalert2.js')}}"></script> --}}
+    <script src="{{ asset('js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous')}}"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous')}}"></script>
+    <script src="{{ asset('//cdn.jsdelivr.net/npm/sweetalert2@11')}}"></script>
+    <script src="{{ asset('js/sweetalert2.js')}}"></script>
     <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js')}}" crossorigin="anonymous"></script>
     <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
     <script src="{{ asset('js/all.js')}}"></script>

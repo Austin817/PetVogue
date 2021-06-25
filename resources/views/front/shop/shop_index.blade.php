@@ -8,6 +8,36 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css')}}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css')}}">
+
+    <style>
+        .ellipsis {
+            overflow:hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .product-pic>img {
+            width: 100%;
+            height: 40vw;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width: 572px) {
+            .product-pic>img {
+                height: 25vw;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .product-pic>img {
+                height: 20vw;
+            }
+        }
+
+        .none{
+            display: none;
+        }
+    </style>
 @endsection
 
 
@@ -53,22 +83,22 @@
                 <h2 class="block-title">商品分類 - PC</h2>
                 <ul class="sort-list">
                     <li>
-                        <a href="###">全部商品</a>
+                        <a class="button-a" data-type="all" href="###">全部商品</a>
                     </li>
                     <li>
-                        <a href="###">貓皇飼料</a>
+                        <a class="button-a" data-type="1"href="###">貓皇飼料</a>
                     </li>
                     <li>
-                        <a href="###">貓皇罐罐</a>
+                        <a class="button-a" data-type="2" href="###">貓皇罐罐</a>
                     </li>
                     <li>
-                        <a href="###">貓皇貓砂</a>
+                        <a class="button-a" data-type="3" href="###">貓皇貓砂</a>
                     </li>
                     <li>
-                        <a href="###">狗勾飼料</a>
+                        <a class="button-a" data-type="4" href="###">狗勾飼料</a>
                     </li>
                     <li>
-                        <a href="###">狗勾罐罐</a>
+                        <a class="button-a" data-type="5" href="###">狗勾罐罐</a>
                     </li>
                 </ul>
             </div>
@@ -80,7 +110,7 @@
         <div class="container-full">
             <h2 class="block-title">特價商品圖</h2>
             <div class="all-product-content">
-                <img src="./pic/all-product-banner.jpg" alt="特價商品圖" title="特價商品圖">
+                <img src="{{ asset('https://i.shgcdn.com/48313f74-248e-4af3-a792-377353206ce6/-/format/auto/-/preview/3000x3000/-/quality/lighter/')}}" alt="特價商品圖" title="特價商品圖">
             </div>
         </div>
     </section>
@@ -90,224 +120,27 @@
             <div class="product-list-group-content">
                 <h2 class="section-title">嚴選商品</h2>
                 <ul class="product-list">
-                    <li>
-                        <a class="product-item" href="/shop/detail">
+                    @foreach ($productsData as $Data)
+                    <li class="product-li" data-type="{{$Data->type_id}}">
+                        <a class="product-item" href="/shop/detail/{{$Data->id}}">
                             <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
+                                <img src="{{asset($Data->img)}}" alt="商品圖片" title="商品圖片">
                             </div>
                             <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
+                                <h3 class="ellipsis">{{$Data->name}}</h3>
                                 <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
+                                    <span>$</span>&nbsp;&nbsp;
+                                    <span>{{number_format($Data->price)}}</span>
                                 </div>
                                 <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
+                                    <span>{{$Data->linkProductType->type_name}}</span>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="product-content-cat.html">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    @endforeach
                 </ul>
-                <div class="page-btn-group">
+                <div id="pageBtn" data-type="{{$id}}" class="page-btn-group">
                     <span class="page-btn">1</span>
                 </div>
             </div>
@@ -325,6 +158,57 @@
     <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js')}}" crossorigin="anonymous"></script>
     <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
     <script src="{{ asset('js/all.js')}}"></script>
+
+    <script>
+        window.addEventListener('load',function () {
+            var id = document.querySelector('#pageBtn');
+            var typeId = id.getAttribute('data-type');
+            console.log(typeId);
+            if(typeId!='all'){
+                    // 所有商品加隱藏
+                    var products = document.querySelectorAll('.product-li');
+                    products.forEach(function (product) {
+                        product.classList.add('none');
+                    });
+                    // 把符合條件的商品打開
+                    var targetProducts = document.querySelectorAll('.product-li[data-type="'+typeId+'"]');
+                    targetProducts.forEach(function (product) {
+                        product.classList.remove('none');
+                    });
+                }else{
+                    var allProducts = document.querySelectorAll('.product-li');
+                    allProducts.forEach(function (product) {
+                        product.classList.remove('none');
+                    });
+                } 
+        });
+        // 取所有按鈕
+        var typeBtns = document.querySelectorAll('.button-a');
+        // 每個按鈕綁監聽
+        typeBtns.forEach(function (btn) {
+            btn.addEventListener('click',function () {
+                // 拿按下那個按鈕的類別id
+                var typeId = this.getAttribute('data-type');
+                if(typeId!='all'){
+                    // 所有商品加隱藏
+                    var products = document.querySelectorAll('.product-li');
+                    products.forEach(function (product) {
+                        product.classList.add('none');
+                    });
+                    // 把符合條件的商品打開
+                    var targetProducts = document.querySelectorAll('.product-li[data-type="'+typeId+'"]');
+                    targetProducts.forEach(function (product) {
+                        product.classList.remove('none');
+                    });
+                }else{
+                    var allProducts = document.querySelectorAll('.product-li');
+                    allProducts.forEach(function (product) {
+                        product.classList.remove('none');
+                    });
+                } 
+            });
+        });
+    </script>
 @endsection
 
 

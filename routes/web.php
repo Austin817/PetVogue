@@ -35,16 +35,22 @@ Route::prefix('/about')->group(function (){
 });
 
 
+
 // Donate Front Controller
 Route::prefix('/donate')->group(function (){
 
-    // 顯示首頁
+    // 顯示 捐款的首頁
     Route::get('/','DonateFrontController@index');
-    // 顯示捐款頁
+
+    // 傳送 捐贈物資資料
+    Route::post('/goods', 'DonateFrontController@goods');
+
+    // 顯示 輸入捐款資料頁
     Route::get('/cash','DonateFrontController@cash');
-    // 傳送捐款資料   
+    // 傳送 捐款資料  + 顯示 確認捐款資料頁  
     Route::post('/cash_save', 'DonateFrontController@cashSave');
-     
+    // 進入 信用卡頁面   
+    Route::post('/cash_pay', 'DonateFrontController@cashPay');
     
 });
 
@@ -89,10 +95,10 @@ Route::prefix('/register')->group(function (){
 Route::prefix('/shop')->group(function (){
 
     // 顯示首頁
-    Route::get('/','ShopFrontController@index');
+    Route::get('/{typeId?}','ShopFrontController@index');
 
     // 顯示內頁
-    Route::get('/detail','ShopFrontController@detail');
+    Route::get('/detail/{id}','ShopFrontController@detail');
     
 });
 
@@ -111,7 +117,8 @@ Route::prefix('/shopping_cart')->group(function (){
         Route::get('/content', 'ShoppingCartFrontController@content');
         Route::get('/list_1', 'ShoppingCartFrontController@list');
         Route::get('/information_2', 'ShoppingCartFrontController@information');
-        Route::get('/checkout_3', 'ShoppingCartFrontController@checkout');
+        Route::post('/checkout_3', 'ShoppingCartFrontController@checkout');
+        Route::get('/send_order', 'ShoppingCartFrontController@sendOrder');
     });
     
 });
@@ -124,6 +131,9 @@ Route::prefix('cart_ecpay')->group(function(){
     //付款完成後，綠界會將付款結果參數以幕前(Client POST)回傳到該網址
     Route::post('return', 'ShoppingCartFrontController@returnUrl')->name('return');
 });
+
+
+
 
 //文章頁前端
 Route::prefix('articles')->group(function (){
@@ -167,6 +177,24 @@ Route::prefix('admin')->middleware('auth')->group(function ()
     Route::resource('rescue', 'RescueController');
 });
 
+
+
+
+// 商品頁後端
+Route::prefix('/admin')->middleware('auth')->group(function ()
+{
+    Route::resource('/product', 'ProductResourceController');
+    Route::post('/product/deleteImg', 'ProductResourceController@deleteImg');
+});
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+

@@ -12,6 +12,92 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}">
     @yield('css')
+    <style>
+        /* LIMO更動區域 */
+        /* 改標籤顏色 */
+        .product-list-group .product-list li .product-item .product-txt .pdt-hashtag span:nth-of-type(1) {
+            background-color: #ffe562;
+        }
+
+        .index-featured-article .article-list li .article-txt .artl-date-hashtag span:nth-of-type(2) {
+            background-color: #ffe562;
+        }
+
+        /* 字體修改*/
+        body {
+            font-weight: 390;
+            background-color: white;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 400;
+        }
+
+        .footer-content .footer-title {
+            background-color: transparent;
+        }
+
+        /* 手機NAV分隔線 */
+        .header {
+            border-bottom: silver;
+        }
+
+        /* 手機下拉選單增加上方分隔線 */
+        .header-content .main-nav-mobile {
+            top: 50px;
+        }
+
+        .header-content .main-nav-mobile li:first-of-type .list-title {
+            border-top: 1px solid #fa0;
+        }
+
+        /* 愛心捐款黏貼右側 */
+        .donate-us a {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .donate-us.show-donate {
+            right: 0;
+        }
+
+        /* SWIPER上推方空白 */
+        .index-banner-slider .swiper-container {
+            padding-top: 10px;
+        }
+
+        /* PC下拉透明背景 */
+        @media screen and (min-width: 992px) {
+            .header-content .main-nav-pc>li:hover .sub-nav-pc {
+                box-shadow: 0px 3px 8px #5552;
+            }
+        }
+
+        .header-content .close-nav-m.close-active {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .header-content .main-nav-mobile a,
+        .index-half-way .half-content .half-list a {
+            background-color: #fdf1b3;
+            color: #000;
+        }
+
+        .header-content .main-nav-mobile li>a {
+            padding-left: 30px;
+        }
+
+        .index-featured-article .article-list li {
+            border: 0;
+        }
+
+        @media screen and (min-width: 992px) {
+            .index-featured-article .article-content .article-list li:hover {
+                box-shadow: 0 1px 5px #0005;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -37,7 +123,7 @@
                     </a>
                 </h1>
                 <div class="user-icon-m">
-                    <a href="###">
+                    <a href="/shop/all">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                     <a href="###">
@@ -109,23 +195,23 @@
                             </h3>
                         <li>
                             <h3>
-                                <a href="/shop">寵物商城</a>
+                                <a href="/shop/all">寵物商城</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
-                                    <a href="###">貓皇飼料</a>
+                                    <a href="/shop/1">貓皇飼料</a>
                                 </li>
                                 <li>
-                                    <a href="###">貓皇罐罐</a>
+                                    <a href="/shop/2">貓皇罐罐</a>
                                 </li>
                                 <li>
-                                    <a href="###">貓皇貓砂</a>
+                                    <a href="/shop/3">貓皇貓砂</a>
                                 </li>
                                 <li>
-                                    <a href="###">狗勾飼料</a>
+                                    <a href="/shop/4">狗勾飼料</a>
                                 </li>
                                 <li>
-                                    <a href="###">狗勾罐罐</a>
+                                    <a href="/shop/5">狗勾罐罐</a>
                                 </li>
                             </ul>
                         </li>
@@ -135,13 +221,13 @@
                             </h3>
                         </li>
                         <li>
-                            <a href="###">
+                            <a href="/shopping_cart/list_1">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>
                         <!-- 登入前 -->
                         <li>
-                            <a href="###"><i class="fas fa-user"></i></a>
+                            <a href="/home"><i class="fas fa-user"></i></a>
                         </li>
                         <!-- 登入後 -->
                         <!-- <li>
@@ -221,22 +307,22 @@
                             <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="/detail">全部商品</a>
+                                    <a href="/shop/all">全部商品</a>
                                 </li>
                                 <li>
-                                    <a href="###">貓皇飼料</a>
+                                    <a href="/shop/1">貓皇飼料</a>
                                 </li>
                                 <li>
-                                    <a href="###">貓皇罐罐</a>
+                                    <a href="/shop/2">貓皇罐罐</a>
                                 </li>
                                 <li>
-                                    <a href="###">貓皇貓砂</a>
+                                    <a href="/shop/3">貓皇貓砂</a>
                                 </li>
                                 <li>
-                                    <a href="###">狗勾飼料</a>
+                                    <a href="/shop/4">狗勾飼料</a>
                                 </li>
                                 <li>
-                                    <a href="###">狗勾罐罐</a>
+                                    <a href="/shop/5">狗勾罐罐</a>
                                 </li>
                             </ul>
                         </li>
@@ -308,6 +394,18 @@
 
 
     <script src="{{ asset('js/app.js') }}"></script>
+
+    @if (Session::get('icon'))
+        <script>
+                Swal.fire({
+                    icon: '{{Session::get("icon")}}',
+                    title: '{{Session::get("title")}}',
+                    text: '{{Session::get("text")}}',
+                    timer: 3500
+                });
+        </script>
+    @endif
+
     @yield('js')
     
 </body>

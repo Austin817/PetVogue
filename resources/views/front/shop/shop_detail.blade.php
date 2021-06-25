@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css')}}">
     <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css')}}">
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css')}}">
+
+
+    <style>
+        .small-pic {
+            width: 100%;
+            height: 40vw;
+            object-fit: cover;
+        }
+        #show-pic {
+            width: 100%;
+            height: 35vw;
+            object-fit: cover;
+        }
+    </style>
 @endsection
 
 
@@ -24,22 +38,22 @@
                     <h2 class="block-title">商品分類 - Mobile</h2>
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide">
-                            <a href="###">全部商品</a>
+                            <a href="/shop/all">全部商品</a>
                         </li>
                         <li class="swiper-slide">
-                            <a href="###">貓皇飼料</a>
+                            <a href="/shop/1">貓皇飼料</a>
                         </li>
                         <li class="swiper-slide">
-                            <a href="###">貓皇罐罐</a>
+                            <a href="/shop/2">貓皇罐罐</a>
                         </li>
                         <li class="swiper-slide">
-                            <a href="###">貓皇貓砂</a>
+                            <a href="/shop/3">貓皇貓砂</a>
                         </li>
                         <li class="swiper-slide">
-                            <a href="###">狗勾飼料</a>
+                            <a href="/shop/4">狗勾飼料</a>
                         </li>
                         <li class="swiper-slide">
-                            <a href="###">狗勾罐罐</a>
+                            <a href="/shop/5">狗勾罐罐</a>
                         </li>
                     </ul>
                 </div>
@@ -54,22 +68,22 @@
                 <h2 class="block-title">商品分類 - PC</h2>
                 <ul class="sort-list">
                     <li>
-                        <a href="###">全部商品</a>
+                        <a href="/shop/all">全部商品</a>
                     </li>
                     <li>
-                        <a href="###">貓皇飼料</a>
+                        <a href="/shop/1">貓皇飼料</a>
                     </li>
                     <li>
-                        <a href="###">貓皇罐罐</a>
+                        <a href="/shop/2">貓皇罐罐</a>
                     </li>
                     <li>
-                        <a href="###">貓皇貓砂</a>
+                        <a href="/shop/3">貓皇貓砂</a>
                     </li>
                     <li>
-                        <a href="###">狗勾飼料</a>
+                        <a href="/shop/4">狗勾飼料</a>
                     </li>
                     <li>
-                        <a href="###">狗勾罐罐</a>
+                        <a href="/shop/5">狗勾罐罐</a>
                     </li>
                 </ul>
             </div>
@@ -84,27 +98,17 @@
                 <!-- 圖片資料要導入兩次，PC版沒有幻燈片 -->
                 <div class="product-show-off-pic">
                     <div class="main-pic">
-                        <img src="https://picsum.photos/500/500/?random=1" alt="商品圖片" title="商品圖片">
+                        <img id="show-pic" src="{{$productData->img}}" alt="商品圖片" title="商品圖片">
                     </div>
                     <div class="sub-pic-group">
                         <div class="sub-pic">
-                            <img src="https://picsum.photos/500/500/?random=1" alt="商品圖片" title="商品圖片">
+                            <img class="small-pic" src="{{$productData->img}}" alt="商品圖片" title="商品圖片">
                         </div>
+                        @foreach ($productData->linkProductImg as $img)
                         <div class="sub-pic">
-                            <img src="https://picsum.photos/500/500/?random=2" alt="商品圖片" title="商品圖片">
+                            <img class="small-pic" src="{{$img->img}}" alt="商品圖片" title="商品圖片">
                         </div>
-                        <div class="sub-pic">
-                            <img src="https://picsum.photos/500/500/?random=3" alt="商品圖片" title="商品圖片">
-                        </div>
-                        <div class="sub-pic">
-                            <img src="https://picsum.photos/500/500/?random=5" alt="商品圖片" title="商品圖片">
-                        </div>
-                        <div class="sub-pic">
-                            <img src="https://picsum.photos/500/500/?random=5" alt="商品圖片" title="商品圖片">
-                        </div>
-                        <div class="sub-pic">
-                            <img src="https://picsum.photos/500/500/?random=6" alt="商品圖片" title="商品圖片">
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <!-- 圖片資料要導入兩次，PC版沒有幻燈片 -->
@@ -114,23 +118,13 @@
                     <div class="swiper-container product-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="https://picsum.photos/500/500/?random=1">
+                                <img src="{{$productData->img}}">
                             </div>
+                            @foreach ($productData->linkProductImg as $img)
                             <div class="swiper-slide">
-                                <img src="https://picsum.photos/500/500/?random=2">
+                                <img src="{{$img->img}}">
                             </div>
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/500/500/?random=3">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/500/500/?random=4">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/500/500/?random=5">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="https://picsum.photos/500/500/?random=6">
-                            </div>
+                            @endforeach
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -140,20 +134,17 @@
                 <!-- 圖片資料要導入兩次，手機版有幻燈片 -->
 
                 <div class="product-show-off-text">
-                    <h2 class="section-title">Tiki主食貓罐-夏日14號(紫)雞肉蛋-80g</h2>
-                    <span class="product-tag">商品標籤</span>
+                    <h2 class="section-title">{{$productData->name}}</h2>
+                    <span class="product-tag">{{$productData->linkProductType->type_name}}</span>
                     <p>
-                        特製狗食級醬油調味，適合特製狗食級醬油調味，適合各式大小犬種，簡單美味各式大小犬種，簡單美味。
-                    </p>
-                    <p>    
-                        特製狗食級醬油調味，適合特製狗食級醬油調味，適合各式大小犬種，簡單美味各式大小犬種，簡單美味。
+                        {{$productData->description}}
                     </p>
                     <div class="product-price">
                         <span>數量</span>
-                        <input type="number" value="1">
-                        <span>$1200</span>
+                        <input id="qty-input" type="number" value="1">
+                        <span>$&nbsp;&nbsp;{{number_format($productData->price)}}</span>
                     </div>
-                    <button class="pet-btn add-cart-btn">加入購物車</button>
+                    <button class="pet-btn add-cart-btn" data-id="{{$productData->id}}">加入購物車</button>
                 </div>
             </div>
         </div>
@@ -289,4 +280,45 @@
     <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
     <script src="{{ asset('js/pet-vogue-swiper.js')}}"></script>
     <script src="{{ asset('js/all.js')}}"></script>
+
+    <script>
+        let small_pic = document.querySelectorAll('.small-pic');
+        for (let i = 0; i < small_pic.length; i++){
+            small_pic[i].onmouseover = function(){
+                let pic_src = this.getAttribute('src');
+                let show_pic = document.querySelector('#show-pic');
+                show_pic.setAttribute('src', pic_src);
+            }
+        }
+    </script>
+
+
+    <script>
+        document.querySelectorAll('.add-cart-btn').forEach(function (addBtn) {
+          addBtn.addEventListener('click',function () {
+            var productId = this.getAttribute('data-id');
+            var qtyInput = document.querySelector('#qty-input');
+            var quantity = qtyInput.value;
+            var formData = new FormData();
+            formData.append('_token','{{ csrf_token() }}');
+            formData.append('productId',productId);
+            formData.append('quantity',quantity);
+            fetch('/shopping_cart/add',{
+              method:'POST',
+              body:formData
+            }).then(function (response) {
+              return response.text();
+            }).then(function (data) {
+              if(data == 'success'){
+                Swal.fire({
+                  icon: 'success',
+                  title: '成功加入購物車!',
+                  showConfirmButton: false,
+                  timer: 1000
+                })
+              }
+            });
+          });
+        })
+      </script>
 @endsection

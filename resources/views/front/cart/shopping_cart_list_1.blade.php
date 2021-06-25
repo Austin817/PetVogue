@@ -1,446 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.front_template')
+@section('title')
+購物車
+@endsection
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-    <title>PET Vogue 毛孩日誌</title>
-    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css') }}">
-</head>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/reset.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/pet-vogue.min.css')}}">
 
-<body class="body">
+    <style>
+        .cargo-check .cargo-check-content .cargo-amount li span {
+            width: 80px;
+        }
 
-    <!-- 全頁面共用 -->
-    <div class="loading" id="loading">
-        <div class="paw-ani">
-            <span><i class="fas fa-paw"></i></span>
-            <span><i class="fas fa-paw"></i></span>
-            <span><i class="fas fa-paw"></i></span>
-            <span><i class="fas fa-paw"></i></span>
-            <span><i class="fas fa-paw"></i></span>
-            <span><i class="fas fa-paw"></i></span>
-        </div>
-        <div class="progress" id="progress">0%</div>
-    </div>
+        .cargo-check .cargo-check-content .move-btns .pet-btn:first-of-type {
+            background-color: rgb(230, 207, 177);
+        }
+    </style>
+@endsection
 
-    <input type="checkbox" name="mobile-menu" id="menu-ctrl">
-    <header class="header">
+
+
+@section('main')
+<main>
+    <section class="section-sm section-lg cargo-check">
         <div class="container">
-            <div class="header-content">
-                <h1>
-                    <a href="index.html">PET Vogue 毛孩日記
-                        <img src="./pic/logo.svg" alt="PET Vogue Logo" title="PET Vogue Logo">
-                    </a>
-                </h1>
-                <div class="user-icon-m">
-                    <a href="###">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                    <a href="###">
-                        <i class="fas fa-user"></i>
-                    </a>
-                </div>
-                <label class="menu-ham" for="menu-ctrl">mobile menu</label>
-                <nav>
-                    <h2 class="block-title">導覽列</h2>
-                    <!-- pc menu -->
-                    <ul class="main-nav-pc">
-                        <li>
-                            <h3>
-                                <a href="all-articles.html">最新文章</a>
-                            </h3>
-                            <ul class="sub-nav-pc">
-                                <li>
-                                    <a href="article-pet-life.html">寵物生活</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-food.html">寵物飲食</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-environment.html">寵物環境</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-health.html">寵物健康</a>
-                                </li>
-                                <li>
-                                    <a href="atricle-pet-law.html">寵物法規</a>
-                                </li>
-                                <li>
-                                    <a href="article-others.html">其他相關</a>
-                                </li>
-                            </ul>
+            <div class="cargo-check-content">
+                <h2>1/3 購物車</h2>
+                <h3>調整購買物品</h3>
+                <div class="cargo-adjustment">
+                    <h2 class="section-title">購物清單</h2>
+                    <ul class="cargo-list">
+                        <!-- 塞資料這邊塞 li做foreach -->
+                        @foreach ($cartCollection as $product)
+                        <li class="cargo-item">
+                            <div class="cargo-pics">
+                                <div class="pic">
+                                    <img src="{{asset($product->attributes->img)}}" alt="商品圖片" title="商品圖片">
+                                </div>
+                                <div class="pic-txt-pc">
+                                    <h3 class="cargo-name">{{$product->name}}</h3>
+                                </div>
+                            </div>
+                            <div class="cargo-calc-group">
+                                <div class="pic-txt-m">
+                                    <h3 class="cargo-name">{{$product->name}}</h3>
+                                </div>
+                                <div class="unit-price-gruop">
+                                    <span>單價 $</span>
+                                    <span class="unit-price">{{$product->price}}</span>
+                                </div>
+                                <div class="cargo-calc">
+                                    <button class="minus">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <input class="quantity" data-id="{{$product->id}}" type="number" value="{{$product->quantity}}">
+                                    <button class="plus">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div>
+                                    <span>單計 $</span>
+                                    <span class="unit-total" data-price="{{$product->price}}">{{$product->price * $product->quantity}}</span>
+                                </div>
+                            </div>
+                            <div class="del-btn" data-id="{{$product->id}}"><i class="far fa-trash-alt"></i></div>
                         </li>
-                        <li>
-                            <h3>
-                                <a href="activity.html">活動專區</a>
-                            </h3>
-                            <ul class="sub-nav-pc">
-                                <li>
-                                    <a href="recent-activity.html">志工聚會活動</a>
-                                </li>
-                                <li>
-                                    <a href="activity.html#feeding">餵食浪貓地圖</a>
-                                </li>
-                                <li>
-                                    <a href="activity.html#report">誘捕救援說明</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3>
-                                <a href="pet-house.html">送領養相關</a>
-                            </h3>
-                            <ul class="sub-nav-pc">
-                                <li>
-                                    <a href="pet-house.html">領養與送養</a>
-                                </li>
-                                <li>
-                                    <a href="index.html#index-half-way">中途之家</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3>
-                                <a href="about_us.html">關於我</a>
-                            </h3>
-                        <li>
-                            <h3>
-                                <a href="all-products.html">寵物商城</a>
-                            </h3>
-                            <ul class="sub-nav-pc">
-                                <li>
-                                    <a href="###">貓皇飼料</a>
-                                </li>
-                                <li>
-                                    <a href="###">貓皇罐罐</a>
-                                </li>
-                                <li>
-                                    <a href="###">貓皇貓砂</a>
-                                </li>
-                                <li>
-                                    <a href="###">狗勾飼料</a>
-                                </li>
-                                <li>
-                                    <a href="###">狗勾罐罐</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3>
-                                <a href="donate-support.html">愛心捐款</a>
-                            </h3>
-                        </li>
-                        <li>
-                            <a href="###">
-                                <i class="fas fa-shopping-cart"></i>
-                            </a>
-                        </li>
-                        <!-- 登入前 -->
-                        <li>
-                            <a href="###"><i class="fas fa-user"></i></a>
-                        </li>
-                        <!-- 登入後 -->
-                        <!-- <li>
-                            <h3 class="user-name"></h2>
-                            <ul class="sub-nav">
-                                <li>回饋</li>
-                                <li>登出</li>
-                            </ul>
-                        </li> -->
+                        @endforeach
                     </ul>
-                    <!-- pc menu -->
-
-                    <!-- mobile menu -->
-                    <ul class="main-nav-mobile">
+                    <ul class="cargo-amount">
+                        <!-- 帶資料這邊帶 -->
                         <li>
-                            <h3 class="list-title only-title">
-                                <a href="index.html">首頁</a>
-                            </h3>
+                            <span>數量</span>
+                            <span class="quan-total"></span>
                         </li>
                         <li>
-                            <h3 class="list-title">
-                                <span>最新文章</span><i class="fas fa-chevron-down"></i>
-                            </h3>
-                            <ul class="sub-nav">
-                                <li>
-                                    <a href="all-articles.html">全部文章</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-life.html">寵物生活</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-food.html">寵物飲食</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-environment.html">寵物環境</a>
-                                </li>
-                                <li>
-                                    <a href="article-pet-health.html">寵物健康</a>
-                                </li>
-                                <li>
-                                    <a href="atricle-pet-law.html">寵物法規</a>
-                                </li>
-                                <li>
-                                    <a href="article-others.html">其他相關</a>
-                                </li>
-                            </ul>
+                            <span>小計</span>
+                            <span class="subtotal"></span>
                         </li>
                         <li>
-                            <h3 class="list-title"><span>活動專區</span><i class="fas fa-chevron-down"></i></h3>
-                            <ul class="sub-nav">
-                                <li>
-                                    <a href="activity.html">全部活動項目</a>
-                                </li>
-                                <li>
-                                    <a href="recent-activity.html">志工聚會活動</a>
-                                </li>
-                                <li>
-                                    <a href="activity.html#feeding">餵食浪貓地圖</a>
-                                </li>
-                                <li>
-                                    <a href="activity.html#report">誘捕救援說明</a>
-                                </li>
-                            </ul>
+                            <span>運費</span>
+                            <span class="shipping"></span>
                         </li>
                         <li>
-                            <h3 class="list-title"><span>送領養相關</span><i class="fas fa-chevron-down"></i></h3>
-                            <ul class="sub-nav">
-                                <li>
-                                    <a href="pet-house.html">領養與送養</a>
-                                </li>
-                                <li>
-                                    <a href="#index-half-way">中途之家</a>
-                                </li>
-                            </ul>
+                            <span>總計</span>
+                            <span class="calc-total"></span>
                         </li>
-                        <li>
-                            <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
-                            <ul class="sub-nav">
-                                <li>
-                                    <a href="all-products.html">全部商品</a>
-                                </li>
-                                <li>
-                                    <a href="###">貓皇飼料</a>
-                                </li>
-                                <li>
-                                    <a href="###">貓皇罐罐</a>
-                                </li>
-                                <li>
-                                    <a href="###">貓皇貓砂</a>
-                                </li>
-                                <li>
-                                    <a href="###">狗勾飼料</a>
-                                </li>
-                                <li>
-                                    <a href="###">狗勾罐罐</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h3 class="list-title only-title">
-                                <a href="donate-support.html">愛心捐款</a>
-                            </h3>
-                        </li>
-                        <li>
-                            <h3 class="list-title only-title">
-                                <a href="about_us.html">關於我</a>
-                            </h3>
-                        </li>
+                        <!--  -->
                     </ul>
-                    <div class="close-nav-m">關閉導覽列</div>
-                    <!-- mobile menu -->
-                </nav>
-            </div>
-        </div>
-    </header>
-    <!-- 全頁面共用 -->
-
-    <main>
-        <section class="section-sm section-lg cargo-check">
-            <div class="container">
-                <div class="cargo-check-content">
-                    <h2>1/3 購物車</h2>
-                    <h3>調整購買物品</h3>
-                    <div class="cargo-adjustment">
-                        <h2 class="section-title">購物清單</h2>
-                        <ul class="cargo-list">
-                            <!-- 塞資料這邊塞 li做foreach -->
-                            <li class="cargo-item">
-                                <div class="cargo-pics">
-                                    <div class="pic">
-                                        <img src="https://picsum.photos/82/82/?random=4" alt="商品圖片" title="商品圖片">
-                                    </div>
-                                    <div class="pic-txt-pc">
-                                        <h3 class="cargo-name">商品名稱商品名稱商品名稱商品名稱商品名稱</h3>
-                                    </div>
-                                </div>
-                                <div class="cargo-calc-group">
-                                    <div class="pic-txt-m">
-                                        <h3 class="cargo-name">商品名稱商品名稱商品名稱商品名稱商品名稱</h3>
-                                    </div>
-                                    <div class="unit-price-gruop">
-                                        <span>單價 $</span>
-                                        <span class="unit-price">1200</span>
-                                    </div>
-                                    <div class="cargo-calc">
-                                        <button class="minus">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <input class="quantity" type="number" value="1">
-                                        <button class="plus">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <span>單計 $</span>
-                                        <span class="unit-total">1200</span>
-                                    </div>
-                                </div>
-                                <div class="del-btn"><i class="far fa-trash-alt"></i></div>
-                            </li>
-                            <li class="cargo-item">
-                                <div class="cargo-pics">
-                                    <div class="pic">
-                                        <img src="https://picsum.photos/82/82/?random=1" alt="商品圖片" title="商品圖片">
-                                    </div>
-                                    <div class="pic-txt-pc">
-                                        <h3 class="cargo-name">商品名稱</h3>
-                                    </div>
-                                </div>
-                                <div class="cargo-calc-group">
-                                    <div class="pic-txt-m">
-                                        <h3 class="cargo-name">商品名稱商品名稱商品名稱商品名稱商品名稱</h3>
-                                    </div>
-                                    <div class="unit-price-gruop">
-                                        <span>單價 $</span>
-                                        <span class="unit-price">1200</span>
-                                    </div>
-                                    <div class="cargo-calc">
-                                        <button class="minus">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <input class="quantity" type="number" value="1">
-                                        <button class="plus">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <span>單計 $</span>
-                                        <span class="unit-total">1200</span>
-                                    </div>
-                                </div>
-                                <div class="del-btn"><i class="far fa-trash-alt"></i></div>
-                            </li>
-                            <li class="cargo-item">
-                                <div class="cargo-pics">
-                                    <div class="pic">
-                                        <img src="https://picsum.photos/82/82/?random=2" alt="商品圖片" title="商品圖片">
-                                    </div>
-                                    <div class="pic-txt-pc">
-                                        <h3 class="cargo-name">商品名稱</h3>
-                                    </div>
-                                </div>
-                                <div class="cargo-calc-group">
-                                    <div class="pic-txt-m">
-                                        <h3 class="cargo-name">商品名稱商品名稱商品名稱商品名稱商品名稱</h3>
-                                    </div>
-                                    <div class="unit-price-gruop">
-                                        <span>單價 $</span>
-                                        <span class="unit-price">1200</span>
-                                    </div>
-                                    <div class="cargo-calc">
-                                        <button class="minus">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <input class="quantity" type="number" value="1">
-                                        <button class="plus">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
-                                    <div>
-                                        <span>單計 $</span>
-                                        <span class="unit-total">1200</span>
-                                    </div>
-                                </div>
-                                <div class="del-btn"><i class="far fa-trash-alt"></i></div>
-                            </li>
-                        </ul>
-                        <ul class="cargo-amount">
-                            <!-- 帶資料這邊帶 -->
-                            <li>
-                                <span>數量</span>
-                                <span class="quan-total">3</span>
-                            </li>
-                            <li>
-                                <span>小計</span>
-                                <span class="subtotal">8,888</span>
-                            </li>
-                            <li>
-                                <span>運費</span>
-                                <span class="shipping">60</span>
-                            </li>
-                            <li>
-                                <span>總計</span>
-                                <span class="calc-total">8,948</span>
-                            </li>
-                            <!--  -->
-                        </ul>
-                        <div class="move-btns">
-                            <a class="pet-btn" href="###">返回購物</a>
-                            <a class="pet-btn" href="###">下一步</a>
-                        </div>
+                    <div class="move-btns">
+                        <a class="pet-btn" href="/shop">返回購物</a>
+                        <a class="pet-btn" href="/shopping_cart/information_2">下一步</a>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <h3 class="footer-title">
-                    <a href="index.html">PET Vogue 毛孩日記
-                        <img src="./pic/logo.svg" alt="Footer Logo">
-                    </a>
-                </h3>
-                <ul class="footer-pet-info">
-                    <li>地址：台中市南區興大路145號</li>
-                    <li>電話：<a href="tel:0412345678">04 - 12345678</a></li>
-                    <li>LINE：@petvogue</li>
-                    <li>
-                        <a href="###">
-                            <i class="fab fa-facebook-square"></i>
-                        </a>
-                        <a href="###">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                </ul>
-                <div class="coptright">
-                    &copy;數位消波塊團體專題，非營利用途
-                </div>
-            </div>
         </div>
-    </footer>
+    </section>
+</main>
+@endsection
 
 
 
-    <!-- 全頁面共用 -->
-    <!-- 愛心捐款 -->
-    <div class="donate-us">
-        <a href="donate-support.html">愛心捐款</a>
-    </div>
-    <!-- 回到頂端 -->
-    <div class="back-top">TOP</div>
-    <!-- 全頁面共用 -->
+@section('js')
+    {{-- <script src="./js/jquery-3.6.0.min.js"></script> --}}
+    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js')}}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
+    <script src="{{ asset('js/all.js')}}"></script>
 
-    {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script> --}}
-    <script src="{{ asset('https://kit.fontawesome.com/ee6524aae5.js') }}" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/pet-vogue-jquery.js') }}"></script>
-    <script src="{{ asset('js/all.js') }}"></script>
-</body>
 
-</html>
+
+
+    <script>
+
+        window.addEventListener('load',ShoppingCartCalc());
+
+
+        var minusBtns = document.querySelectorAll('.minus');
+        var plusBtns = document.querySelectorAll('.plus');
+        var qtyInputs = document.querySelectorAll('.quantity');
+        var deleteBtns = document.querySelectorAll('.del-btn');
+
+
+        qtyInputs.forEach(function (qtyInput) {
+            calcProductPrice(qtyInput);
+        });
+
+
+        qtyInputs.forEach(function (qtyInput) {
+            qtyInput.addEventListener('change',function () {
+                var qty = this.value;
+                shoppingCartUpdate(this,this,qty)
+            });
+        });
+        
+
+        plusBtns.forEach(function (plusBtn) {
+            plusBtn.addEventListener('click',function () {
+                // this.previousElementSibling
+                // 取得當前元素前面的元素，在此處也就是取得input
+                
+                var input = this.previousElementSibling;
+                var qty = Number(input.value) + 1;
+
+                shoppingCartUpdate(this,input,qty);
+
+            });
+        });
+
+        minusBtns.forEach(function (minusBtn) {
+            minusBtn.addEventListener('click',function () {
+                // this.nextElementSibling
+                // 取得當前元素後面的元素，在此處也就是取得input
+                var input = this.nextElementSibling;
+                
+                var qty = Number(input.value) <= 1 ? 1 : Number(input.value) - 1;
+                
+                shoppingCartUpdate(this,input,qty);
+
+            });
+        });
+
+        deleteBtns.forEach(function (deleteBtn) {
+            deleteBtn.addEventListener('click',function () {
+                var formData = new FormData();
+                deleteBtnElement = this;
+                formData.append('_token','{{ csrf_token() }}');
+                formData.append('productId',this.getAttribute('data-id'));
+                fetch('/shopping_cart/delete',{
+                    'method':'POST',
+                    'body': formData
+                }).then(function (response) {
+                    return response.text();
+                }).then(function (data) {
+                    if(data == 'success'){
+                        var productArea = deleteBtnElement.parentElement;
+                        productArea.remove();
+                        ShoppingCartCalc();
+                    }
+                });
+            });
+        });
+
+
+
+        function calcProductPrice(element) {
+            // 觸發事件的元素的父層
+            var controlArea = element.parentElement;
+            var input = controlArea.querySelector('.quantity');
+            var price = controlArea.nextElementSibling.querySelector('.unit-total');
+            var newPrice = (price.getAttribute('data-price') * input.value).toLocaleString();
+            price.innerText = newPrice;
+        }
+
+
+        function shoppingCartUpdate(element,input,qty) {
+            var productId = input.getAttribute('data-id');
+            var formData = new FormData();
+            formData.append('_token','{{ csrf_token() }}');
+            formData.append('productId',productId);
+            formData.append('qty',qty);
+
+            fetch('/shopping_cart/update',{
+                'method':'POST',
+                'body':formData
+            }).then(function (response) {
+                return response.text();
+            }).then(function (data) {
+                input.value = Number(data);
+                calcProductPrice(element);
+                ShoppingCartCalc();
+            });
+        }
+
+
+
+        function ShoppingCartCalc() {
+            var totalQty = 0;
+            var subPrice = 0;
+            var shipmentPrice = 60;
+            var totalPrice = 0;
+
+            var qtyInputs = document.querySelectorAll('.quantity');
+            qtyInputs.forEach(function (qtyInput) {
+                totalQty += Number(qtyInput.value);
+
+                var price = qtyInput.parentElement.nextElementSibling.lastElementChild.getAttribute('data-price');
+                subPrice += price * qtyInput.value;
+            });
+
+            document.querySelector('.quan-total').innerText = totalQty.toLocaleString();
+            document.querySelector('.subtotal').innerText = subPrice.toLocaleString();
+
+            if(subPrice > 1000){
+                shipmentPrice = 0;
+            }
+
+            document.querySelector('.shipping').innerText = shipmentPrice.toLocaleString();
+
+
+            totalPrice = subPrice + shipmentPrice;
+
+            document.querySelector('.calc-total').innerText = totalPrice.toLocaleString();
+
+        }
+
+
+    </script>
+@endsection
+

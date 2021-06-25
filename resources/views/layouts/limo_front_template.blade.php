@@ -1,18 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no">
-    <title>2/3 購物車 - PET Vogue 毛孩日誌</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/pet-vogue.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>
+        @yield('title') - Pet Vogue
+        {{-- {{ config('app.name', ' - Pet Vogue') }} --}}
+    </title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pet-vogue.css') }}"> --}}
+
+    @yield('css')
+    <style>
+        /* LIMO更動區域 */
+        /* 改標籤顏色 */
+        .product-list-group .product-list li .product-item .product-txt .pdt-hashtag span:nth-of-type(1) {
+            background-color: #ffe562;
+        }
+
+        .index-featured-article .article-list li .article-txt .artl-date-hashtag span:nth-of-type(2) {
+            background-color: #ffe562;
+        }
+
+        /* 字體修改*/
+        body {
+            font-weight: 390;
+            background-color: white;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 400;
+        }
+
+        .footer-content .footer-title {
+            background-color: transparent;
+        }
+
+        /* 手機NAV分隔線 */
+        .header {
+            border-bottom: silver;
+        }
+
+        /* 手機下拉選單增加上方分隔線 */
+        .header-content .main-nav-mobile {
+            top: 50px;
+        }
+
+        .header-content .main-nav-mobile li:first-of-type .list-title {
+            border-top: 1px solid #fa0;
+        }
+
+        /* 愛心捐款黏貼右側 */
+        .donate-us a {
+            border-radius: 5px 0 0 5px;
+        }
+
+        .donate-us.show-donate {
+            right: 0;
+        }
+
+        /* SWIPER上推方空白 */
+        .index-banner-slider .swiper-container {
+            padding-top: 10px;
+        }
+
+        /* PC下拉透明背景 */
+        @media screen and (min-width: 992px) {
+            .header-content .main-nav-pc>li:hover .sub-nav-pc {
+                box-shadow: 0px 3px 8px #5552;
+            }
+        }
+
+        .header-content .close-nav-m.close-active {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .header-content .main-nav-mobile a,
+        .index-half-way .half-content .half-list a {
+            background-color: #fdf1b3;
+            color: #000;
+        }
+
+        .header-content .main-nav-mobile li>a {
+            padding-left: 30px;
+        }
+
+        .index-featured-article .article-list li {
+            border: 0;
+        }
+
+        @media screen and (min-width: 992px) {
+            .index-featured-article .article-content .article-list li:hover {
+                box-shadow: 0 1px 5px #0005;
+            }
+        }
+
+    </style>
+
+    <link rel="shortcut icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
+    <link rel="icon" href="{{ asset('img/petvogue-logo.ico') }}" type="image/ico" />
 </head>
 
-<body class="body">
-
-    <!-- 全頁面共用 -->
+<body>
     <div class="loading" id="loading">
         <div class="paw-ani">
             <span><i class="fas fa-paw"></i></span>
@@ -30,8 +124,8 @@
         <div class="container">
             <div class="header-content">
                 <h1>
-                    <a href="index.html">PET Vogue 毛孩日記
-                        <img src="./pic/logo.svg" alt="PET Vogue Logo" title="PET Vogue Logo">
+                    <a href="/">PET Vogue 毛孩日記
+                        <img src="{{ asset('/img/logo-08.svg') }}" alt="PET Vogue Logo" title="PET Vogue Logo">
                     </a>
                 </h1>
                 <div class="user-icon-m">
@@ -74,7 +168,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="activity.html">活動專區</a>
+                                <a href="/event">活動專區</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -90,7 +184,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="pet-house.html">送領養相關</a>
+                                <a href="/owner">送領養相關</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -103,11 +197,11 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="about_us.html">關於我</a>
+                                <a href="/about">關於我</a>
                             </h3>
                         <li>
                             <h3>
-                                <a href="all-products.html">寵物商城</a>
+                                <a href="/shop">寵物商城</a>
                             </h3>
                             <ul class="sub-nav-pc">
                                 <li>
@@ -129,7 +223,7 @@
                         </li>
                         <li>
                             <h3>
-                                <a href="donate-support.html">愛心捐款</a>
+                                <a href="/donate">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
@@ -138,9 +232,36 @@
                             </a>
                         </li>
                         <!-- 登入前 -->
-                        <li>
-                            <a href="###"><i class="fas fa-user"></i></a>
-                        </li>
+
+
+                        <ul class="navbar-nav ml-auto">
+                            @guest
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-user"></i></a></a>
+                                </li>
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                                                     document.getElementById('logout-form').submit();">
+                                            登出
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                        </ul>
+
                         <!-- 登入後 -->
                         <!-- <li>
                             <h3 class="user-name"></h2>
@@ -150,13 +271,14 @@
                             </ul>
                         </li> -->
                     </ul>
+
                     <!-- pc menu -->
 
                     <!-- mobile menu -->
                     <ul class="main-nav-mobile">
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="index.html">首頁</a>
+                                <a href="/">首頁</a>
                             </h3>
                         </li>
                         <li>
@@ -208,7 +330,7 @@
                             <h3 class="list-title"><span>送領養相關</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="pet-house.html">領養與送養</a>
+                                    <a href="/owner">領養與送養</a>
                                 </li>
                                 <li>
                                     <a href="#index-half-way">中途之家</a>
@@ -219,7 +341,7 @@
                             <h3 class="list-title"><span>寵物商城</span><i class="fas fa-chevron-down"></i></h3>
                             <ul class="sub-nav">
                                 <li>
-                                    <a href="all-products.html">全部商品</a>
+                                    <a href="/shop">全部商品</a>
                                 </li>
                                 <li>
                                     <a href="###">貓皇飼料</a>
@@ -240,12 +362,12 @@
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="donate-support.html">愛心捐款</a>
+                                <a href="/donate">愛心捐款</a>
                             </h3>
                         </li>
                         <li>
                             <h3 class="list-title only-title">
-                                <a href="about_us.html">關於我</a>
+                                <a href="/about">關於我</a>
                             </h3>
                         </li>
                     </ul>
@@ -257,65 +379,18 @@
     </header>
     <!-- 全頁面共用 -->
 
-    <main>
-        <section class="section-sm section-lg user-info">
-            <div class="container">
-                <div class="user-info-content">
-                    <h2>2/3 購物車</h2>
-                    <h3>填選運送詳細資料</h3>
-                    <form action="" class="user-form-list">
-                        <!-- 帶資料這邊帶 -->
-                        <div class="info-group">
-                            <label for="receiver">收件人</label>
-                            <input class="receiver-name" type="text" name="" id="receiver" placeholder="輸入姓名">
-                        </div>
-                        <div class="info-group">
-                            <label for="phone">聯絡電話</label>
-                            <input class="receiver-phone" type="tel" name="" id="phone" placeholder="0988-888-888">
-                        </div>
-                        <div class="info-group">
-                            <label for="mail">聯絡信箱</label>
-                            <input class="receiver-mail" type="email" name="" id="mail" placeholder="888@petVogue.com">
-                        </div>
-                        <!-- 後端帶入前端 -->
-                        <div class="city-selector-set">
-                            <label for="">收件地址</label>
-                            <div class="allselect">
-                                <div class="sel-county">
-                                    <!-- 縣市選單 -->
-                                    <select class="county">
-                                        <option value="八八市">八八市</option>
-                                        <!-- 測試用記得刪掉 -->
-                                    </select>
-                                </div>
-                                <div class="sel-district">
-                                    <!-- 區域選單 -->
-                                    <select class="district">
-                                        <option value="八八區">八八區</option>
-                                        <!-- 測試用記得刪掉 -->
-                                    </select>
-                                </div>
-                                <input type="text" name="" id="" placeholder="輸入街道地址">
-                            </div>
-                        </div>
-                    </form>
-                    <h3>目前僅提供線上刷卡支付及宅配服務</h3>
-                    <div class="move-btns">
-                        <a class="pet-btn" href="shopping-cart-step-1.html">上一步</a>
-                        <a class="pet-btn" href="shopping-cart-step-3.html">下一步</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+
+    @yield('main')
+
 
     <!-- footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <h3 class="footer-title">
-                    <a href="index.html">PET Vogue 毛孩日記
-                        <img src="./pic/logo.svg" alt="Footer Logo">
+                    <a href="{{ asset('/') }}">PET Vogue 毛孩日記
+                        <img src="{{ asset('/img/logo-08.svg') }}" alt="Footer Logo" title="PET Vogue Logo">
+
                     </a>
                 </h3>
                 <ul class="footer-pet-info">
@@ -333,26 +408,40 @@
                 </ul>
                 <div class="coptright">
                     &copy;數位消波塊團體專題，非營利用途
+
                 </div>
             </div>
         </div>
     </footer>
 
-
-
     <!-- 全頁面共用 -->
     <!-- 愛心捐款 -->
     <div class="donate-us">
-        <a href="donate-support.html">愛心捐款</a>
+        <a href="{{ asset('/donate') }}"><i class="far fa-heart"></i> 愛心捐款</a>
     </div>
     <!-- 回到頂端 -->
     <div class="back-top">TOP</div>
     <!-- 全頁面共用 -->
 
-    <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
-    <script src="./js/pet-vogue-jquery.js"></script>
-    <script src="./js/all.js"></script>
+
+
+
+
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    @if (Session::get('icon'))
+        <script>
+            Swal.fire({
+                icon: '{{ Session::get('icon') }}',
+                title: '{{ Session::get('title') }}',
+                text: '{{ Session::get('text') }}',
+                timer: 3500
+            });
+        </script>
+    @endif
+
+    @yield('js')
+
 </body>
 
 </html>

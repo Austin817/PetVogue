@@ -10,8 +10,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -51,6 +49,7 @@
                             <a class="nav-link" href="/admin/activity">活動(後端)</a>
                             <a class="nav-link" href="/rescues">救援(前端)</a>
                             <a class="nav-link" href="/admin/rescue">救援(後端)</a>
+                            <a class="nav-link" href="/admin/product">Product Edit</a>
                         </li>
                     </ul>
 
@@ -95,6 +94,9 @@
             @yield('main')
         </main>
     </div>
+
+
+    <script src="{{ asset('js/app.js') }}"></script>
     @yield('js')
 </body>
 
