@@ -18,7 +18,7 @@ class CartCheck
     public function handle($request, Closure $next)
     {
         if (\Cart::isEmpty()){
-            return redirect('/shop')
+            return redirect('/shop/all')
             ->with(ProductToolBoxController::swal('warning','結帳失敗','請選擇商品後結帳!!'));  
         }else{
             return $next($request);    
