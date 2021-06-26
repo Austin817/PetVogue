@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -7,7 +7,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 10px
+        padding: 10px;
     }
 </style>
 @endsection
@@ -16,7 +16,7 @@
 <div class="container">
     <a href="/admin/article_label/create " class="btn btn-primary">新增文章標籤</a>
     <hr>
-    <table id="myTable">
+    <table id="articlelabelTable">
         <thead>
             <tr>
                 <th>id</th>

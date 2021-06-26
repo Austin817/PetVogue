@@ -1,6 +1,9 @@
-@extends('layouts.jun-template')
+@extends('layouts.front_template')
 
 @section('css')
+<link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
+<link rel="stylesheet" href="{{asset('css/aos.css')}}">
+<link rel="stylesheet" href="{{asset('css/pet-vogue.min.css')}}">
 <style>
     .card {
         width:96%;
@@ -25,7 +28,7 @@
  <section class="page-title">
     <div class="container">
         <div class="page-title-content">
-            <h2 class="section-title">各縣市動物保護單位</h2>
+            <h2 class="section-title">各縣市動物保護機關</h2>
         </div>
     </div>
 </section>
@@ -51,9 +54,17 @@
             @endforeach
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-8"></div>
             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-8"></div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-8"></div>
+            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-8"></div>
         </div>
     </div>
 </main>
 @endsection
 @section('js')
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+<script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
+<script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
+<script src="{{asset('/js/all.js')}}"></script>
 @endsection

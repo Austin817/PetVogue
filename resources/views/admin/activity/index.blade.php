@@ -1,13 +1,14 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
+<link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
 <style>
-    td,th {
+        td,th {
         max-width: 200px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 10px
+        padding: 10px;
     }
 </style>
 @endsection
@@ -15,19 +16,14 @@
 <div class="container">
     <a href="/admin/activity/create" class="btn btn-primary">新增活動</a>
     <hr>
-    <table id="activityTable" class="">
+    <table id="activityTable" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>活動標題</th>
                 <th>活動日期</th>
-                <th>活動起始時間</th>
-                <th>活動結束時間</th>
-                <th>活動地址</th>
-                <th>活動主持人</th>
-                <th>活動人數</th>
+                <th>可參加人數</th>
                 <th>活動費用</th>
                 <th>活動圖片</th>
-                <th>活動內文</th>
                 <th>編輯刪除按鈕</th>
             </tr>
         </thead>
@@ -36,14 +32,9 @@
             <tr>
                 <td>{{$activity->title}}</td>
                 <td>{{$activity->date}}</td>
-                <td>{{$activity->timestart}}</td>
-                <td>{{$activity->timeend}}</td>
-                <td>{{$activity->address}}</td>
-                <td>{{$activity->host}}</td>
                 <td>{{$activity->people}}</td>
-                <td>{{$activity->price}}</td>
-                <td><img src="{{$activity->img}}"style="width:100%;"></td>
-                <td>{{$activity->text}}</td>
+                <td >{{$activity->price}}</td>
+                <td><img src="{{$activity->img}}"style="max-width:200px;"></td>
                 <td><a href="/admin/activity/{{$activity->id}}/edit" class="btn btn-success btn-sm">編輯</a>
                     <form id="delete_{{$activity->id}}" action="/admin/activity/{{$activity->id}}" method="POST"
                         class="d-none">
@@ -58,17 +49,28 @@
     </table>
 </div>
 @endsection
-
 @section('js')
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script>
     var delBtns = document.querySelectorAll('.delete-btn');
     delBtns.forEach(function (btn) {
     btn.addEventListener('click',function () {
-        if(confirm('是否要刪除這篇文章?')){
+        if(confirm('是否要刪除這場活動?')){
             var id=this.getAttribute('data-id');
             document.querySelector(id).submit();
         }
     });
 })
+</script>
+<script>
+    $(function () {
+        $("#activityTable").DataTable({
+            searching: true,    //關閉filter功能
+            columnDefs: [{
+                targets: [6],
+                orderable: false,
+            }]
+        });
+    });
 </script>
 @endsection

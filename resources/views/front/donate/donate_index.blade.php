@@ -87,7 +87,7 @@
                         <span>捐款名冊、物資用途、金額公布，</span>
                         <span>邀您一同捐款幫助浪浪找個家。</span>
                     </p>
-                    <a class="pet-btn" href="###">愛心芳名錄</a>
+                    <a class="pet-btn" href="https://drive.google.com/drive/u/2/folders/1S7RWdMkRceWGjyI6R7vOAwUUwtxrzQI8">愛心芳名錄</a>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ class ActivityFrontController extends Controller
     //活動內頁
     public function activitiesContent($id)
     {
-        $activityDetail = Activity::find($id);
-        return view('front.activities.content',compact('articleDetail'));
+        $activity = Activity::find($id);
+        return view('front.activities.content',compact('activity'));
     }
 }

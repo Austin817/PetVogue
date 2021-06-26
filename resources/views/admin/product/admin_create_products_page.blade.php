@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section ('css')
     <link rel="stylesheet" href="{{ asset('css/products_create_page.css') }}">

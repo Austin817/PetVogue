@@ -190,78 +190,28 @@
                     <a href="all-products.html">探索更多...</a>
                 </div>
                 <ul>
+                    @for ($i = 0; $i < 4; $i++) 
+                    @php 
+                    $products=$productsNext[$i]; 
+                    @endphp 
                     <li>
-                        <a class="product-item" href="###">
+                        <a class="product-item" href="/shop/detail/{{$products->id}}">
                             <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
+                                <img src="{{asset($products->img)}}" alt="商品圖片" title="商品圖片">
                             </div>
                             <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
+                                <h3>{{$products->name}}</h3>
                                 <div class="product-price">
                                     <span>$</span>
-                                    <span>299</span>
+                                    <span>{{number_format($products->price)}}</span>
                                 </div>
                                 <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
+                                    <span>{{$products->linkProductType->type_name}}</span>
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a class="product-item" href="###">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="###">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="product-item" href="###">
-                            <div class="product-pic">
-                                <img src="https://picsum.photos/300/300/?random=678" alt="商品圖片" title="商品圖片">
-                            </div>
-                            <div class="product-txt">
-                                <h3>消波塊嚴選 | 特製香草豬後腿肉.鮮味貓貓罐頭</h3>
-                                <div class="product-price">
-                                    <span>$</span>
-                                    <span>299</span>
-                                </div>
-                                <div class="pdt-hashtag">
-                                    <span>貓砂</span>
-                                    <span>貓罐頭</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    @endfor
                 </ul>
             </div>
         </div>

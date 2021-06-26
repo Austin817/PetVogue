@@ -1,14 +1,15 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
+<link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
 <style>
     td,th {
-        max-width: 200px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        padding: 10px
-    }
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px;
+}
 </style>
 @endsection
 @section('main')
@@ -19,12 +20,12 @@
         <thead>
             <tr>
                 <th>文章標題</th>
-                <th>文章日期</th>
+                <th>張貼日期</th>
                 <th>文章標籤</th>
-                <th>文章圖片</th>
-                <th>文章內文</th>
+                <th>內文圖片</th>
+                <th>內文文字</th>
                 <th>參考網站</th>
-                <th>編輯刪除按鈕</th>
+                <th>功能</th>
             </tr>
         </thead>
         <tbody>
@@ -52,6 +53,8 @@
 @endsection
 
 @section('js')
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script>
     var delBtns = document.querySelectorAll('.delete-btn');
     delBtns.forEach(function (btn) {
@@ -62,5 +65,16 @@
         }
     });
 })
+</script>
+<script>
+    $(function () {
+        $("#articleTable").DataTable({
+            searching: true,    //關閉filter功能
+            columnDefs: [{
+                targets: [7],
+                orderable: false,
+            }]
+        });
+    });
 </script>
 @endsection

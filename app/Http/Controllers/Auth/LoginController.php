@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -36,5 +37,19 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    use AuthenticatesUsers;
+
+    // 身分別切換不同畫面
+    protected function authenticated() {
+        if (Auth::check()) {
+
+            $role = Auth::user()->role ?? null;
+            if ($role != 'admin') {
+                return redirect()->route('index');
+            
+            }return redirect()->route('home');
+
+        }
     }
 }

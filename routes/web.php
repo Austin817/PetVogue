@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/')->group(function (){
 
     // 顯示首頁
-    Route::get('/','FrontController@index');
+    Route::get('/','FrontController@index')->name('index');
 
 });
 
@@ -44,12 +45,12 @@ Route::prefix('/donate')->group(function (){
 
     // 傳送 捐贈物資資料
     Route::post('/goods', 'DonateFrontController@goods');
-
+    
     // 顯示 輸入捐款資料頁
     Route::get('/cash','DonateFrontController@cash');
-    // 傳送 捐款資料  + 顯示 確認捐款資料頁  
+    // 傳送 捐款資料  + 顯示 確認捐款資料頁
     Route::post('/cash_save', 'DonateFrontController@cashSave');
-    // 進入 信用卡頁面   
+    // 進入 信用卡頁面
     Route::post('/cash_pay', 'DonateFrontController@cashPay');
     
 });
@@ -89,7 +90,6 @@ Route::prefix('/register')->group(function (){
     Route::get('/','RegisterController@index');
     
 });
-
 
 // Shop Front Controller
 Route::prefix('/shop')->group(function (){
@@ -132,7 +132,12 @@ Route::prefix('cart_ecpay')->group(function(){
     Route::post('return', 'ShoppingCartFrontController@returnUrl')->name('return');
 });
 
-
+// 商品頁後端
+Route::prefix('/admin')->middleware('auth')->group(function ()
+{
+    Route::resource('/product', 'ProductResourceController');
+    Route::post('/product/deleteImg', 'ProductResourceController@deleteImg');
+});
 
 
 //文章頁前端
@@ -145,6 +150,7 @@ Route::prefix('articles')->group(function (){
 Route::prefix('admin')->middleware('auth')->group(function ()
 {
     Route::resource('article', 'ArticleController');
+    //文章標籤後端
     Route::resource('article_label', 'ArticleLabelController'); 
 });
 
@@ -177,21 +183,46 @@ Route::prefix('admin')->middleware('auth')->group(function ()
     Route::resource('rescue', 'RescueController');
 });
 
-
-
-
-// 商品頁後端
-Route::prefix('/admin')->middleware('auth')->group(function ()
-{
-    Route::resource('/product', 'ProductResourceController');
-    Route::post('/product/deleteImg', 'ProductResourceController@deleteImg');
+//餵食頁前端
+Route::prefix('feeds')->group(function (){
+    Route::get('/', 'FeedFrontController@feedsIndex');
+    //增加浪浪地圖座標
+    Route::get('create', 'FeedFrontController@feedsCreate');
 });
 
+//餵食表單狀態後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('feed', 'FeedController');
+    //餵食表單狀態
+    Route::resource('feed_status', 'FeedStatusController');
+});
 
+//首頁swipper後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('index_swiper', 'IndexSwiperController');
+});
 
+//認養頁前端
+Route::prefix('adopts')->group(function (){
+    Route::get('/', 'AdoptFrontController@adoptIndex');
+    Route::get('/content', 'AdoptFrontController@adoptContent');
+});
+
+//認養頁後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('rescue', 'RescueController');
+});
+
+//首頁swipper後端
+Route::prefix('admin')->middleware('auth')->group(function ()
+{
+    Route::resource('house', 'HouseController');
+});
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 

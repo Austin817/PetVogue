@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -7,7 +7,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        padding: 10px
+        padding: 10px;
     }
 </style>
 @endsection
@@ -21,7 +21,7 @@
                 <th>廣告名稱</th>
                 <th>廣告圖片</th>
                 <th>連結網站</th>
-                <th>編輯刪除按鈕</th>
+                <th>功能</th>
             </tr>
         </thead>
         <tbody>

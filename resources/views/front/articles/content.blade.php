@@ -1,8 +1,29 @@
-@extends('layouts.jun-template')
+@extends('layouts.front_template')
 
 @section('css')
+<link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
+<link rel="stylesheet" href="{{asset('css/aos.css')}}">
+<link rel="stylesheet" href="{{asset('css/pet-vogue.min.css')}}">
 @endsection
+<style>
+    .feature-pic>img {
+            width: 100%;
+            height: 40vw !important; 
+            object-fit: cover; 
+        }
 
+        @media screen and (min-width: 572px) {
+            .feature-pic>img {
+                height: 25vw !important;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .feature-pic>img {
+                height: 20vw !important;
+            }
+        }
+</style>
 @section('main')
 <main>
     <section class="section-bread-crumb bread-crumb">
@@ -13,7 +34,8 @@
                         <a href="/articles">文章列表</a>
                     </li>
                     <li>
-                        <a href="/articles?labelId={{$articleDetail->label_id}}">{{$articleDetail->articleLabel->name}}</a>
+                        <a
+                            href="/articles?labelId={{$articleDetail->label_id}}">{{$articleDetail->articleLabel->name}}</a>
                     </li>
                     <li>
                         <a href="/articles/content/{{$articleDetail->id}}">{{$articleDetail->title}}</a>
@@ -38,63 +60,40 @@
                         <p class="essay-txt">
                             {{$articleDetail->text}}
                         </p>
-                        文章來源：<a class="essay-origin" href="{{$articleDetail->website}}">{{$articleDetail->reference}}</a>
+                        文章來源：<a class="essay-origin"
+                            href="{{$articleDetail->website}}">{{$articleDetail->reference}}</a>
                     </div>
                     <div class="feature-eaasy">
                         <h2 class="section-title">文章推薦</h2>
                         <ul>
-                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                                <a href="###">
+                            @for ($i = 0; $i < 3; $i++) @php $article=$articleNext[$i]; @endphp <li
+                                data-aos="fade-right" data-aos-duration="1000"
+                                data-aos-anchor-placement="center-bottom">
+                                <a href="/articles/content/{{$article->id}}">
                                     <div class="feature-pic">
-                                        <img src="{{$articleDetail->img}}" alt="推薦文章" title="文章標題">
+                                        <img src="{{$article->img}}" alt="推薦文章" title="文章標題">
                                     </div>
                                     <div class="feature-text">
                                         <div class="date">
-                                            <span>2021-06-15</span>
-                                            <span class="essay-tag">Hashtag</span>
+                                            <span>{{$article->date}}</span>
+                                            <span class="essay-tag">{{$article->articleLabel->name}}</span>
                                         </div>
-                                        <h2>文章標題</h2>
+                                        <h2><div style="width: 100%;
+                                            overflow: hidden;
+                                            display: -webkit-box;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-line-clamp: 1;">{{$article->title}}</div></h2>
                                         <p>
-                                            文件回答首頁註冊時間還會相當高效情人品牌，就算要是對你對面，政治這一首先你怎麼動物作出，近期都不專門形勢女性臺灣民眾公主計算機桌面。
+                                            <div style="width: 100%;
+                                            overflow: hidden;
+                                            display: -webkit-box;
+                                            -webkit-box-orient: vertical;
+                                            -webkit-line-clamp: 1;">{{$article->text}}</div>
                                         </p>
                                     </div>
                                 </a>
-                            </li>
-                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                                <a href="###">
-                                    <div class="feature-pic">
-                                        <img src="{{$articleDetail->img}}" alt="推薦文章" title="文章標題">
-                                    </div>
-                                    <div class="feature-text">
-                                        <div class="date">
-                                            <span>2021-06-15</span>
-                                            <span class="essay-tag">Hashtag</span>
-                                        </div>
-                                        <h2>文章標題</h2>
-                                        <p>
-                                            文件回答首頁註冊時間還會相當高效情人品牌，就算要是對你對面，政治這一首先你怎麼動物作出，近期都不專門形勢女性臺灣民眾公主計算機桌面。
-                                        </p>
-                                    </div>
-                                </a>
-
-                            </li>
-                            <li data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
-                                <a href="###">
-                                    <div class="feature-pic">
-                                        <img src="{{$articleDetail->img}}" alt="推薦文章" title="文章標題">
-                                    </div>
-                                    <div class="feature-text">
-                                        <div class="date">
-                                            <span>2021-06-15</span>
-                                            <span class="essay-tag">Hashtag</span>
-                                        </div>
-                                        <h2>文章標題</h2>
-                                        <p>
-                                            文件回答首頁註冊時間還會相當高效情人品牌，就算要是對你對面，政治這一首先你怎麼動物作出，近期都不專門形勢女性臺灣民眾公主計算機桌面。
-                                        </p>
-                                    </div>
-                                </a>
-                            </li>
+                                </li>
+                                @endfor
                         </ul>
                     </div>
                 </div>
@@ -116,4 +115,10 @@
 </main>
 @endsection
 @section('js')
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{{asset('js/aos.js')}}"></script>
+<script src="https://kit.fontawesome.com/ee6524aae5.js" crossorigin="anonymous"></script>
+<script src="{{asset('/js/pet-vogue-jquery.js')}}"></script>
+<script src="{{asset('/js/pet-vogue-swiper.js')}}"></script>
+<script src="{{asset('/js/all.js')}}"></script>
 @endsection

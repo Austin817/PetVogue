@@ -137,12 +137,10 @@
                             <div class="info-list-txt">
                                 <h3>參加活動</h3>
                                 <p>
-
-
                                     <span>我們尋找各地浪浪協助TNR、餵食、</span>
                                     <span>送養並宣導友善動物的觀念</span>
                                 </p>
-                                <button class="pet-btn" href="###">按我參加</button>
+                                <button class="pet-btn"  onclick="window.location.href='/activities'">點我參加</button>
                             </div>
                         </li>
                         <li data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
@@ -155,7 +153,7 @@
                                     <span>在街頭流浪的浪浪們需要</span>
                                     <span>各位的友愛，給他們一個溫暖的家</span>
                                 </p>
-                                <button class="pet-btn pet-btn-r" href="###">按我認養</button>
+                                <button class="pet-btn pet-btn-r" onclick="window.location.href='/adopts'">按我認養</button>
                             </div>
                         </li>
                         <li data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
@@ -206,7 +204,7 @@
                         <p>
                             我們觀察到許多善心人士建立貓狗家園，但浪浪的數量眾多，希望蒐集大家的愛心，採購飼料分送需要的單位，讓各園區的浪浪三餐能夠溫飽。
                         </p>
-                        <button class="pet-btn pet-btn-r" href="###">立即捐款</button>
+                        <button class="pet-btn pet-btn-r" onclick="window.location.href='/donate'">立即捐款</button>
                     </div>
                 </div>
             </div>

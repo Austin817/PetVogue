@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -13,6 +13,7 @@
     <form action="/admin/rescue/{{$rescue->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
+        編輯單位
         <div class="form-group">
             <label for="name">單位名稱</label>
             <input type="text" id="name" name="name" value="{{$rescue->name}}">
@@ -33,7 +34,7 @@
             <label for="sort">排序(1最前)</label>
             <input type="mumber" id="sort" name="sort" value="{{$rescue->sort}}">
         </div>
-        <button type="submit">送出</button>
+        <button type="submit" class="btn btn-danger btn-sm">確認編輯</button>
     </form>
 </div>
 @endsection
