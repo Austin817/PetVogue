@@ -1,5 +1,7 @@
 @extends('layouts.front_template')
-
+@section('title')
+    活動詳情
+@endsection
 @section('css')
 <link rel="stylesheet" href="{{asset('css/reset.css')}}">
 <link rel="stylesheet" href="{{asset('css/pet-vogue.min.css')}}">

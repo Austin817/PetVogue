@@ -1,4 +1,7 @@
 @extends('layouts.front_template')
+@section('title')
+各縣市動物保護機關
+@endsection
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
