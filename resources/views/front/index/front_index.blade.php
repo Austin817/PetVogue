@@ -50,23 +50,31 @@
             object-fit: cover; 
         }
 
-        @media screen and (min-width: 572px) {
-            .article-pic>img {
-                height: 20vw ;
-            }
+    @media screen and (min-width: 572px) {
+        .article-pic>img {
+            height: 20vw ;
         }
+    }
 
-        @media screen and (min-width: 700px) {
-            .article-pic>img {
-                height: 20vw ;
-            }
+    @media screen and (min-width: 700px) {
+        .article-pic>img {
+            height: 20vw ;
         }
+    }
 
-        @media screen and (min-width: 992px) {
-            .article-pic>img {
-                height: 8vw ;
-            }
+    @media screen and (min-width: 992px) {
+        .article-pic>img {
+            height: 8vw ;
         }
+    }
+    .shop-ellipsis {
+        overflow:hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .index-pet-product .product-content .product-list li .product-txt .pdt-hashtag span {
+        background-color: #ffe562;
+    }
 </style>
 @endsection
 
@@ -239,17 +247,19 @@
                 </div>
                 <ul class="product-list">
                     @for ($i = 0; $i < 8; $i++) 
-                    @php $product=$productsData[$i]; @endphp
+                    @php 
+                    $product=$productsData[$i]; 
+                    @endphp
                     <li>
                         <a class="pdt-item" href="/shop/detail/{{$product->id}}">
                             <div class="product-pic">
                                 <img src="{{asset($product->img)}}" alt="商品圖片" title="商品圖片">
                             </div>
                             <div class="product-txt">
-                                <h3>{{($product->name)}}</h3>
+                                <h3 class="shop-ellipsis">{{($product->name)}}</h3>
                                 <div class="product-price">
-                                    <span>$</span>
-                                    <span>{{($product->price)}}</span>
+                                    <span>$</span>&nbsp;&nbsp;
+                                    <span>{{number_format($product->price)}}</span>
                                 </div>
                                 <div class="pdt-hashtag">
                                     <span>{{($product->linkProductType->type_name)}}</span>
@@ -258,6 +268,9 @@
                         </a>
                     </li>
                     @endfor
+                </ul>
+            </div>
+        </div>        
     </section>
 
     <!-- 中途之家 -->
@@ -269,10 +282,16 @@
                 </h2>
                 <h2 class="section-title">中途之家</h2>
                 <ul class="half-list">
-                    @for ($i = 0; $i < 1; $i++) @php $houses=$houseData[$i]; @endphp @endfor @for ($i=0; $i < $houses->
+                    @for ($i = 0; $i < 1; $i++) 
+                    @php 
+                    $houses=$houseData[$i]; 
+                    @endphp 
+                    @endfor 
+                    @for ($i=0; $i < $houses->
                         number ; $i++)
-                        @php $house=$houseData[$i];
-                        @endphp
+                    @php 
+                    $house=$houseData[$i];
+                    @endphp
                         <li class="half-item">
                            
                             <h3 class="halfway-home-title">{{$house->name}}</h3>
@@ -281,7 +300,7 @@
                             </a>
                             <a class="half-item-m" href="{{asset($house->website)}}">{{($house->name)}}</a>
                         </li>
-                        @endfor
+                    @endfor
                 </ul>
             </div>
         </div>
