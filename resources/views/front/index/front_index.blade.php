@@ -81,17 +81,23 @@
                 <!-- Swiper -->
                 <div class="swiper-container mySwiper">
                     <div class="swiper-wrapper">
-                        @for ($i = 0; $i < 1; $i++) @php $indexswipers=$indexswiperData[$i]; @endphp @endfor @for ($i=0;
-                            $i < $indexswipers->number ; $i++)
-                            @php $indexswiper=$indexswiperData[$i];
-                            @endphp
+                        @for ($i = 0; $i < 1; $i++) 
+                        @php 
+                            $indexswipers=$indexswiperData[$i]; 
+                        @endphp 
+                        @endfor 
+
+                        @for ($i=0;$i < $indexswipers->number;$i++)
+                        @php 
+                            $indexswiper=$indexswiperData[$i];
+                        @endphp
                             <div class="swiper-slide">
                                 <a href="{{asset($indexswiper->website)}}"><img class="slider-pc-pic"
                                         src="{{asset($indexswiper->img1)}}" alt="Banner 圖片"></a>
                                 <a href="{{asset($indexswiper->website)}}"><img class="slider-mobile-pic"
                                         src="{{asset($indexswiper->img2)}}" alt="Banner 圖片"></a>
                             </div>
-                            @endfor
+                        @endfor
                     </div>
                     <div class="swiper-button-next swiper-color"></div>
                     <div class="swiper-button-prev swiper-color"></div>
@@ -287,7 +293,7 @@
 @section('js')
 <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
 <script src="{{ asset('js/moment.js')}}"></script>{{-- 只是拿來做行事曆 --}}
-<script src="{{ asset('https://unpkg.com/swiper/swiper-bundle.min.js')}}"></script>{{-- 只是拿來做滑頁動畫 --}}
+<script src="{{ asset('https://unpkg.com/swiper/swiper-bundle.min.js')}}"></script> {{-- 只是拿來做滑頁動畫 --}}
 <script src="{{ asset('js/aos.js')}}"></script> {{-- 只是拿來做出移動動畫 --}}
 <script src="{{ asset('js/main.min.js')}}"></script>{{-- 只是拿來做行事曆 --}}
 <script src="{{ asset('js/pet-vogue-swiper.js')}}"></script>{{-- 只是拿來做滑頁動畫 --}}
