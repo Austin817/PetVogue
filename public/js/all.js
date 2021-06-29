@@ -22,11 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 })
 window.onload = function () {
+    progress.textContent = '100%';
     loading.classList.add('loading-out');
     setTimeout(function () {
         body_fix.classList.remove('body-fix');
-    }, 1000);
+    }, 500);
     
 }
 AOS.init();
 AOS.refresh();
+

@@ -29,7 +29,8 @@ class ShopFrontController extends Controller
     public function detail($id)
     {
         $productData = Product::with('linkProductType','linkProductImg')->find($id);
-        return view('front.shop.shop_detail',compact('productData'));
+        $productsNext = Product::with('linkProductType')->get();
+        return view('front.shop.shop_detail',compact('productData','productsNext'));
     }
 
 }

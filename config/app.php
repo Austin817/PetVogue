@@ -163,6 +163,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
 
+
+        // 我不是機器人
+        Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+        // 我不是機器人
+
        
         // 購物車
         Darryldecode\Cart\CartServiceProvider::class,
@@ -184,7 +189,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -237,6 +241,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        
+        // 我不是機器人
+        'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
+        // 我不是機器人
     ],
 
 ];

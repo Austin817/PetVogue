@@ -12,11 +12,11 @@ class ArtileFrontController extends Controller
     public function articlesIndex(Request $request)
     {
         if ($request->labelId) {
-            //如果有type的話,取出對應資料
+            //如果有label的話,取出對應資料
             $requestid = $request->labelId;
             $articleDetail = Article::where('label_id',$request->labelId)->get();
         }else{
-            //如果沒有type的話,取出全部
+            //如果沒有label的話,取出全部
             $requestid = 0;
             $articleDetail = Article::with('articleLabel')->get();
         }
@@ -29,6 +29,7 @@ class ArtileFrontController extends Controller
     {
         $articleDetail = Article::with('articleLabel')->find($id);
         $adData = Ad::get();
-        return view('front.articles.content',compact('articleDetail','adData'));
+        $articleNext = Article::with('articleLabel')->get();
+        return view('front.articles.content',compact('articleDetail','adData','articleNext'));
     }
 }

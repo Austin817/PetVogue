@@ -1,4 +1,4 @@
-@extends('layouts.jun-app')
+@extends('layouts.app')
 
 @section('css')
 <style>
@@ -30,7 +30,7 @@
             <label for="text">連結網址</label>
             <textarea name="website" id="website" rows="1">{{$ad->website}}</textarea>
         </div>
-        <button type="submit">編輯</button>
+        <button type="submit" class="btn btn-danger btn-sm">確認編輯</button>
     </form>
 </div>
 @endsection
