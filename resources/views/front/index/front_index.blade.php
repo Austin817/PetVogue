@@ -151,7 +151,7 @@
         </div>
     </section>
 
-    {{-- <!-- 帶我回家 -->
+    <!-- 帶我回家 -->
     <section class="section-sm section-lg index-pet-home">
         <div class="container">
             <div class="pet-content">
@@ -195,7 +195,7 @@
                 </ul>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- 活動行事曆 -->
     <section class="section-sm section-lg index-pet-calendar">
         <div class="container">
