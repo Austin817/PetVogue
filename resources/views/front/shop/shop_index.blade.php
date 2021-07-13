@@ -159,6 +159,10 @@
     <script src="{{ asset('js/pet-vogue-jquery.js')}}"></script>
     <script src="{{ asset('js/all.js')}}"></script>
 
+    <script src="{{ asset('https://unpkg.com/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('js/pet-vogue-swiper.js') }}"></script>
+    
+
     <script>
         window.addEventListener('load',function () {
             var id = document.querySelector('#pageBtn');
