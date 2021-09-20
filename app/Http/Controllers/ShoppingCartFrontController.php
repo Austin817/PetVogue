@@ -104,19 +104,19 @@ class ShoppingCartFrontController extends Controller
     public function list()
     {
         $cartCollection = \Cart::getContent()->sortBy('id');
-        return view('front.Cart.shopping_cart_list_1',compact('cartCollection'));
+        return view('front.cart.shopping_cart_list_1',compact('cartCollection'));
     }
 
     public function information()
     {
-        return view('front.Cart.shopping_cart_information_2');
+        return view('front.cart.shopping_cart_information_2');
     }
     
 
     public function checkout(Request $request)
     {
         Session::put('information_save',$request->all());
-        return view('front.Cart.shopping_cart_checkout_3');
+        return view('front.cart.shopping_cart_checkout_3');
     }
 
     public function sendOrder()
