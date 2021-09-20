@@ -18,13 +18,17 @@ class FrontController extends Controller
         $houseData = House::orderBy('sort','asc')->get();
         $articleData = Article::with('articleLabel')->get();
         $productsData = Product::with('linkProductType')->get();
-        $adopts = Http::get('https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL')->json();
-        if ($adopts==null) {
-            return view('front.index.front_index_02',compact('indexswiperData','adopts','houseData','articleData','productsData'));
-        }else{
-            return view('front.index.front_index',compact('indexswiperData','adopts','houseData','articleData','productsData'));
+        // $adopts = Http::get('https://data.coa.gov.tw/Service/OpenData/TransService.aspx?UnitId=QcbUEzN6E6DL')->json();
+        // return view('front.index.front_index');
 
-        }
+        return view('front.index.front_index',compact('indexswiperData','houseData','articleData','productsData'));
+        
+        // if ($adopts==null) {
+        //     return view('front.index.front_index_02',compact('indexswiperData','adopts','houseData','articleData','productsData'));
+        // }else{
+            //     return view('front.index.front_index',compact('indexswiperData','adopts','houseData','articleData','productsData'));
+
+        // }
 
     }
 

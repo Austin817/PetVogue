@@ -151,7 +151,7 @@
         </div>
     </section>
 
-    <!-- 帶我回家 -->
+    {{-- <!-- 帶我回家 -->
     <section class="section-sm section-lg index-pet-home">
         <div class="container">
             <div class="pet-content">
@@ -177,7 +177,7 @@
                         <li>
                             <div class="pet-pic">
                                 <a
-                                    href="https://asms.coa.gov.tw/Amlapp/App/AnnounceList.aspx?Id={{$adopt["animal_id"]}}&AcceptNum={{$adopt["animal_subid"]}}&PageType=Adopt">
+                                    href="https://asms.coa.gov.tw/Amlapp/App/AnnounceList.aspx?Id={{$adopt["animal_id"]}}&AcceptNum={{$adopt["animal_subid"]}}&PageType=Adopt" target="blank">
                                     <img src="{{asset($adopt["album_file"])}}" alt="送養照片" title="送養照片">
                                 </a>
                             </div>
@@ -188,14 +188,14 @@
                                 </p>
                                 <p>我在{{$adopt["shelter_name"]}}快來接我回家</p>
                                 <a
-                                    href="https://asms.coa.gov.tw/Amlapp/App/AnnounceList.aspx?Id={{$adopt["animal_id"]}}&AcceptNum={{$adopt["animal_subid"]}}&PageType=Adopt">看更多</span></a>
+                                    href="https://asms.coa.gov.tw/Amlapp/App/AnnounceList.aspx?Id={{$adopt["animal_id"]}}&AcceptNum={{$adopt["animal_subid"]}}&PageType=Adopt" target="blank">看更多</span></a>
                             </div>
                         </li>
                     @endfor
                 </ul>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- 活動行事曆 -->
     <section class="section-sm section-lg index-pet-calendar">
         <div class="container">
@@ -310,6 +310,7 @@
             </div>
         </div>
     </section>
+    
 </main>
 @endsection
 

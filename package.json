@@ -27,6 +27,7 @@
         "datatables.net": "^1.10.25",
         "datatables.net-dt": "^1.1.0",
         "datatables.net-zf": "^2.1.1",
+        "feather-icons": "^4.28.0",
         "sweetalert2": "^11.0.18"
     }
 }
