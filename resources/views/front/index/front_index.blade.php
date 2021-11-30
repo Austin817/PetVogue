@@ -1,6 +1,5 @@
 @extends('layouts.front_template')
 @section('title')
-    首頁
 @endsection
 
 @section('css')
