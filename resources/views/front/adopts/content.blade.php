@@ -1,4 +1,7 @@
 @extends('layouts.front_template')
+@section('title')
+    收容所領養
+@endsection
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/reset.css')}}">

@@ -1,4 +1,7 @@
 @extends('layouts.front_template')
+@section('title')
+    近期活動
+@endsection
 
 @section('css')
 

@@ -1,4 +1,8 @@
 @extends('layouts.front_template')
+@section('title')
+    選擇活動
+@endsection
+
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/reset.css')}}">
