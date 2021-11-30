@@ -1,4 +1,7 @@
 @extends('layouts.front_template')
+@section('title')
+    最新文章
+@endsection
 
 @section('css')
 <link rel="stylesheet" href="{{asset('css/swiper-bundle.min.css')}}" />
