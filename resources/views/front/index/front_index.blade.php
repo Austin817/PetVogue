@@ -160,7 +160,8 @@
                     <a href="/articles">探索更多...</a>
                 </div>
                 <ul class="pet-home-list">
-                    @for ($i = 0; $i < 3; $i++) @php $adopt=$adopts[$i]; $sex="性別" ; if ($adopt["animal_sex"]=="F" ) {
+                    @for ($i = 0; $i < 3; $i++) 
+                        @php $adopt=$adopts[$i]; $sex="性別" ; if ($adopt["animal_sex"]=="F" ) {
                         $sex="女" ; } else { $sex="男" ; } $city=[ '2'=>
                         '台北市','3'=>'新北市','4'=>'基隆市','5'=>'宜蘭縣',
                         '6'=>'桃園縣','7'=>'新竹縣','8'=>'新竹市','9'=>'苗栗縣',
@@ -186,7 +187,7 @@
                                     href="https://asms.coa.gov.tw/Amlapp/App/AnnounceList.aspx?Id={{$adopt["animal_id"]}}&AcceptNum={{$adopt["animal_subid"]}}&PageType=Adopt">看更多</span></a>
                             </div>
                         </li>
-                        @endfor
+                    @endfor
                 </ul>
             </div>
         </div>
