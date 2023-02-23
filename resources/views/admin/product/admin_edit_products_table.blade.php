@@ -114,7 +114,7 @@
         var btnDelete = document.querySelectorAll('.deleteBtn');
         btnDelete.forEach(function (btn) {
             btn.addEventListener('click',function () {
-                if (confirm ('真的?')) {
+                if (confirm ('是否要刪除這個商品??')) {
                     var id = this.getAttribute('data-id');
                     document.querySelector(id).submit();
                 }
