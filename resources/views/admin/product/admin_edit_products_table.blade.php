@@ -5,7 +5,7 @@
 
 @section ('css')
     <link rel="stylesheet" href="{{ asset('css/products_list_page.css') }}">
-    
+
     {{-- datatables --}}
     <link href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css" rel="stylesheet">
     {{-- datatables --}}
@@ -58,7 +58,7 @@
                         </a>
                     </td>
                 </tr>
-            @endforeach 
+            @endforeach
         </tbody>
     </table>
 
@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    
+
     @endforeach
 
 
@@ -111,13 +111,14 @@
     {{-- datatables --}}
 
     <script>
-        var btnDelete = document.querySelectorAll('.killBtn');
+        var btnDelete = document.querySelectorAll('.deleteBtn');
         btnDelete.forEach(function (btn) {
             btn.addEventListener('click',function () {
                 if (confirm ('真的?')) {
-                    location.href = this.getAttribute('data-href');
+                    var id = this.getAttribute('data-id');
+                    document.querySelector(id).submit();
                 }
-            })
+            });
         });
     </script>
 
